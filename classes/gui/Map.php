@@ -16,6 +16,7 @@
  */
 
 class Map {
+    
     public function decode($map, $locX, $locY) {
         switch($map[$locX][$locY]) {
             case 0:

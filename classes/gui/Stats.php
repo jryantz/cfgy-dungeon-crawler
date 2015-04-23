@@ -18,28 +18,6 @@ class Stats {
             $agility = 4,
             $money = 364;
     
-    public function show() {
-        return ('
-            <div class="slot"> <span>Level: ' . $this->lvl . '</span> </div>
-            <div class="slot">
-                <div class="progBarContainer gradient">
-                    <div class="progressbar green" style="width:' . ($this->health/$this->maxHealth)*100 . '%"></div>
-                </div>
-                <span style="margin-left:10px;">HP: ' . $this->health . '/' . $this->maxHealth . '</span>
-            </div>
-            <div class="slot">
-                <div class="progBarContainer gradient">
-                    <div class="progressbar purple" style="width:' . ($this->xp/$this->maxXp)*100 . '%"></div>
-                </div>
-                <span style="margin-left:10px;">XP: ' . $this->xp . '/' . $this->maxXp . '</span>
-            </div>
-            <div class="slot"> <span>Strength: ' . $this->str . '</span> </div>
-            <div class="slot"> <span>Intelligence: ' . $this->int . '</span> </div>
-            <div class="slot"> <span>Agility: ' . $this->agility . '</span> </div>
-            <div class="slot"> <span>Money: $' . $this->money . '</span> </div>
-        ');
-    }
-    
     public function setLvl($var) {
         if(is_numeric($var)) {
             $this->lvl = $var;
@@ -48,10 +26,20 @@ class Stats {
         return false;
     }
     
-    public function setXp($var) {
+    public function setMaxXp($var) {
         if(is_numeric($var)) {
-            $this->xp = $var;
+            $this->maxXp = $var;
             return true;
+        }
+        return false;
+    }
+    
+    public function setXp($var) {
+        if(isset($this->maxXp)) {
+            if(is_numeric($var)) {
+                $this->xp = $var;
+                return true;
+            }
         }
         return false;
     }
@@ -104,5 +92,27 @@ class Stats {
             return true;
         }
         return false;
+    }
+    
+    public function show() {
+        return ('
+            <div class="slot"> <span>Level: ' . $this->lvl . '</span> </div>
+            <div class="slot">
+                <div class="progBarContainer gradient">
+                    <div class="progressbar green" style="width:' . ($this->health/$this->maxHealth)*100 . '%"></div>
+                </div>
+                <span style="margin-left:10px;">HP: ' . $this->health . '/' . $this->maxHealth . '</span>
+            </div>
+            <div class="slot">
+                <div class="progBarContainer gradient">
+                    <div class="progressbar purple" style="width:' . ($this->xp/$this->maxXp)*100 . '%"></div>
+                </div>
+                <span style="margin-left:10px;">XP: ' . $this->xp . '/' . $this->maxXp . '</span>
+            </div>
+            <div class="slot"> <span>Strength: ' . $this->str . '</span> </div>
+            <div class="slot"> <span>Intelligence: ' . $this->int . '</span> </div>
+            <div class="slot"> <span>Agility: ' . $this->agility . '</span> </div>
+            <div class="slot"> <span>Money: $' . $this->money . '</span> </div>
+        ');
     }
 }

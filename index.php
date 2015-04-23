@@ -1,9 +1,9 @@
 <?php
-require 'classes/gui/Inventory.php';
+require_once 'core/init.php';
 
-require 'classes/gui/Map.php';
-
-require 'classes/gui/Stats.php';
+//require 'classes/gui/Inventory.php';
+//require 'classes/gui/Map.php';
+//require 'classes/gui/Stats.php';
 
 $provMap = array(
     array(0, 1, 4, 0, 0),
@@ -45,7 +45,17 @@ $provMap = array(
             </div>
             
             <div class="inv">
-                <a href="#" onclick="toolDesc('slot1');" class="slot">
+                <?php
+                    $Inventory = new Inventory();
+                    
+                    $Inventory->setSlot(1, 'Stick', 2, 6);
+
+                    for($i = 1; $i <= 9; $i++) {
+                        echo $Inventory->show($i);
+                    }
+                ?>
+                
+                <!--<a href="#" onclick="toolDesc('slot1');" class="slot">
                     <span><?php echo $slot1; ?></span>
                 </a>
                 <div class="drop" id="slot1" style="display:none; height:0px; font-size:0px;">
@@ -115,7 +125,7 @@ $provMap = array(
                 <div class="drop" id="slot9" style="display:none; height:0px; font-size:0px;">
                     <span>Damage:</span>
                     <span>Hit Chance:</span>
-                </div>
+                </div>-->
                 
             </div>
         </div>

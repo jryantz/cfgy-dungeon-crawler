@@ -1,5 +1,84 @@
 <?php
 
+class Inventory {
+    private $inventoryLvl,
+            $slots;
+    
+    public function __construct() {
+        $this->inventoryLvl = 0;
+        
+        $this->slots = array(
+            1 => array('', null, null, 0),
+            2 => array('', null, null, 0),
+            3 => array('', null, null, 0),
+            4 => array('', null, null, 0),
+            5 => array('', null, null, 1),
+            6 => array('', null, null, 1),
+            7 => array('', null, null, 1),
+            8 => array('', null, null, 1),
+            9 => array('', null, null, 1),
+        );
+    }
+    
+    public function setSlot($num, $item, $stat1, $stat2) {
+        $slots[$num][0] = $item;
+        $slots[$num][1] = $stat1;
+        $slots[$num][2] = $stat2;
+    }
+    
+    public function slotCheck($num) {
+        if($this->slots[$num][0] == null) {
+            $this->slots[$num][0] = 'empty';
+            $this->slots[$num][1] = null;
+            $this->slots[$num][2] = null;
+        }
+        
+        switch($this->inventoryLvl) {
+            case 5:
+                $this->slots[9][3] = 0;
+            case 4:
+                $this->slots[8][3] = 0;
+            case 3:
+                $this->slots[7][3] = 0;
+            case 2:
+                $this->slots[6][3] = 0;
+            case 1:
+                $this->slots[5][3] = 0;
+                break;
+            default:
+                break;
+        }
+        
+        for($i = 5; $i <= 9; $i++) {
+            if($this->slots[$i][3] == 1) {
+                $this->slots[$i][0] = 'locked';
+                $this->slots[$i][1] = null;
+                $this->slots[$i][2] = null;
+            }
+        }
+    }
+    
+    public function show($num) {
+        $this->slotCheck($num);
+        
+        $output = '<a href="#" onclick="toolDesc(\'slot' . $num . '\');" class="slot'; 
+        
+        if($this->slots[$num][3] == 1) {
+            $output .= " locked";
+        }
+        
+        $output .= '">
+                <span>' . $this->slots[$num][0] . '</span>
+            </a>
+            <div class="drop" id="slot' . $num . '" style="display:none; height:0px; font-size:0px;">
+                <span>Damage: ' . $this->slots[$num][1] . '</span>
+                <span>Hit Chance: ' . $this->slots[$num][2] . '</span>
+            </div>';
+        
+        return $output;
+    }
+}
+
 /*
  * -----------------------------------------------------
  * Level of inventory. Decides how many slots are open
@@ -13,102 +92,3 @@
  * 5 - unlocks slot nine
  * -----------------------------------------------------
  */
-
-$inventoryLvl = 0;
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 0
- * -----------------------------------------------------
- */
-
-$slot1 = 'Sharpened Stick';
-$slot2 = '';
-$slot3 = '';
-$slot4 = '';
-
-if($slot1 == null) {
-    $slot1 = 'empty';
-}
-
-if($slot2 == null) {
-    $slot2 = 'empty';
-}
-
-if($slot3 == null) {
-    $slot3 = 'empty';
-}
-
-if($slot4 == null) {
-    $slot4 = 'empty';
-}
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 1
- * -----------------------------------------------------
- */
-
-$slot5 = '';
-
-if($inventoryLvl < 1) {
-    $slot5 = 'locked';
-} else if($slot5 == null) {
-    $slot5 = 'empty';
-}
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 2
- * -----------------------------------------------------
- */
-
-$slot6 = '';
-
-if($inventoryLvl < 2) {
-    $slot6 = 'locked';
-} else if($slot6 == null) {
-    $slot6 = 'empty';
-}
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 3
- * -----------------------------------------------------
- */
-
-$slot7 = '';
-
-if($inventoryLvl < 3) {
-    $slot7 = 'locked';
-} else if($slot7 == null) {
-    $slot7 = 'empty';
-}
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 4
- * -----------------------------------------------------
- */
-
-$slot8 = '';
-
-if($inventoryLvl < 4) {
-    $slot8 = 'locked';
-} else if($slot8 == null) {
-    $slot8 = 'empty';
-}
-
-/*
- * -----------------------------------------------------
- * Items in inventory when level is 5
- * -----------------------------------------------------
- */
-
-$slot9 = '';
-
-if($inventoryLvl < 5) {
-    $slot9 = 'locked';
-} else if($slot9 == null) {
-    $slot9 = 'empty';
-}
