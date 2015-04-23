@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+.statsPane,
+.mainPane,
+.interactionPane,
+.mapPane {
+    position:relative;
+    display:block;
+    color:black;
+    background:rgba(255,255,255,0.6);
+    border:1px solid black;
+    box-shadow:inset 0px 0px 8px rgba(0,0,0,0.5);
+    padding:10px;
+    z-index:0;
+}
+
+.statsPane {
+    float:right;
+    width:calc(25% - 28px);
+    height:calc(100% - 22px);
+}
+
+.statsPane .stats,
+.statsPane .inv {
+    position:absolute;
+    left:0;
+    margin:10px;
+    width:calc(100% - 20px);
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.statsPane .stats {
+    top:0;
+    height:283px;
+}
+
+.statsPane .inv {
+    bottom:0;
+    height:calc(100% - 323px);
+}
+
+.progBarContainer {
+	background-color:#ebebeb;
+	border-radius:10px;	
+	height:15px;
+	overflow:hidden;
+    margin-bottom:5px;
+}
+
+.progressbar {
+	height:100%;
+	float:left;
+}
+
+.gradient .blue {
+	background-image:linear-gradient(#06f, #0cf);
+}
+
+.gradient .purple {
+	background-image:linear-gradient(#9e0daa, #f500ff);
+}
+
+.gradient .yellow{
+	background-image:linear-gradient(#fc6, #ff6);
+}
+
+.gradient .green {
+	background-image:linear-gradient(#06a300, #00ed37);
+}
+
+.statsPane .slot {
+    display:block;
+    line-height:1;
+    padding:5px;
+    margin:5px;
+    color:black;
+    background:white;
+    border:1px solid black;
+    text-decoration:none;
+}
+
+.statsPane .slot.locked {
+    color:#888;
+    background:#333;
+    pointer-events:none;
+    text-align:center;
+}
+
+.statsPane .drop {
+    background:rgba(0,0,0,0.4);
+    box-shadow:inset 0 0 75px rgba(0,0,0,0.2);
+    color:white;
+    position:relative;
+    top:-5px;
+    left:12px;
+    width:calc(100% - 24px);
+    transition:height 0.3s, font-size 0.3s;
+    overflow:hidden;
+}
+
+.statsPane .drop span {
+    display:block;
+    margin:5px 0 5px 10px;
+}
+
+.mainPane {
+    float:left;
+    width:calc(75% - 28px);
+    height:calc(70% - 26px);
+    margin-bottom:12px;
+}
+
+.interactionPane {
+    float:left;
+    width:calc(50% - 28px);
+    height:calc(30% - 30px);
+}
+
+.mapPane {
+    float:left;
+    width:calc(25% - 14px);
+    height:calc(30% - 10px);
+    margin-right:12px;
+    padding:0;
+    background:black;
+}
+
+.mapPane .cell {
+    display:block;
+    float:left;
+    height:calc(20% - 10px);
+    width:calc(20% - 10px);
+    margin:1px;
+    border:4px solid white;
+}

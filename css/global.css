@@ -1,0 +1,68 @@
+@charset "UTF-8";
+* {margin:0; padding:0;}
+
+.cf:before,
+.cf:after {
+    content:" ";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+body {
+    font-family:sans-serif;
+    font-size:17px;
+    font-weight:300;
+    line-height:1.3;
+    color:black;
+    background:white url("../assets/images/stoneTx.jpg") repeat left top;
+    background-size:cover;
+    padding:10px;
+    width:calc(100% - 20px);
+    height:calc(100% - 20px);
+    position:absolute;
+}
+
+.loading {
+    background:#6db8f2;
+    background:-moz-radial-gradient(center, ellipse cover,  #6db8f2 0%, #448ad6 100%);
+    background:-webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #6db8f2), color-stop(100%, #448ad6));
+    background:-webkit-radial-gradient(center, ellipse cover, #6db8f2 0%, #448ad6 100%);
+    background:-o-radial-gradient(center, ellipse cover, #6db8f2 0%, #448ad6 100%);
+    background:-ms-radial-gradient(center, ellipse cover, #6db8f2 0%, #448ad6 100%);
+    background:radial-gradient(ellipse at center, #6db8f2 0%, #448ad6 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6db8f2', endColorstr='#448ad6', GradientType=1);
+
+    color:black;
+    padding:10px;
+    width:calc(100% - 20px);
+    height:calc(100% - 20px);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+
+.loadingTitle {
+    font-family:fantasy;
+    font-size:45px;
+    color:white;
+    position:absolute;
+    top:calc(50% - 30px);
+    left:calc(50% - 45px);
+    overflow:hidden;
+    padding:25px;
+    text-shadow:0 0 50px rgba(0,0,0,0.2);
+}
+
+.loadingSub {
+    color:#fff;
+    position:absolute;
+    top:calc(50% + 40px);
+    left:calc(50% - 35px);
+    overflow:hidden;
+    padding:25px;
+    text-shadow:0 0 50px rgba(0,0,0,0.2);
+}
