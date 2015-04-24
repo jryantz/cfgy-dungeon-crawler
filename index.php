@@ -59,11 +59,11 @@ $provMap = array(
             </div>
         </div>
         
-        <div id="mainPane" class="mainPane">
+        <div id="mainPane" class="mainPane" style="display:block;">
             
         </div>
         
-        <div id="debugPane" class="debugPane">
+        <div id="debugPane" class="debugPane" style="display:none;">
             
         </div>
         
