@@ -1,5 +1,19 @@
 <?php
 
+/*
+ * -----------------------------------------------------
+ * Level of inventory. Decides how many slots are open
+ * in the inventory.
+ *
+ * 0 - slots one to four open
+ * 1 - unlocks slot five
+ * 2 - unlocks slot six
+ * 3 - unlocks slot seven
+ * 4 - unlocks slot eight
+ * 5 - unlocks slot nine
+ * -----------------------------------------------------
+ */
+
 class Inventory {
     private $inventoryLvl,
             $slots;
@@ -78,17 +92,3 @@ class Inventory {
         return $output;
     }
 }
-
-/*
- * -----------------------------------------------------
- * Level of inventory. Decides how many slots are open
- * in the inventory.
- *
- * 0 - slots one to four open
- * 1 - unlocks slot five
- * 2 - unlocks slot six
- * 3 - unlocks slot seven
- * 4 - unlocks slot eight
- * 5 - unlocks slot nine
- * -----------------------------------------------------
- */
