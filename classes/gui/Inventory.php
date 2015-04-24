@@ -40,6 +40,32 @@ class Inventory {
         $slots[$num][2] = $stat2;
     }
     
+    public function unsetSlot($num) {
+        $slots[$num][0] = '';
+        $slots[$num][1] = null;
+        $slots[$num][2] = null;
+    }
+    
+    /*
+     * slotCheck
+     *
+     * $num - the number of the slot
+     *
+     * this function takes in a slot in the inventory array
+     * then checks if it is locked or not. 
+     *
+     * the first step is checking if the slot is
+     * empty. if it is, all the fields are set to null
+     * and the name is 'empty.'
+     *
+     * then in the switch statement, it checks what the
+     * inventory level of the player is and unlocks the new
+     * slots. 
+     * 
+     * the final for and if statements check if a slot is
+     * locked, if it is, it sets the name to 'locked' and
+     * the values to null.
+     */
     public function slotCheck($num) {
         if($this->slots[$num][0] == null) {
             $this->slots[$num][0] = 'empty';
@@ -72,6 +98,20 @@ class Inventory {
         }
     }
     
+    /*
+     * show
+     * 
+     * $num - the number of the slot
+     * 
+     * this function takes in a slot and returns the
+     * requested slot with formatting for the inventory
+     * pane in the gui.
+     * 
+     * also takes into account if the slot is locked. 
+     * if it is, it appends the locked class to the anchor
+     * tag.
+     * 
+     */
     public function show($num) {
         $this->slotCheck($num);
         

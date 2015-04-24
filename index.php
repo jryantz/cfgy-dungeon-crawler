@@ -49,88 +49,21 @@ $provMap = array(
                     $Inventory = new Inventory();
                     
                     $Inventory->setSlot(1, 'Stick', 2, 6);
+                    $Inventory->setSlot(1, 'Sword', 2, 6);
+                    $Inventory->setSlot(1, 'Bow', 2, 6);
 
                     for($i = 1; $i <= 9; $i++) {
                         echo $Inventory->show($i);
                     }
                 ?>
-                
-                <!--<a href="#" onclick="toolDesc('slot1');" class="slot">
-                    <span><?php echo $slot1; ?></span>
-                </a>
-                <div class="drop" id="slot1" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage: 4</span>
-                    <span>Hit Chance: 7</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot2');" class="slot">
-                    <span><?php echo $slot2; ?></span>
-                </a>
-                <div class="drop" id="slot2" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot3');" class="slot">
-                    <span><?php echo $slot3; ?></span>
-                </a>
-                <div class="drop" id="slot3" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot4');" class="slot">
-                    <span><?php echo $slot4; ?></span>
-                </a>
-                <div class="drop" id="slot4" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot5');" class="slot<?php if($inventoryLvl < 1) { echo ' locked'; } ?>">
-                    <span><?php echo $slot5; ?></span>
-                </a>
-                <div class="drop" id="slot5" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot6');" class="slot<?php if($inventoryLvl < 2) { echo ' locked'; } ?>">
-                    <span><?php echo $slot6; ?></span>
-                </a>
-                <div class="drop" id="slot6" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot7');" class="slot<?php if($inventoryLvl < 3) { echo ' locked'; } ?>">
-                    <span><?php echo $slot7; ?></span>
-                </a>
-                <div class="drop" id="slot7" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot8');" class="slot<?php if($inventoryLvl < 4) { echo ' locked'; } ?>">
-                    <span><?php echo $slot8; ?></span>
-                </a>
-                <div class="drop" id="slot8" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>
-                
-                <a href="#" onclick="toolDesc('slot9');" class="slot<?php if($inventoryLvl < 5) { echo ' locked'; } ?>">
-                    <span><?php echo $slot9; ?></span>
-                </a>
-                <div class="drop" id="slot9" style="display:none; height:0px; font-size:0px;">
-                    <span>Damage:</span>
-                    <span>Hit Chance:</span>
-                </div>-->
-                
             </div>
         </div>
         
         <div id="mainPane" class="mainPane">
+            
+        </div>
+        
+        <div id="debugPane" class="debugPane">
             
         </div>
         
