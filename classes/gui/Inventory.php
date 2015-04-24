@@ -21,29 +21,46 @@ class Inventory {
     public function __construct() {
         $this->inventoryLvl = 0;
         
+        /*
+         * 0 - name
+         * 1 - stat 1 value
+         * 2 - stat 2 name
+         * 3 - stat 2 value
+         * 4 - locked
+         */
         $this->slots = array(
-            1 => array('', null, null, 0),
-            2 => array('', null, null, 0),
-            3 => array('', null, null, 0),
-            4 => array('', null, null, 0),
-            5 => array('', null, null, 1),
-            6 => array('', null, null, 1),
-            7 => array('', null, null, 1),
-            8 => array('', null, null, 1),
-            9 => array('', null, null, 1),
+            1 => array('', null, null, null, 0),
+            2 => array('', null, null, null, 0),
+            3 => array('', null, null, null, 0),
+            4 => array('', null, null, null, 0),
+            5 => array('', null, null, null, 1),
+            6 => array('', null, null, null, 1),
+            7 => array('', null, null, null, 1),
+            8 => array('', null, null, null, 1),
+            9 => array('', null, null, null, 1),
         );
     }
     
-    public function setSlot($num, $item, $stat1, $stat2) {
-        $slots[$num][0] = $item;
-        $slots[$num][1] = $stat1;
-        $slots[$num][2] = $stat2;
+    public function changeLvl($new) {
+        if(is_numeric($new)) {
+            $this->inventoryLvl = $new;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setSlot($num, $item, $stat1v, $stat2n ,$stat2v) {
+        $this->slots[$num][0] = $item;
+        $this->slots[$num][1] = $stat1v;
+        $this->slots[$num][2] = $stat2n;
+        $this->slots[$num][3] = $stat2v;
     }
     
     public function unsetSlot($num) {
-        $slots[$num][0] = '';
-        $slots[$num][1] = null;
-        $slots[$num][2] = null;
+        $this->slots[$num][0] = '';
+        $this->slots[$num][1] = null;
+        $this->slots[$num][2] = null;
+        $this->slots[$num][3] = null;
     }
     
     /*
@@ -71,29 +88,31 @@ class Inventory {
             $this->slots[$num][0] = 'empty';
             $this->slots[$num][1] = null;
             $this->slots[$num][2] = null;
+            $this->slots[$num][3] = null;
         }
         
         switch($this->inventoryLvl) {
             case 5:
-                $this->slots[9][3] = 0;
+                $this->slots[9][4] = 0;
             case 4:
-                $this->slots[8][3] = 0;
+                $this->slots[8][4] = 0;
             case 3:
-                $this->slots[7][3] = 0;
+                $this->slots[7][4] = 0;
             case 2:
-                $this->slots[6][3] = 0;
+                $this->slots[6][4] = 0;
             case 1:
-                $this->slots[5][3] = 0;
+                $this->slots[5][4] = 0;
                 break;
             default:
                 break;
         }
         
         for($i = 5; $i <= 9; $i++) {
-            if($this->slots[$i][3] == 1) {
+            if($this->slots[$i][4] == 1) {
                 $this->slots[$i][0] = 'locked';
                 $this->slots[$i][1] = null;
                 $this->slots[$i][2] = null;
+                $this->slots[$i][3] = null;
             }
         }
     }
@@ -117,7 +136,7 @@ class Inventory {
         
         $output = '<a href="#" onclick="toolDesc(\'slot' . $num . '\');" class="slot'; 
         
-        if($this->slots[$num][3] == 1) {
+        if($this->slots[$num][4] == 1) {
             $output .= " locked";
         }
         
@@ -126,7 +145,7 @@ class Inventory {
             </a>
             <div class="drop" id="slot' . $num . '" style="display:none; height:0px; font-size:0px;">
                 <span>Damage: ' . $this->slots[$num][1] . '</span>
-                <span>Hit Chance: ' . $this->slots[$num][2] . '</span>
+                <span>' . $this->slots[$num][2] . ': ' . $this->slots[$num][3] . '</span>
             </div>';
         
         return $output;

@@ -48,9 +48,10 @@ $provMap = array(
                 <?php
                     $Inventory = new Inventory();
                     
-                    $Inventory->setSlot(1, 'Stick', 2, 6);
-                    $Inventory->setSlot(1, 'Sword', 2, 6);
-                    $Inventory->setSlot(1, 'Bow', 2, 6);
+                    $Inventory->setSlot(1, 'Sword', 2, 'Hit Chance', 6);
+                    $Inventory->setSlot(2, 'Bow', 3, 'Dodge Chance', 4);
+                    $Inventory->setSlot(3, 'Shield', 0, 'Health Boost', 15);
+                    $Inventory->setSlot(4, 'Armor', 0, 'Defense', 3);
 
                     for($i = 1; $i <= 9; $i++) {
                         echo $Inventory->show($i);
@@ -60,11 +61,11 @@ $provMap = array(
         </div>
         
         <div id="mainPane" class="mainPane" style="display:block;">
-            
+            Main
         </div>
         
         <div id="debugPane" class="debugPane" style="display:none;">
-            
+            Debug
         </div>
         
         <div id="mapPane" class="mapPane">
@@ -79,7 +80,7 @@ $provMap = array(
         </div>
         
         <div id="interactionPane" class="interactionPane">
-            
+            <a href="#" onclick="flip('mainPane', 'debugPane');">Debug<br>Mode</a>
         </div>
     </body>
     

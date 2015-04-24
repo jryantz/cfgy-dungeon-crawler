@@ -1,9 +1,23 @@
 function visibility(id) {
     var element = document.getElementById(id);
+    
     if(element.style.visibility == 'visible') {
         element.style.visibility = 'hidden';
     } else {
         element.style.visibility = 'visible';
+    }
+}
+
+function flip(idPrim, idSec) {
+    var elementPrim = document.getElementById(idPrim);
+    var elementSec = document.getElementById(idSec);
+    
+    if(elementPrim.style.display == 'block') {
+        elementPrim.style.display = 'none';
+        elementSec.style.display = 'block';
+    } else {
+        elementPrim.style.display = 'block';
+        elementSec.style.display = 'none';
     }
 }
 
