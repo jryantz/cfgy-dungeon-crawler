@@ -52,6 +52,13 @@ $provMap = array(
                     $Inventory->setSlot(2, 'Bow', 3, 'Dodge Chance', 4);
                     $Inventory->setSlot(3, 'Shield', 0, 'Health Boost', 15);
                     $Inventory->setSlot(4, 'Armor', 0, 'Defense', 3);
+                    $Inventory->setSlot(5, 'Sword', 2, 'Hit Chance', 6);
+                    $Inventory->setSlot(6, 'Bow', 3, 'Dodge Chance', 4);
+                    $Inventory->setSlot(7, 'Shield', 0, 'Health Boost', 15);
+                    $Inventory->setSlot(8, 'Armor', 0, 'Defense', 3);
+                    $Inventory->setSlot(9, 'Bow', 3, 'Dodge Chance', 4);
+
+                    $Inventory->unsetSlot(5);
 
                     for($i = 1; $i <= 9; $i++) {
                         echo $Inventory->show($i);

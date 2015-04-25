@@ -1,25 +1,11 @@
 <?php
 
-/*
- * -----------------------------------------------------
- * Level of inventory. Decides how many slots are open
- * in the inventory.
- *
- * 0 - slots one to four open
- * 1 - unlocks slot five
- * 2 - unlocks slot six
- * 3 - unlocks slot seven
- * 4 - unlocks slot eight
- * 5 - unlocks slot nine
- * -----------------------------------------------------
- */
-
 class Inventory {
     private $inventoryLvl,
             $slots;
     
     public function __construct() {
-        $this->inventoryLvl = 0;
+        $this->inventoryLvl = 5;
         
         /*
          * 0 - name
@@ -41,26 +27,82 @@ class Inventory {
         );
     }
     
-    public function changeLvl($new) {
-        if(is_numeric($new)) {
-            $this->inventoryLvl = $new;
-            return true;
+    /*
+     * changeLvl
+     *
+     * $num - the number of the desired level
+     * 
+     * this function takes in a desired level for the inventory
+     * then makes sure it is a number and inside the range, then
+     * changes the inventory to that level unlocking a new
+     * slot.
+     * 
+     * 0 - slots one to four open
+     * 1 - unlocks slot five
+     * 2 - unlocks slot six
+     * 3 - unlocks slot seven
+     * 4 - unlocks slot eight
+     * 5 - unlocks slot nine
+     */
+    public function changeLvl($num) {
+        if(is_numeric($num) && $num <= 6 && $num >= 0) {
+            $this->inventoryLvl = $num;
+            $this->slotCheck($num);
         }
-        return false;
     }
     
+    /*
+     * setSlot
+     *
+     * $num - the number of the slot
+     * $item - the provided item name
+     * $stat1v - stat 1 variable
+     * $stat2n - stat 2 name/description
+     * $stat2v - stat 2 variable
+     * 
+     * this function takes in and sets the item name, 
+     * variables, and variable names.
+     * 
+     * 0 - slots one to four open
+     * 1 - unlocks slot five
+     * 2 - unlocks slot six
+     * 3 - unlocks slot seven
+     * 4 - unlocks slot eight
+     * 5 - unlocks slot nine
+     */
     public function setSlot($num, $item, $stat1v, $stat2n ,$stat2v) {
         $this->slots[$num][0] = $item;
         $this->slots[$num][1] = $stat1v;
         $this->slots[$num][2] = $stat2n;
         $this->slots[$num][3] = $stat2v;
+        
+        $this->slotCheck($num);
     }
     
+    /*
+     * setSlot
+     *
+     * $num - the number of the slot
+     * 
+     * this function takes in a slot location, 
+     * and clears that slot completely.
+     */
     public function unsetSlot($num) {
         $this->slots[$num][0] = '';
         $this->slots[$num][1] = null;
         $this->slots[$num][2] = null;
         $this->slots[$num][3] = null;
+        
+        for($i = $num; $i <= 9; $i++) {
+            if($this->slots[$i][0] != null && $this->slots[$i][0] != 'locked') {
+                for($j = 0; $j < 5; $j++) {
+                    $this->slots[$i - 1][$j] = $this->slots[$i][$j];
+                    $this->slots[$i][$j] = null;
+                }
+            }
+        }
+        
+        $this->slotCheck($num);
     }
     
     /*
@@ -137,11 +179,21 @@ class Inventory {
         $output = '<a href="#" onclick="toolDesc(\'slot' . $num . '\');" class="slot'; 
         
         if($this->slots[$num][4] == 1) {
-            $output .= " locked";
+            $output .= ' locked';
+        }
+        
+        if($this->slots[$num][0] == 'empty') {
+            $output .= ' dropOff';
         }
         
         $output .= '">
-                <span>' . $this->slots[$num][0] . '</span>
+            <span';
+        
+        if($this->slots[$num][0] == 'empty') {
+            $output .= ' style="font-style:italic;"';
+        }
+        
+        $output .= '>' . $this->slots[$num][0] . '</span>
             </a>
             <div class="drop" id="slot' . $num . '" style="display:none; height:0px; font-size:0px;">
                 <span>Damage: ' . $this->slots[$num][1] . '</span>

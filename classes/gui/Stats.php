@@ -21,77 +21,59 @@ class Stats {
     public function setLvl($var) {
         if(is_numeric($var)) {
             $this->lvl = $var;
-            return true;
         }
-        return false;
     }
     
     public function setMaxXp($var) {
         if(is_numeric($var)) {
             $this->maxXp = $var;
-            return true;
         }
-        return false;
     }
     
     public function setXp($var) {
         if(isset($this->maxXp)) {
             if(is_numeric($var)) {
                 $this->xp = $var;
-                return true;
             }
         }
-        return false;
     }
     
     public function setMaxHealth($var) {
         if(is_numeric($var)) {
             $this->maxHealth = $var;
-            return true;
         }
-        return false;
     }
     
     public function setHealth($var) {
         if(isset($this->maxHealth)) {
             if(is_numeric($var)) {
                 $this->health = $var;
-                return true;
             }
         }
-        return false;
     }
     
     public function setStr($var) {
         if(is_numeric($var)) {
             $this->str = $var;
-            return true;
         }
-        return false;
     }
     
     public function setInt($var) {
         if(is_numeric($var)) {
             $this->int = $var;
-            return true;
         }
-        return false;
     }
     
     public function setAgility($var) {
         if(is_numeric($var)) {
             $this->agility = $var;
-            return true;
         }
-        return false;
     }
     
     public function setMoney($var) {
         if(is_numeric($var)) {
             $this->money = $var;
-            return true;
         }
-        return false;
     }
     
     public function show() {

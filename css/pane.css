@@ -88,6 +88,10 @@
     text-align:center;
 }
 
+.statsPane .slot.dropOff {
+    pointer-events:none;
+}
+
 .statsPane .drop {
     background:rgba(0,0,0,0.4);
     box-shadow:inset 0 0 75px rgba(0,0,0,0.2);
