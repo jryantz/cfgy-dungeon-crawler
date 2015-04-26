@@ -37,34 +37,14 @@ $provMap = array(
         </div>
         
         <div id="statsPane" class="statsPane">
-            <div class="stats">
+            <div id="stats" class="stats">
                 <?php
                     $Stats = new Stats();
                     echo $Stats->show();
                 ?>
             </div>
             
-            <div class="inv">
-                <?php
-                    $Inventory = new Inventory();
-                    
-                    $Inventory->setSlot(1, 'Sword', 2, 'Hit Chance', 6);
-                    $Inventory->setSlot(2, 'Bow', 3, 'Dodge Chance', 4);
-                    $Inventory->setSlot(3, 'Shield', 0, 'Health Boost', 15);
-                    $Inventory->setSlot(4, 'Armor', 0, 'Defense', 3);
-                    $Inventory->setSlot(5, 'Sword', 2, 'Hit Chance', 6);
-                    $Inventory->setSlot(6, 'Bow', 3, 'Dodge Chance', 4);
-                    $Inventory->setSlot(7, 'Shield', 0, 'Health Boost', 15);
-                    $Inventory->setSlot(8, 'Armor', 0, 'Defense', 3);
-                    $Inventory->setSlot(9, 'Bow', 3, 'Dodge Chance', 4);
-
-                    $Inventory->unsetSlot(5);
-
-                    for($i = 1; $i <= 9; $i++) {
-                        echo $Inventory->show($i);
-                    }
-                ?>
-            </div>
+            <div id="inv" class="inv"></div>
         </div>
         
         <div id="mainPane" class="mainPane" style="display:block;">
@@ -92,4 +72,22 @@ $provMap = array(
     </body>
     
     <script src="js/main-0.0.1.js" type="text/javascript"></script>
+    
+    <script src="classes/gui/Inventory.js" type="text/javascript"></script>
+    <script>
+        document.getElementById('inv').innerHTML = show(0);
+        document.getElementById('inv').innerHTML += show(1);
+        document.getElementById('inv').innerHTML += show(2);
+        document.getElementById('inv').innerHTML += show(3);
+        document.getElementById('inv').innerHTML += show(4);
+        document.getElementById('inv').innerHTML += show(5);
+        document.getElementById('inv').innerHTML += show(6);
+        document.getElementById('inv').innerHTML += show(7);
+        document.getElementById('inv').innerHTML += show(8);
+    </script>
+    
+    <script src="classes/gui/Stats.js" type="text/javascript"></script>
+    <script>
+        document.getElementById('stats').innerHTML = show();
+    </script>
 </html>

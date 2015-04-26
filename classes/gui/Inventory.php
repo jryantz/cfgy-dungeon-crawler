@@ -7,13 +7,6 @@ class Inventory {
     public function __construct() {
         $this->inventoryLvl = 5;
         
-        /*
-         * 0 - name
-         * 1 - stat 1 value
-         * 2 - stat 2 name
-         * 3 - stat 2 value
-         * 4 - locked
-         */
         $this->slots = array(
             1 => array('', null, null, null, 0),
             2 => array('', null, null, null, 0),
