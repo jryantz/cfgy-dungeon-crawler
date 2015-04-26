@@ -8,7 +8,7 @@ var inventoryLvl = 0,
         ['', null, null, null, 1],
         ['', null, null, null, 1],
         ['', null, null, null, 1],
-        ['', null, null, null, 1],
+        ['', null, null, null, 1]
     ];
 
 function changeLvl(num) {
@@ -79,7 +79,7 @@ function slotCheck(num) {
     }
 }
 
-function show(num) {
+function showInv(num) {
     slotCheck(num);
     
     output = '<a href="#" onclick="toolDesc(\'slot' + num + '\');" class="slot';

@@ -1,19 +1,3 @@
-<?php
-require_once 'core/init.php';
-
-//require 'classes/gui/Inventory.php';
-//require 'classes/gui/Map.php';
-//require 'classes/gui/Stats.php';
-
-$provMap = array(
-    array(0, 1, 4, 0, 0),
-    array(2, 1, 1, 1, 1),
-    array(0, 1, 0, 0, 1),
-    array(1, 2, 0, 2, 1),
-    array(0, 3, 0, 0, 3)
-);
-?>
-
 <!doctype html>
 
 <html>
@@ -37,12 +21,7 @@ $provMap = array(
         </div>
         
         <div id="statsPane" class="statsPane">
-            <div id="stats" class="stats">
-                <?php
-                    $Stats = new Stats();
-                    echo $Stats->show();
-                ?>
-            </div>
+            <div id="stats" class="stats"></div>
             
             <div id="inv" class="inv"></div>
         </div>
@@ -55,16 +34,7 @@ $provMap = array(
             Debug
         </div>
         
-        <div id="mapPane" class="mapPane">
-            <?php
-                $Map = new Map();
-                for($i = 0; $i <= 4; $i++) {
-                    for($j = 0; $j <= 4; $j++) {
-                        echo $Map->decode($provMap, $i, $j);
-                    }
-                }
-            ?>
-        </div>
+        <div id="mapPane" class="mapPane"></div>
         
         <div id="interactionPane" class="interactionPane">
             <a href="#" onclick="flip('mainPane', 'debugPane');">Debug<br>Mode</a>
@@ -74,20 +44,26 @@ $provMap = array(
     <script src="js/main-0.0.1.js" type="text/javascript"></script>
     
     <script src="classes/gui/Inventory.js" type="text/javascript"></script>
-    <script>
-        document.getElementById('inv').innerHTML = show(0);
-        document.getElementById('inv').innerHTML += show(1);
-        document.getElementById('inv').innerHTML += show(2);
-        document.getElementById('inv').innerHTML += show(3);
-        document.getElementById('inv').innerHTML += show(4);
-        document.getElementById('inv').innerHTML += show(5);
-        document.getElementById('inv').innerHTML += show(6);
-        document.getElementById('inv').innerHTML += show(7);
-        document.getElementById('inv').innerHTML += show(8);
-    </script>
-    
     <script src="classes/gui/Stats.js" type="text/javascript"></script>
-    <script>
-        document.getElementById('stats').innerHTML = show();
+    <script src="classes/gui/Map.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        document.getElementById('inv').innerHTML = showInv(0);
+        document.getElementById('inv').innerHTML += showInv(1);
+        document.getElementById('inv').innerHTML += showInv(2);
+        document.getElementById('inv').innerHTML += showInv(3);
+        document.getElementById('inv').innerHTML += showInv(4);
+        document.getElementById('inv').innerHTML += showInv(5);
+        document.getElementById('inv').innerHTML += showInv(6);
+        document.getElementById('inv').innerHTML += showInv(7);
+        document.getElementById('inv').innerHTML += showInv(8);
+        
+        document.getElementById('stats').innerHTML = showStats();
+        
+        for(i = 0; i <= 4; i++) {
+            for(j = 0; j <= 4; j++) {
+                document.getElementById('mapPane').innerHTML += decode(i, j);
+            }
+        }
     </script>
 </html>

@@ -66,7 +66,7 @@ function setMoney(num) {
     }
 }
 
-function show() {
+function showStats() {
     output = '<div class="slot"><span>Level: ' + lvl + '</span></div>';
     
     output += '<div class="slot"><div class="progBarContainer gradient">';
