@@ -65,5 +65,19 @@
                 document.getElementById('mapPane').innerHTML += decode(i, j);
             }
         }
+        
+        function refresh() {
+            document.getElementById('inv').innerHTML = showInv(0);
+            document.getElementById('inv').innerHTML += showInv(1);
+            document.getElementById('inv').innerHTML += showInv(2);
+            document.getElementById('inv').innerHTML += showInv(3);
+            document.getElementById('inv').innerHTML += showInv(4);
+            document.getElementById('inv').innerHTML += showInv(5);
+            document.getElementById('inv').innerHTML += showInv(6);
+            document.getElementById('inv').innerHTML += showInv(7);
+            document.getElementById('inv').innerHTML += showInv(8);
+            
+            document.getElementById('stats').innerHTML = showStats();
+        }
     </script>
 </html>
