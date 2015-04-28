@@ -1,26 +1,26 @@
-var lvl = 2,
-    maxXp = 60,
-    xp = 54,
-    maxHealth = 100,
-    health = 50,
-    str = 7,
-    int = 3,
-    agility = 4,
-    money = 364;
+var guiLvl = 2,
+    guiMaxXp = 60,
+    guiXp = 54,
+    guiMaxHealth = 100,
+    guiHealth = 50,
+    guiStr = 7,
+    guiInt = 3,
+    guiAgility = 4,
+    guiMoney = 364;
 
-function setLvl(num) {
+function guiSetLvl(num) {
     if(!isNaN(num)) {
         lvl = num;
     }
 }
 
-function setMaxXp(num) {
+function guiSetMaxXp(num) {
     if(!isNaN(num)) {
         maxXp = num;
     }
 }
 
-function setXp(num) {
+function guiSetXp(num) {
     if(maxXp >= num) {
         if(!isNaN(num)) {
             xp = num;
@@ -28,13 +28,13 @@ function setXp(num) {
     }
 }
 
-function setMaxHealth(num) {
+function guiSetMaxHealth(num) {
     if(!isNaN(num)) {
         maxHealth = num;
     }
 }
 
-function setHealth(num) {
+function guiSetHealth(num) {
     if(maxHealth >= num) {
         if(!isNaN(num)) {
             health = num;
@@ -42,52 +42,52 @@ function setHealth(num) {
     }
 }
 
-function setStr(num) {
+function guiSetStr(num) {
     if(!isNaN(num)) {
         str = num;
     }
 }
 
-function setInt(num) {
+function guiSetInt(num) {
     if(!isNaN(num)) {
         int = num;
     }
 }
 
-function setAgility(num) {
+function guiSetAgility(num) {
     if(!isNaN(num)) {
         agility = num;
     }
 }
 
-function setMoney(num) {
+function guiSetMoney(num) {
     if(!isNaN(num)) {
         money = num;
     }
 }
 
-function showStats() {
-    output = '<div class="slot"><span>Level: ' + lvl + '</span></div>';
+function guiShowStats() {
+    output = '<div class="slot"><span>Level: ' + guiLvl + '</span></div>';
     
     output += '<div class="slot"><div class="progBarContainer gradient">';
     
-    output += '<div class="progressbar green" style="width:' + (health/maxHealth)*100 + '%"></div></div>';
+    output += '<div class="progressbar green" style="width:' + (guiHealth/guiMaxHealth)*100 + '%"></div></div>';
     
-    output += '<span style="margin-left:10px;">HP: ' + health + '/' + maxHealth + '</span>';
+    output += '<span style="margin-left:10px;">HP: ' + guiHealth + '/' + guiMaxHealth + '</span>';
     
     output += '</div><div class="slot"><div class="progBarContainer gradient">';
     
-    output += '<div class="progressbar purple" style="width:' + (xp/maxXp)*100 + '%"></div></div>';
+    output += '<div class="progressbar purple" style="width:' + (guiXp/guiMaxXp)*100 + '%"></div></div>';
     
-    output += '<span style="margin-left:10px;">XP: ' + xp + '/' + maxXp + '</span></div>';
+    output += '<span style="margin-left:10px;">XP: ' + guiXp + '/' + guiMaxXp + '</span></div>';
     
-    output += '<div class="slot"><span>Strength: ' + str + '</span></div>';
+    output += '<div class="slot"><span>Strength: ' + guiStr + '</span></div>';
     
-    output += '<div class="slot"><span>Intelligence: ' + int + '</span></div>';
+    output += '<div class="slot"><span>Intelligence: ' + guiInt + '</span></div>';
     
-    output += '<div class="slot"><span>Agility: ' + agility + '</span></div>';
+    output += '<div class="slot"><span>Agility: ' + guiAgility + '</span></div>';
     
-    output += '<div class="slot"><span>Money: $' + money + '</span></div>';
+    output += '<div class="slot"><span>Money: $' + guiMoney + '</span></div>';
     
     return output;
 }

@@ -32,6 +32,9 @@
         
         <div id="debugPane" class="debugPane" style="display:none;">
             Debug
+            <a href="#" onclick="setSlot(0, 'Stick', '3', 'Hit Chance', '2');">Set Slot 1</a>
+            <a href="#" onclick="unsetSlot(0);">Unset Slot 1</a>
+            <a href="#" onclick="refresh();">Refresh</a>
         </div>
         
         <div id="mapPane" class="mapPane"></div>
@@ -48,24 +51,6 @@
     <script src="classes/gui/Map.js" type="text/javascript"></script>
     
     <script type="text/javascript">
-        document.getElementById('inv').innerHTML = showInv(0);
-        document.getElementById('inv').innerHTML += showInv(1);
-        document.getElementById('inv').innerHTML += showInv(2);
-        document.getElementById('inv').innerHTML += showInv(3);
-        document.getElementById('inv').innerHTML += showInv(4);
-        document.getElementById('inv').innerHTML += showInv(5);
-        document.getElementById('inv').innerHTML += showInv(6);
-        document.getElementById('inv').innerHTML += showInv(7);
-        document.getElementById('inv').innerHTML += showInv(8);
-        
-        document.getElementById('stats').innerHTML = showStats();
-        
-        for(i = 0; i <= 4; i++) {
-            for(j = 0; j <= 4; j++) {
-                document.getElementById('mapPane').innerHTML += decode(i, j);
-            }
-        }
-        
         function refresh() {
             document.getElementById('inv').innerHTML = showInv(0);
             document.getElementById('inv').innerHTML += showInv(1);
@@ -77,7 +62,17 @@
             document.getElementById('inv').innerHTML += showInv(7);
             document.getElementById('inv').innerHTML += showInv(8);
             
-            document.getElementById('stats').innerHTML = showStats();
+            document.getElementById('stats').innerHTML = guiShowStats();
         }
+        
+        refresh();
+        
+        for(i = 0; i <= 4; i++) {
+            for(j = 0; j <= 4; j++) {
+                document.getElementById('mapPane').innerHTML += decode(i, j);
+            }
+        }
+        
+        
     </script>
 </html>
