@@ -1,5 +1,5 @@
-var inventoryLvl = 0,
-    slots = [
+var guiInventoryLvl = 0,
+    guiSlots = [
         ['', null, null, null, 0],
         ['', null, null, null, 0],
         ['', null, null, null, 0],
@@ -11,102 +11,117 @@ var inventoryLvl = 0,
         ['', null, null, null, 1]
     ];
 
-function changeLvl(num) {
-    if(!isNaN(num) && num <= 6 && num >= 0) {
-        inventoryLvl = num;
-        slotCheck(num);
+function guiChangeLvl(num) {
+    if(!isNaN(num) && num < 6 && num >= 0) {
+        guiInventoryLvl = num;
+        switch(num) {
+            case 5:
+                guiSlots[8][0] = '';
+            case 4:
+                guiSlots[7][0] = '';
+            case 3:
+                guiSlots[6][0] = '';
+            case 2:
+                guiSlots[5][0] = '';
+            case 1:
+                guiSlots[4][0] = '';
+                break;
+            default:
+                break;
+        }
+        guiSlotCheck(num);
     }
 }
 
-function setSlot(num, item, stat1v, stat2n, stat2v) {
-    slots[num][0] = item;
-    slots[num][1] = stat1v;
-    slots[num][2] = stat2n;
-    slots[num][3] = stat2v;
+function guiSetSlot(num, item, stat1v, stat2n, stat2v) {
+    guiSlots[num][0] = item;
+    guiSlots[num][1] = stat1v;
+    guiSlots[num][2] = stat2n;
+    guiSlots[num][3] = stat2v;
     
-    slotCheck(num);
+    guiSlotCheck(num);
 }
 
-function unsetSlot(num) {
-    slots[num][0] = '';
-    slots[num][1] = null;
-    slots[num][2] = null;
-    slots[num][3] = null;
+function guiUnsetSlot(num) {
+    guiSlots[num][0] = '';
+    guiSlots[num][1] = null;
+    guiSlots[num][2] = null;
+    guiSlots[num][3] = null;
     
     for(i = num; i <= 8; i++) {
-        if(slots[i][0] != null && slots[i][0] != 'locked') {
+        if(guiSlots[i][0] != null && guiSlots[i][0] != 'locked') {
             for(j = 0; j < 5; j++) {
-                slots[i - 1][j] = slots[i][j];
-                slots[i][j] = null;
+                guiSlots[i - 1][j] = guiSlots[i][j];
+                guiSlots[i][j] = null;
             }
         }
     }
     
-    slotCheck(num);
+    guiSlotCheck(num);
 }
 
-function slotCheck(num) {
-    if(slots[num][0] == '') {
-        slots[num][0] = 'empty';
-        slots[num][1] = null;
-        slots[num][2] = null;
-        slots[num][3] = null;
+function guiSlotCheck(num) {
+    if(guiSlots[num][0] == '') {
+        guiSlots[num][0] = 'empty';
+        guiSlots[num][1] = null;
+        guiSlots[num][2] = null;
+        guiSlots[num][3] = null;
     }
     
-    switch(inventoryLvl) {
+    switch(guiInventoryLvl) {
         case 5:
-            slots[8][4] = 0;
+            guiSlots[8][4] = 0;
         case 4:
-            slots[7][4] = 0;
+            guiSlots[7][4] = 0;
         case 3: 
-            slots[6][4] = 0;
+            guiSlots[6][4] = 0;
         case 2:
-            slots[5][4] = 0;
+            guiSlots[5][4] = 0;
         case 1:
-            slots[4][4] = 0;
+            guiSlots[4][4] = 0;
             break;
         default:
             break;
     }
     
     for(i = 4; i < 9; i++) {
-        if(slots[i][4] == 1) {
-            slots[i][0] = 'locked';
-            slots[i][1] = null;
-            slots[i][2] = null;
-            slots[i][3] = null;
+        if(guiSlots[i][4] == 1) {
+            guiSlots[i][0] = 'locked';
+            guiSlots[i][1] = null;
+            guiSlots[i][2] = null;
+            guiSlots[i][3] = null;
         }
     }
 }
 
-function showInv(num) {
-    slotCheck(num);
+function guiShowInv(num) {
+    guiSlotCheck(num);
     
     output = '<a href="#" onclick="toolDesc(\'slot' + num + '\');" class="slot';
     
-    if(slots[num][4] == 1) {
+    if(guiSlots[num][4] == 1) {
         output += ' locked';
     }
     
-    if(slots[num][0] == 'empty') {
+    if(guiSlots[num][0] == 'empty') {
         output += ' dropOff';
     }
     
     output += '"><span';
     
-    if(slots[num][0] == 'empty') {
+    if(guiSlots[num][0] == 'empty') {
         output += ' style="font-style:italic;"';
     }
     
-    output += '>' + slots[num][0] + '</span>';
+    output += '>' + guiSlots[num][0] + '</span>';
         
     output += '</a>';
         
     output += '<div class="drop" id="slot' + num + '" style="display:none; height:0px; font-size:0px;">';
             
-    output += '<span>Damage: ' + slots[num][1] + '</span>';
+    output += '<span>Damage: ' + guiSlots[num][1] + '</span>';
     
-    output += '<span>' + slots[num][2] + ': ' + slots[num][3] + '</span>';
+    output += '<span>' + guiSlots[num][2] + ': ' + guiSlots[num][3] + '</span>';
     
     output += '</div>';
     

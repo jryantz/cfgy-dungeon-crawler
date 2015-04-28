@@ -5,64 +5,64 @@ var guiLvl = 2,
     guiHealth = 50,
     guiStr = 7,
     guiInt = 3,
-    guiAgility = 4,
+    guiAgi = 4,
     guiMoney = 364;
 
 function guiSetLvl(num) {
     if(!isNaN(num)) {
-        lvl = num;
+        guiLvl = num;
     }
 }
 
 function guiSetMaxXp(num) {
     if(!isNaN(num)) {
-        maxXp = num;
+        guiMaxXp = num;
     }
 }
 
 function guiSetXp(num) {
-    if(maxXp >= num) {
+    if(guiMaxXp >= num) {
         if(!isNaN(num)) {
-            xp = num;
+            guiXp = num;
         }
     }
 }
 
 function guiSetMaxHealth(num) {
     if(!isNaN(num)) {
-        maxHealth = num;
+        guiMaxHealth = num;
     }
 }
 
 function guiSetHealth(num) {
-    if(maxHealth >= num) {
+    if(guiMaxHealth >= num) {
         if(!isNaN(num)) {
-            health = num;
+            guiHealth = num;
         }
     }
 }
 
 function guiSetStr(num) {
     if(!isNaN(num)) {
-        str = num;
+        guiStr = num;
     }
 }
 
 function guiSetInt(num) {
     if(!isNaN(num)) {
-        int = num;
+        guiInt = num;
     }
 }
 
 function guiSetAgility(num) {
     if(!isNaN(num)) {
-        agility = num;
+        guiAgility = num;
     }
 }
 
 function guiSetMoney(num) {
     if(!isNaN(num)) {
-        money = num;
+        guiMoney = num;
     }
 }
 
