@@ -37,6 +37,8 @@ var tier2shield = ["Roman Sield", 0, 0, 0, 60];
 var tier3shield = ["Spiked Shield", 2, 0, 0, 35];
 var tier4shield = ["Molten Shield", 3, 0, 0, 45];
 var tier5shield = [];
+
+
     
     
 //I have some descriptions if we want to use them for some of the boss weapons I named
