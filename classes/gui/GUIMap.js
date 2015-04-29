@@ -1,4 +1,6 @@
-var guiProvMap = [
+var guiProvMap = lvl;
+    
+var testMap = [
     [0, 1, 4, 0, 0],
     [2, 1, 1, 1, 1],
     [0, 1, 0, 0, 1],
@@ -7,7 +9,7 @@ var guiProvMap = [
 ];
 
 function guiDecode(locX, locY) {
-    switch(guiProvMap[locX][locY]) {
+    switch(guiProvMap[locX][locY][0]) {
         case 0:
             return '<div class="cell" style="background-color:black; border-color:black;"></div>';
             break;

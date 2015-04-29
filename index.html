@@ -60,9 +60,11 @@
     
     <script src="js/main-0.0.1.js" type="text/javascript"></script>
     
+    <script src="classes/levels/Map.js" type="text/javascript"></script>
+    
     <script src="classes/gui/Inventory.js" type="text/javascript"></script>
     <script src="classes/gui/Stats.js" type="text/javascript"></script>
-    <script src="classes/gui/Map.js" type="text/javascript"></script>
+    <script src="classes/gui/GUIMap.js" type="text/javascript"></script>
     
     <script src="classes/player/Player.js" type="text/javascript"></script>
     
@@ -84,9 +86,12 @@
         plaConstruct();
         refresh();
         
+        createLvl1();
+        
         for(i = 0; i <= 4; i++) {
             for(j = 0; j <= 4; j++) {
                 document.getElementById('mapPane').innerHTML += guiDecode(i, j);
+                console.log(i + ', ' + j);
             }
         }
         
