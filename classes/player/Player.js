@@ -23,6 +23,9 @@ function plaConstruct() {
     plaLvl = 1;
     
     plaMaxXp = 200;
+    
+    plaHealth = 100;
+    plaMaxHealth = 100;
 }
 
 function plaLvlUp() {
