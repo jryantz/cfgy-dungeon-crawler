@@ -1,12 +1,14 @@
-var eneHealth = 0,
+var eneLvl = 0,
+    eneXp = 0,
+    eneHealth = 0,
     eneStr = 0,
     eneInt = 0,
     eneAgi = 0,
     eneDef = 0;
-    eneXp = 0,
-    eneLvl = 0,
-    eneGold = 0,
-    eneWep = '';
+    eneMoney = 0,
+        
+    eneWeap = '',
+
     eneName = '';
     
 
