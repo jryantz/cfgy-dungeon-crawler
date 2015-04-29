@@ -40,10 +40,9 @@ function createLvl1() {
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
 function placeEntities() {
     //first for loop goes through the columns of the lvl
-    var column = 0, row = 0;
-	for(column < 5, column++) {
+	for(column = 0; column < 5; column++) {
         //second for loop goes through the rows
-        for(row < 5, row++) {
+        for(row = 0; row < 5; row++) {
             //checks if the current cell is accessable to player
             if(lvl[column][row][0] == 1) {
                 //generates if there is an enemy
