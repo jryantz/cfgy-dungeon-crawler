@@ -41,33 +41,31 @@ function createLvl1() {
 function placeEntities() {
     //first for loop goes through the columns of the lvl
     var column = 0, row = 0;
-	for (column < 5, column++){
+	for(column < 5, column++) {
         //second for loop goes through the rows
-        for (row < 5, row++){
+        for(row < 5, row++) {
             //checks if the current cell is accessable to player
-            if(lvl[column][row][0] == 1){
+            if(lvl[column][row][0] == 1) {
                 //generates if there is an enemy
                 lvl[column][row][2] = Math.random() * 1;
                 //generates if there is an item
                 lvl[column][row][3] = Math.random() * 1;
                 
             //checks if enemy in cell and adds to item/enemy array
-            if(lvl[column][row][2] = 1)
-            {
+            if(lvl[column][row][2] = 1) {
                 lvl[column][row][5][0] = currentLvl;
             }
             
-            else{
+            else {
              lvl[column][row][5][0] = 0;  
             }
             
             //checks if item in cell and adds to item/enemy array
-            if(lvl[column][row][3] = 1)
-            {
+            if(lvl[column][row][3] = 1) {
                 lvl[column][row][5][1] = currentLvl;
             }
             
-            else{
+            else {
              lvl[column][row][5][1] = 0;  
             }
             
