@@ -51,4 +51,5 @@ var tier5shield = ["Titans Skin", 4, 0, 0, 100];
 //Shard of asteria : a grisly looking piece of rock said to have been part of the island of Delos which 
 //is rumored to be the remains of Asteria
 //Nights Gaze : A large luminescent bow that resembles the moon. This bow was said to be to be crafted by //Theia, the goddess of sight, given to her daughter Selene, goddess of the moon.
-//daughter 
+//daughter
+//
