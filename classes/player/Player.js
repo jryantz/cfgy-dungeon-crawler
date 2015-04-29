@@ -27,8 +27,8 @@ function plaConstruct() {
 
 function plaLvlUp() {
     if(plaXp >= plaMaxXp) {
-        plaXp = 0;
+        plaXp = plaXp - plaMaxXp;
         plaMaxXp += Math.floor(plaMaxXp * 0.75);
-        plaLvl++;
+        plaLvl += 1;
     }
 }

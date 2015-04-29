@@ -1,7 +1,6 @@
-<script>
 var eneHealth = 0,
     eneStr = 0,
-    eneVit = 0,
+    eneInt = 0,
     eneAgi = 0,
     eneDef = 0;
     eneXp = 0,
