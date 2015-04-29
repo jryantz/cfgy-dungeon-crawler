@@ -22,24 +22,24 @@ function createLvl1() {
     resetMap();
     currentLvl = 1;
     //  first array collumn 0-4, second array row 0-4,third array (look at line 2 for what each index is)
-    lvl[0][3][0] = 1;
-    lvl[0][4][0] = 1;
-    lvl[1][3][0] = 1;
-    lvl[2][1][0] = 1;
-    lvl[2][1][1] = 1;
-    lvl[2][3][0] = 1;
-    lvl[2][4][0] = 1;
-    lvl[2][4][1] = 1;
+    lvl[3][0][0] = 1;
+    lvl[4][0][0] = 1;
     lvl[3][1][0] = 1;
+    lvl[1][2][0] = 1;
+    lvl[1][2][1] = 1;
     lvl[3][2][0] = 1;
-    lvl[3][3][0] = 1;
     lvl[4][2][0] = 1;
+    lvl[4][2][1] = 1;
+    lvl[1][3][0] = 1;
+    lvl[2][3][0] = 1;
+    lvl[3][3][0] = 1;
+    lvl[2][4][0] = 1;
 	placeEntities();
 }
 
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
 function placeEntities() {
-    //first for loop goes through the columns of the map
+    //first for loop goes through the columns of the lvl
     var column = 0, row = 0;
 	for (column < 5, column++){
         //second for loop goes through the rows
