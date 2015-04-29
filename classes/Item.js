@@ -41,8 +41,8 @@ var tier5shield = [];
     
 //I have some descriptions if we want to use them for some of the boss weapons I named
 //Blade of olymbros : This battered blade is the only remnant left of the titan olymbros
-//after his assault on olympus
+//after his assault on olympus, Mentor to zeus who later led a rebellion against olympus
 //Shard of asteria : a grisly looking piece of rock said to have been part of the island of Delso which 
-//is rumored to be the remains of Asteria
+//is rumored to be the remains of Asteria, wife of perses and mother to hekate
 //Nights Gaze : A large luminescent bow that resembles the moon. This bow was said to be to be crafted by //Theia, the goddess of sight, given to her daughter Selene, goddess of the moon.
 //daughter 
