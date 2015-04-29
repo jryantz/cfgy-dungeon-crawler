@@ -7,7 +7,7 @@
 //the dodge chance for the bows is zero according to the document so i will put in values of my own for now //feel free to change these values as you see fit. I have done the same for the boss dependant weapons so //feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
 
 
-var tier1Dagger = ["sharpened Stick", 1, 0, 0, 0];
+var tier1Dagger = ["Sharpened Stick", 1, 0, 0, 0];
 var tier2Dagger = ["Rusted Dagger", 3, 0, 0, 0];
 var tier3Dagger = ["Steel Dagger", 5, 0, 0, 0];
 var tier4Dagger = ["Sacrificial Dagger", 7, 0, 0, 0];
@@ -32,14 +32,14 @@ var tier2Bow = ["Long Bow", 3, 0, 15, 0];
 var tier3Bow = ["Recurve Bow", 5, 0, 17, 0];
 var tier4Bow = ["Compund Bow", 7, 0, 19, 0];
 var tier5Bow = ["Nights Gaze", 10, 0, 21, 0];
-var tier1shield = ["battered Shield", 0, 0, 0, 15];
-var tier1shield = ["Roman Shield", 0, 0, 0, 60];
-var tier1shield = ["Spiked Shield", 2, 0, 0, 35];
-var tier1shield = ["Molten Shield", 3, 0, 0, 0, 45];
-var tier1shield = ["Titans skin", 4, 0, 0, 100];
+var tier1shield = ["Battered Shield", 0, 0, 0, 15];
+var tier2shield = ["Roman Shield", 0, 0, 0, 60];
+var tier3shield = ["Spiked Shield", 2, 0, 0, 35];
+var tier4shield = ["Molten Shield", 3, 0, 0, 0, 45];
+var tier5shield = ["Titans Skin", 4, 0, 0, 100];
 
 
-
+//JON - DONT NEED GET OR SET FUNCTIONS
 
 //function getRandomitem{} : not implemented yet
 

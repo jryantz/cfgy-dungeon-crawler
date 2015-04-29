@@ -17,65 +17,18 @@ var plaLvl = 0,
 
 function plaConstruct() {
     plaStr = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
-    plaVitality = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
+    plaInt = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
     plaAgi = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
+    
     plaLvl = 1;
     
     plaMaxXp = 200;
 }
 
-function plaSetMaxHealth(x) {
-    
-}
-
-function plaSetHealth(x) {
-    
-}
-
-function plaSetRace(x) {
-    
-}
-
-function plaSetStr(x) {
-    
-}
-
-function plaSetVitality(x) {
-    
-}
-
-function plaSetAgi(x) {
-    
-}
-
-function plaSetMaxInv(x) {
-    
-}
-
-function plaSetInv(x) {
-    
-}
-
-function plaSetMaxXp(x) {
-    
-}
-
-function plaSetXp(x) {
-    
-}
-
-function plaSetLvl(x) {
-    
-}
-
-function plaSetMoney(x) {
-    
-}
-
-function plaSetName(x) {
-    
-}
-
-function plaSetBg(x) {
-    
+function plaLvlUp() {
+    if(plaXp >= plaMaxXp) {
+        plaXp = 0;
+        plaMaxXp += Math.floor(plaMaxXp * 0.75);
+        plaLvl++;
+    }
 }
