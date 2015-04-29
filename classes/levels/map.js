@@ -19,7 +19,7 @@ function resetMap() {
 
 //creates level1
 function createLvl1() {
-    resetMap;
+    resetMap();
     currentLvl = 1;
     //  first array collumn 0-4, second array row 0-4,third array (look at line 2 for what each index is)
     map[0][3][0] = 1;
@@ -34,6 +34,7 @@ function createLvl1() {
     map[3][2][0] = 1;
     map[3][3][0] = 1;
     map[4][2][0] = 1;
+	placeEntities();
 }
 
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
