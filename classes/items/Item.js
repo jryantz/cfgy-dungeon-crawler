@@ -32,17 +32,23 @@ var tier2Bow = ["Long Bow", 3, 0, 15, 0];
 var tier3Bow = ["Recurve Bow", 5, 0, 17, 0];
 var tier4Bow = ["Compund Bow", 7, 0, 19, 0];
 var tier5Bow = ["Nights Gaze", 10, 0, 21, 0];
-var tier1shield = [];
-var tier2shield = ["Roman Sield", 0, 0, 0, 60];
-var tier3shield = ["Spiked Shield", 2, 0, 0, 35];
-var tier4shield = ["Molten Shield", 3, 0, 0, 45];
-var tier5shield = [];
+var tier1shield = ["battered Shield", 0, 0, 0, 15];
+var tier1shield = ["Roman Shield", 0, 0, 0, 60];
+var tier1shield = ["Spiked Shield", 2, 0, 0, 35];
+var tier1shield = ["Molten Shield", 3, 0, 0, 0, 45];
+var tier1shield = ["Titans skin", 4, 0, 0, 100];
+
+
+
+
+//function getRandomitem{} : not implemented yet
+
     
     
 //I have some descriptions if we want to use them for some of the boss weapons I named
 //Blade of olymbros : This battered blade is the only remnant left of the titan olymbros
 //after his assault on olympus
-//Shard of asteria : a grisly looking piece of rock said to have been part of the island of Delso which 
+//Shard of asteria : a grisly looking piece of rock said to have been part of the island of Delos which 
 //is rumored to be the remains of Asteria
 //Nights Gaze : A large luminescent bow that resembles the moon. This bow was said to be to be crafted by //Theia, the goddess of sight, given to her daughter Selene, goddess of the moon.
 //daughter 
