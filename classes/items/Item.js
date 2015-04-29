@@ -1,9 +1,5 @@
 //each weapon is saved as an array with "stats" stored in it
-//index 1 = weapon name
-//index 2 = Damage
-//index 3 = Hit Chance
-//index 4 = Dodge Chance
-//index 5 = Health Boost
+//unlabeled indexes are damage
 //the dodge chance for the bows is zero according to the document so i will put in values of my own for now //feel free to change these values as you see fit. I have done the same for the boss dependant weapons so //feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
 
 var tier1Dagger = ["Sharpened Stick", 1];
@@ -35,7 +31,11 @@ var tier1shield = ["Battered Shield", "Health Bonus", 15];
 var tier2shield = ["Roman Shield", "Health Bonus", 60];
 var tier3shield = ["Spiked Shield", 2, "Health Bonus", 35];
 var tier4shield = ["Molten Shield", 3, "Health Bonus", 45];
-var tier5shield = ["Titans Skin", 4, "Health Bonus", 100];
+var tier5shield = ["Gaias Crest Shield", 4, "Health Bonus", 100];
+var tier1Armor = ["Torn leather armor", "Defense", 2];
+var tier2Armor = ["Studded Leather Armor", "Defense", 3];
+var tier3Armor = ["Chain Vest", "Defense", 4];
+
 
 
 //JON - DONT NEED GET OR SET FUNCTIONS
@@ -51,4 +51,5 @@ var tier5shield = ["Titans Skin", 4, "Health Bonus", 100];
 //is rumored to be the remains of Asteria
 //Nights Gaze : A large luminescent bow that resembles the moon. This bow was said to be to be crafted by //Theia, the goddess of sight, given to her daughter Selene, goddess of the moon.
 //daughter
-//Titans Skin : 
+//Gaias Crest Shield : a large wooden lightweight shield. The front depicts an injured man being mended by 
+//titan like being presumably Gaia, the entitiy that represents earth.
