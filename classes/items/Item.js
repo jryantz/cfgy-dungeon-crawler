@@ -35,7 +35,8 @@ var tier5shield = ["Gaias Crest Shield", 4, "Health Bonus", 100];
 var tier1Armor = ["Torn Leather Armor", "Defense", 2];
 var tier2Armor = ["Studded Leather Armor", "Defense", 3];
 var tier3Armor = ["Chain Vest", "Defense", 4];
-
+var tier4Armor = ["pyrium suit", 5];
+var tier5Armor = ["Armor of the Ancients", 6];
 
 
 //JON - DONT NEED GET OR SET FUNCTIONS
@@ -53,3 +54,6 @@ var tier3Armor = ["Chain Vest", "Defense", 4];
 //daughter
 //Gaias Crest Shield : a large wooden lightweight shield. The front depicts an injured man being mended by 
 //titan like being presumably Gaia, the entitiy that represents earth.
+//Armor of the Ancients : This is the suit of armor was worn by kratos during his battles. While it looks 
+//like any common soldiers armor, this particular suit produces bright ripples upon impact that absorb
+//most if not all of the attack
