@@ -49,27 +49,20 @@ function placeEntities() {
                 //generates if there is an item
                 lvl[column][row][3] = Math.random() * 1;
                 
-            //checks if enemy in cell and adds to item/enemy array
-            if(lvl[column][row][2] = 1) {
-                lvl[column][row][5][0] = currentLvl;
-            }
-            
-            else {
-             lvl[column][row][5][0] = 0;  
-            }
-            
-            //checks if item in cell and adds to item/enemy array
-            if(lvl[column][row][3] = 1) {
-                lvl[column][row][5][1] = currentLvl;
-            }
-            
-            else {
-             lvl[column][row][5][1] = 0;  
-            }
-            
+                //checks if enemy in cell and adds to item/enemy array
+                if(lvl[column][row][2] = 1) {
+                    lvl[column][row][5][0] = currentLvl;
+                } else {
+                    lvl[column][row][5][0] = 0;  
+                }
+
+                //checks if item in cell and adds to item/enemy array
+                if(lvl[column][row][3] = 1) {
+                    lvl[column][row][5][1] = currentLvl;
+                } else {
+                 lvl[column][row][5][1] = 0;  
+                }
             }
         }
     }
-	
-    
 }
