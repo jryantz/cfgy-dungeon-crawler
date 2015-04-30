@@ -8,6 +8,10 @@ var plaLvl = 0,
     plaAgi = 0,
     plaMoney = 0,
     
+    //[x, y]
+    plaCurrCell = [0, 0],
+    plaPrevCell = [0, 0],
+    
     plaMaxInv = 0,
     plaInv = [],
     
@@ -34,4 +38,10 @@ function plaLvlUp() {
         plaMaxXp += Math.floor(plaMaxXp * 0.75);
         plaLvl += 1;
     }
+}
+
+//dir - take direction of movement
+function plaMove(dir) {
+    plaPrevCell = plaCurrCell;
+    
 }
