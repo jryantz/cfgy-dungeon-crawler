@@ -9,6 +9,10 @@ var testMap = [
 ];
 
 function guiDecode(locX, locY) {
+    if(guiProvMap[locX][locY][0] == 1 && plaCurrCell[0] == locX && plaCurrCell[1] == locY) {
+        return '<div class="cell" style="background-color:red;"></div>';
+    }
+    
     if(guiProvMap[locX][locY][0] == 0) {
         return '<div class="cell" style="background-color:black; border-color:black;"></div>';
     } else {
@@ -27,24 +31,4 @@ function guiDecode(locX, locY) {
             return '<div class="cell" style="background-color:white;"></div>';
         }
     }
-    
-    /*switch(guiProvMap[locX][locY][0]) {
-        case 0:
-            return '<div class="cell" style="background-color:black; border-color:black;"></div>';
-            break;
-        case 1:
-            return '<div class="cell" style="background-color:white;"></div>';
-            break;
-        case 2:
-            return '<div class="cell" style="background-color:blue;"></div>';
-            break;
-        case 3:
-            return '<div class="cell" style="background-color:green;"></div>';
-            break;
-        case 4:
-            return '<div class="cell" style="background-color:red;"></div>';
-            break;
-        default:
-            return '<div class="cell" style="background-color:yellow;"></div>';
-    }*/
 }
