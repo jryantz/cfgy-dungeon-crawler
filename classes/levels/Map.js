@@ -51,16 +51,16 @@ function placeEntities() {
                 
                 //checks if enemy in cell and adds to item/enemy array
                 if(lvl[column][row][2] = 1) {
-                    lvl[column][row][5][0] = currentLvl;
+                    lvl[column][row][4][0] = currentLvl;
                 } else {
-                    lvl[column][row][5][0] = 0;  
+                    lvl[column][row][4][0] = 0;  
                 }
 
                 //checks if item in cell and adds to item/enemy array
                 if(lvl[column][row][3] = 1) {
-                    lvl[column][row][5][1] = currentLvl;
+                    lvl[column][row][4][1] = currentLvl;
                 } else {
-                 lvl[column][row][5][1] = 0;
+                 lvl[column][row][4][1] = 0;
                 }
             }
         }
