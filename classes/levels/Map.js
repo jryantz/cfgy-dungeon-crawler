@@ -19,7 +19,7 @@ function resetlvl() {
 
 //creates level1
 function createLvl1() {
-    resetLvl();
+    resetlvl();
     currentLvl = 1;
     //  first array collumn 0-4, second array row 0-4,third array (look at line 2 for what each index is)
     lvl[3][0][0] = 1;
