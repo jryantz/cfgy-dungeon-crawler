@@ -42,55 +42,150 @@ var tier5Armor = ["Armor of the Ancients", 6];
 //JON - DONT NEED GET OR SET FUNCTIONS
 
 function randomItemTier1() {
-    var choice = Math.round((Math.random() * 4) + 1);
+    var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
             return tier1Dagger
             break;
         case 2: 
-            return tier2Dagger
+            return tier1Flail
             break;
         case 3: 
-            return tier3Dagger
+            return tier1Pole
             break;
         case 4:
-            return tier4Dagger
+            return tier1sword
             break;
         case 5:
+            return tier1Bow
+            break;
+        case 6:
+            return tier1shield
+            break;
+        case 7:
+            return tier1Armor
+            break;
+        default:
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+    }
+} 
+
+function randomItemTier2() {
+    var choice = Math.round((Math.random() * 6) + 1);
+    Switch(choice) {
+        case 1:
+            return tier2Dagger
+            break;
+        case 2: 
+            return tier2Flail
+            break;
+        case 3: 
+            return tier2Pole
+            break;
+        case 4:
+            return tier2sword
+            break;
+        case 5:
+            return tier2Bow
+            break;
+        case 6:
+            return tier2shield
+            break;
+        case 7:
+            return tier2Armor
+            break;
+        default:
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+    }
+} 
+
+function randomItemTier3() {
+    var choice = Math.round((Math.random() * 6) + 1);
+    Switch(choice) {
+        case 1:
+            return tier3Dagger
+            break;
+        case 2: 
+            return tier3Flail
+            break;
+        case 3: 
+            return tier3Pole
+            break;
+        case 4:
+            return tier3sword
+            break;
+        case 5:
+            return tier3Bow
+            break;
+        case 6:
+            return tier3shield
+            break;
+        case 7:
+            return tier3Armor
+            break;
+        default:
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+    }
+} 
+
+function randomItemTier4() {
+    var choice = Math.round((Math.random() * 6) + 1);
+    Switch(choice) {
+        case 1:
+            return tier4Dagger
+            break;
+        case 2: 
+            return tier4Flail
+            break;
+        case 3: 
+            return tier4Pole
+            break;
+        case 4:
+            return tier4sword
+            break;
+        case 5:
+            return tier4Bow
+            break;
+        case 6:
+            return tier4shield
+            break;
+        case 7:
+            return tier4Armor
+            break;
+        default:
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+    }
+} 
+
+function randomItemTier5() {
+    var choice = Math.round((Math.random() * 6) + 1);
+    Switch(choice) {
+        case 1:
             return tier5Dagger
+            break;
+        case 2: 
+            return tier5Flail
+            break;
+        case 3: 
+            return tier5Pole
+            break;
+        case 4:
+            return tier5sword
+            break;
+        case 5:
+            return tier5Bow
+            break;
+        case 6:
+            return tier5shield
+            break;
+        case 7:
+            return tier5Armor
             break;
         default:
             return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
     }
 } 
         
-function randomItemTier2() {
-    var choice = Math.round((Math.random() * 4) + 1);
-    Switch(choice) {
-        case 1
-    }
-} 
-
-function randomItemTier3() {
-    var choice = Math.round((Math.random() * 4) + 1);
-    Switch(choice) {
-        case 1
-    }
-} 
-        
-function randomItemTier4() {
-    var choice = Math.round((Math.random() * 4) + 1);
-    Switch(choice) {
-        case 1
-    }
-} 
-        
-function randomItemTier5() {
-    var choice = Math.round((Math.random() * 4) + 1);
-    Switch(choice) {
-        case 1
-    }
-} 
 
     
     
