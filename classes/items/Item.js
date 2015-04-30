@@ -41,7 +41,56 @@ var tier5Armor = ["Armor of the Ancients", 6];
 
 //JON - DONT NEED GET OR SET FUNCTIONS
 
-//function getRandomitem{} : not implemented yet
+function randomItemTier1() {
+    var choice = Math.round((Math.random() * 4) + 1);
+    Switch(choice) {
+        case 1:
+            return tier1Dagger
+            break;
+        case 2: 
+            return tier2Dagger
+            break;
+        case 3: 
+            return tier3Dagger
+            break;
+        case 4:
+            return tier4Dagger
+            break;
+        case 5:
+            return tier5Dagger
+            break;
+        default:
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+    }
+} 
+        
+function randomItemTier2() {
+    var choice = Math.round((Math.random() * 4) + 1);
+    Switch(choice) {
+        case 1
+    }
+} 
+
+function randomItemTier3() {
+    var choice = Math.round((Math.random() * 4) + 1);
+    Switch(choice) {
+        case 1
+    }
+} 
+        
+function randomItemTier4() {
+    var choice = Math.round((Math.random() * 4) + 1);
+    Switch(choice) {
+        case 1
+    }
+} 
+        
+function randomItemTier5() {
+    var choice = Math.round((Math.random() * 4) + 1);
+    Switch(choice) {
+        case 1
+    }
+} 
 
     
     
