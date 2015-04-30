@@ -6,8 +6,6 @@ var currentLvl = 1,
 		   [[0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]]],
 		   [[0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]]],
 		   [[0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]], [0, 0, 0, 0, [null,null,null]]]];
-			
-           
 
  //sets everything 0 and removes items/enemies from array in each cell
 function resetlvl() {
