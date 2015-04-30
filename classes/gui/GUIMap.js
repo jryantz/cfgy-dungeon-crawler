@@ -14,6 +14,9 @@ function guiDecode(locX, locY) {
     } else {
         if(guiProvMap[locX][locY][1] == 1) {
             return '<div class="cell" style="background-color:green;"></div>';
+        } else if(guiProvMap[locX][locY][2] == 1 && guiProvMap[locX][locY][3] == 1) {
+            //both
+            return '<div class="cell" style="background-color:blue;"></div>';
         } else if(guiProvMap[locX][locY][2] == 1) {
             //enemy
             return '<div class="cell" style="background-color:lightblue;"></div>';
