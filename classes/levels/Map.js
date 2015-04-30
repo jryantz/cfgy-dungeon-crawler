@@ -14,7 +14,7 @@ function resetlvl() {
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]]];
-			
+}
 
 //creates level1
 function createLvl1() {
@@ -60,7 +60,7 @@ function placeEntities() {
                 if(lvl[column][row][3] = 1) {
                     lvl[column][row][5][1] = currentLvl;
                 } else {
-                 lvl[column][row][5][1] = 0;  
+                 lvl[column][row][5][1] = 0;
                 }
             }
         }
