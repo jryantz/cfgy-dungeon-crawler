@@ -18,7 +18,6 @@ function resetlvl() {
 
 //creates level1
 function createLvl1() {
-    resetlvl();
     currentLvl = 1;
     //first array collumn 0-4, second array row 0-4,third array (look at line 2 for what each index is)
     lvl[3][0][0] = 1;
@@ -45,22 +44,31 @@ function placeEntities() {
             //checks if the current cell is accessable to player
             if(lvl[column][row][0] == 1) {
                 //generates if there is an enemy
-                lvl[column][row][2] = Math.random() * 1;
+                if((Math.floor(Math.random() * 6) + 1) > 2) {
+                    lvl[column][row][2] = 1;
+                } else {
+                    lvl[column][row][2] = 0;
+                }
+                
                 //generates if there is an item
-                lvl[column][row][3] = Math.random() * 1;
+                if((Math.floor(Math.random() * 6) + 1) > 3) {
+                    lvl[column][row][3] = 1;
+                } else {
+                    lvl[column][row][3] = 0;
+                }
                 
                 //checks if enemy in cell and adds to item/enemy array
-                if(lvl[column][row][2] = 1) {
+                if(lvl[column][row][2] == 1) {
                     lvl[column][row][4][0] = currentLvl;
                 } else {
                     lvl[column][row][4][0] = 0;  
                 }
 
                 //checks if item in cell and adds to item/enemy array
-                if(lvl[column][row][3] = 1) {
+                if(lvl[column][row][3] == 1) {
                     lvl[column][row][4][1] = currentLvl;
                 } else {
-                 lvl[column][row][4][1] = 0;
+                    lvl[column][row][4][1] = 0;
                 }
             }
         }

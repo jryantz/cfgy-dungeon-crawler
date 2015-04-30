@@ -86,12 +86,14 @@
         plaConstruct();
         refresh();
         
+        //resetlvl();
         createLvl1();
         
         for(i = 0; i <= 4; i++) {
             for(j = 0; j <= 4; j++) {
                 document.getElementById('mapPane').innerHTML += guiDecode(i, j);
-                console.log(i + ', ' + j);
+                console.log('en ' + guiProvMap[i][j][2]);
+                console.log('it ' + guiProvMap[i][j][3]);
             }
         }
         

@@ -9,7 +9,23 @@ var testMap = [
 ];
 
 function guiDecode(locX, locY) {
-    switch(guiProvMap[locX][locY][0]) {
+    if(guiProvMap[locX][locY][0] == 0) {
+        return '<div class="cell" style="background-color:black; border-color:black;"></div>';
+    } else {
+        if(guiProvMap[locX][locY][1] == 1) {
+            return '<div class="cell" style="background-color:green;"></div>';
+        } else if(guiProvMap[locX][locY][2] == 1) {
+            //enemy
+            return '<div class="cell" style="background-color:lightblue;"></div>';
+        } else if(guiProvMap[locX][locY][3] == 1) {
+            //item
+            return '<div class="cell" style="background-color:darkblue;"></div>';
+        } else {
+            return '<div class="cell" style="background-color:white;"></div>';
+        }
+    }
+    
+    /*switch(guiProvMap[locX][locY][0]) {
         case 0:
             return '<div class="cell" style="background-color:black; border-color:black;"></div>';
             break;
@@ -27,5 +43,5 @@ function guiDecode(locX, locY) {
             break;
         default:
             return '<div class="cell" style="background-color:yellow;"></div>';
-    }
+    }*/
 }
