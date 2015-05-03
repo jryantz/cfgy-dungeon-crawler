@@ -2,6 +2,7 @@
 //unlabeled indexes are damage
 //the dodge chance for the bows is zero according to the document so i will put in values of my own for now //feel free to change these values as you see fit. I have done the same for the boss dependant weapons so //feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
 
+<<<<<<< HEAD
 var tier1Dagger = ["Sharpened Stick", 1];
 var tier2Dagger = ["Rusted Dagger", 3];
 var tier3Dagger = ["Steel Dagger", 5];
@@ -40,33 +41,74 @@ var tier5Armor = ["Armor of the Ancients", 6];
 
 
 //these functions provide a random item of a certain tier
+=======
+var tier1Dagger = ["Sharpened Stick", 1],
+    tier2Dagger = ["Rusted Dagger", 3],
+    tier3Dagger = ["Steel Dagger", 5],
+    tier4Dagger = ["Sacrificial Dagger", 7],
+    tier5Dagger = ["Shard of Asteria", 10],
+    tier1Flail = ["Stick with Rock", 1],
+    tier2Flail = ["Worn Flail", 4],
+    tier3Flail = ["Iron Flail", 6],
+    tier4Flail = ["Sacrifial Flail", 9],
+    tier5Flail = ["Another Fucking Flail", 12],
+    tier1Pole = ["Tree Branch",  4],
+    tier2Pole = ["Stone Spear", 6],
+    tier3Pole = ["Trident", 9],
+    tier4Pole = ["Scythe", 11],
+    tier5Pole = ["Astraeus's Splintered Staff", 14],
+    tier1Sword = ["2x4", 2],
+    tier2Sword = ["Bronze Sword", 4],
+    tier3Sword = ["Katana", 6],
+    tier4Sword = ["Aztec Sword", 8],
+    tier5Sword = ["Blade of Olymbros", 11],
+    tier1Bow = ["Short Bow", 1, "Dodge Chance", 15],
+    tier2Bow = ["Long Bow", 3, "Dodge Chance", 15],
+    tier3Bow = ["Recurve Bow", 5, "Dodge Chance", 17],
+    tier4Bow = ["Compund Bow", 7,  "Dodge Chance", 19],
+    tier5Bow = ["Nights Gaze", 10, "Dodge Chance", 21],
+    tier1shield = ["Battered Shield", "Health Bonus", 15],
+    tier2shield = ["Roman Shield", "Health Bonus", 60],
+    tier3shield = ["Spiked Shield", 2, "Health Bonus", 35],
+    tier4shield = ["Molten Shield", 3, "Health Bonus", 45],
+    tier5shield = ["Gaias Crest Shield", 4, "Health Bonus", 100],
+    tier1Armor = ["Torn Leather Armor", "Defense", 2],
+    tier2Armor = ["Studded Leather Armor", "Defense", 3],
+    tier3Armor = ["Chain Vest", "Defense", 4],
+    tier4Armor = ["pyrium suit", 5],
+    tier5Armor = ["Armor of the Ancients", 6];
+>>>>>>> origin/master
 
 function randomItemTier1() {
     var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
-            return tier1Dagger
+            return tier1Dagger;
             break;
         case 2: 
-            return tier1Flail
+            return tier1Flail;
             break;
         case 3: 
-            return tier1Pole
+            return tier1Pole;
             break;
         case 4:
-            return tier1sword
+            return tier1sword;
             break;
         case 5:
-            return tier1Bow
+            return tier1Bow;
             break;
         case 6:
-            return tier1shield
+            return tier1shield;
             break;
         case 7:
-            return tier1Armor
+            return tier1Armor;
             break;
         default:
+<<<<<<< HEAD
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!"
+=======
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!";
+>>>>>>> origin/master
     }
 } 
 
@@ -74,28 +116,32 @@ function randomItemTier2() {
     var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
-            return tier2Dagger
+            return tier2Dagger;
             break;
         case 2: 
-            return tier2Flail
+            return tier2Flail;
             break;
         case 3: 
-            return tier2Pole
+            return tier2Pole;
             break;
         case 4:
-            return tier2sword
+            return tier2sword;
             break;
         case 5:
-            return tier2Bow
+            return tier2Bow;
             break;
         case 6:
-            return tier2shield
+            return tier2shield;
             break;
         case 7:
-            return tier2Armor
+            return tier2Armor;
             break;
         default:
+<<<<<<< HEAD
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!"
+=======
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!";
+>>>>>>> origin/master
     }
 } 
 
@@ -103,28 +149,32 @@ function randomItemTier3() {
     var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
-            return tier3Dagger
+            return tier3Dagger;
             break;
         case 2: 
-            return tier3Flail
+            return tier3Flail;
             break;
         case 3: 
-            return tier3Pole
+            return tier3Pole;
             break;
         case 4:
-            return tier3sword
+            return tier3sword;
             break;
         case 5:
-            return tier3Bow
+            return tier3Bow;
             break;
         case 6:
-            return tier3shield
+            return tier3shield;
             break;
         case 7:
-            return tier3Armor
+            return tier3Armor;
             break;
         default:
+<<<<<<< HEAD
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!"
+=======
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!";
+>>>>>>> origin/master
     }
 } 
 
@@ -132,28 +182,28 @@ function randomItemTier4() {
     var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
-            return tier4Dagger
+            return tier4Dagger;
             break;
         case 2: 
-            return tier4Flail
+            return tier4Flail;
             break;
         case 3: 
-            return tier4Pole
+            return tier4Pole;
             break;
         case 4:
-            return tier4sword
+            return tier4sword;
             break;
         case 5:
-            return tier4Bow
+            return tier4Bow;
             break;
         case 6:
-            return tier4shield
+            return tier4shield;
             break;
         case 7:
-            return tier4Armor
+            return tier4Armor;
             break;
         default:
-            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!"
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!";
     }
 } 
 
@@ -161,28 +211,32 @@ function randomItemTier5() {
     var choice = Math.round((Math.random() * 6) + 1);
     Switch(choice) {
         case 1:
-            return tier5Dagger
+            return tier5Dagger;
             break;
         case 2: 
-            return tier5Flail
+            return tier5Flail;
             break;
         case 3: 
-            return tier5Pole
+            return tier5Pole;
             break;
         case 4:
-            return tier5sword
+            return tier5sword;
             break;
         case 5:
-            return tier5Bow
+            return tier5Bow;
             break;
         case 6:
-            return tier5shield
+            return tier5shield;
             break;
         case 7:
-            return tier5Armor
+            return tier5Armor;
             break;
         default:
+<<<<<<< HEAD
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!"
+=======
+            return "YOHOHO NEAR THE BOOTS I'LL NEVER GO!";
+>>>>>>> origin/master
     }
 }
 
