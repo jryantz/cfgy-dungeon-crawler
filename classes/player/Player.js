@@ -17,7 +17,12 @@ var plaLvl = 0,
     
     plaName = '',
     plaRace = '',
-    plaBg = [];
+    plaBg = [],
+
+    plaWeapon = [],
+    plaArmor = [],
+    plaShield = [],
+    plaDefense = plaArmor[2] + plaShield[2] + Math.floor((plaAgi - 10) / 2);
 
 function plaConstruct() {
     //the following while + if statements will ensure that the player's stats, at creation, will not dip below 8. This is in the favor of the player, of course, but the negatives you'd get from having a strength of 3, for       example, would literally be crippling to the point where you might as well refresh the page.
@@ -31,12 +36,15 @@ function plaConstruct() {
             plaStr = str;
             checker = true;
         }
+    }//end of 1st while loop
     checker = false;
     while (checker === false) {
         int = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
+        if (int > 8) {
             plaInt = int;
             checker = true;
         }
+    }//end of 2nd while loop
     checker = false; 
     while (checker === false) {
         agi = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
@@ -44,6 +52,7 @@ function plaConstruct() {
             plaAgi = agi;
             checker = true;
         }
+    }//end of 3rd while loop
     
     plaLvl = 1;
     
