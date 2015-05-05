@@ -19,5 +19,4 @@ function refresh() {
                 document.getElementById('mapPane').innerHTML += guiDecode(i, j);
             }
         }
-        console.log('gen/regen lvl');
     }

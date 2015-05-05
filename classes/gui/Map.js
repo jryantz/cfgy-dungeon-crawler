@@ -1,12 +1,4 @@
 var guiProvMap = lvl;
-    
-var testMap = [
-    [0, 1, 4, 0, 0],
-    [2, 1, 1, 1, 1],
-    [0, 1, 0, 0, 1],
-    [1, 2, 0, 2, 1],
-    [0, 3, 0, 0, 3]
-];
 
 function guiDecode(locX, locY) {
     if(guiProvMap[locX][locY][0] == 1 && plaCurrCell[0] == locX && plaCurrCell[1] == locY) {

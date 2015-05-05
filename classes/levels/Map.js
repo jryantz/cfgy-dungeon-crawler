@@ -16,7 +16,6 @@ function resetLvl() {
             lvl[i][j] = [0, 0, 0, 0, [null, null, null]];
         }
     }
-    console.log('reset level');
 }
 
 //checks to see if the cell has an exit and whether the exit goes to the next or previous levels
@@ -80,8 +79,6 @@ function createLvl1() {
     lvl[4][2][0] = 1;
     lvl[4][2][1] = 1;
     
-    console.log('create lvl1');
-    
 	placeEntities();
 }
 
@@ -111,8 +108,6 @@ function createLvl2() {
     lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;
     lvl[4][2][1] = 1;
-    
-    console.log('create lvl2');
     
     placeEntities();
 }
