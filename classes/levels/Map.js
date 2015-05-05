@@ -11,11 +11,11 @@ var currentLvl = 1,
 
 //sets everything 0 and removes items/enemies from array in each cell
 function resetLvl() {
-	lvl = [[[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
-		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
-		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
-		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
-		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]]];
+    for(i = 0; i <= 4; i++) {
+        for(j = 0; j <= 4; j++) {
+            lvl[i][j] = [0, 0, 0, 0, [null, null, null]];
+        }
+    }
     console.log('reset level');
 }
 
@@ -62,18 +62,24 @@ function makeLvl(whichLvl) {
 //creates level1 - julian's level
 function createLvl1() {
     //first array collumn 0-4, second array row 0-4, third array (look at line 2 for what each index is)
-    lvl[3][0][0] = 1;
-    lvl[4][0][0] = 1;
-    lvl[3][1][0] = 1;
+    resetLvl();
+    
     lvl[1][2][0] = 1;
     lvl[1][2][1] = 1;
+    lvl[1][3][0] = 1;
+    
+    lvl[2][3][0] = 1;
+    lvl[2][4][0] = 1;
+    
+    lvl[3][0][0] = 1;
+    lvl[3][1][0] = 1;
     lvl[3][2][0] = 1;
+    lvl[3][3][0] = 1;
+    
+    lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;
     lvl[4][2][1] = 1;
-    lvl[1][3][0] = 1;
-    lvl[2][3][0] = 1;
-    lvl[3][3][0] = 1;
-    lvl[2][4][0] = 1;
+    
     console.log('create lvl1');
     
 	placeEntities();
@@ -81,24 +87,31 @@ function createLvl1() {
 
 //creates level2 - jon's level
 function createLvl2() {
+    resetLvl();
+    
     lvl[0][1][0] = 1;
     lvl[0][3][0] = 1;
     lvl[0][4][0] = 1;
+    
     lvl[1][0][0] = 1;
     lvl[1][1][0] = 1;
     lvl[1][2][0] = 1;
     lvl[1][3][0] = 1;
+    
     lvl[2][1][0] = 1;
     lvl[2][3][0] = 1;
     lvl[2][4][0] = 1;
+    
     lvl[3][0][0] = 1;
     lvl[3][1][0] = 1;
     lvl[3][2][0] = 1;
     lvl[3][4][0] = 1;
     lvl[3][4][1] = 1;
+    
     lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;
     lvl[4][2][1] = 1;
+    
     console.log('create lvl2');
     
     placeEntities();
