@@ -13,9 +13,11 @@ function refresh() {
     }
 
     function regenLvl() {
+        document.getElementById('mapPane').innerHTML = '';
         for(i = 0; i <= 4; i++) {
             for(j = 0; j <= 4; j++) {
                 document.getElementById('mapPane').innerHTML += guiDecode(i, j);
             }
         }
+        console.log('gen/regen lvl');
     }

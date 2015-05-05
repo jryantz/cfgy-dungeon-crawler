@@ -1,63 +1,62 @@
 //map index 0 = 1st column, 1 = 2nd column, 2 = 3rd column, 3 = 4th column, 4 = 5th column
 // = each column = 5x[ability to enter,is an exit(1 to previous,2 to nextlvl), enemy in cell,item in cell, array of enemy and item ids?]
 var currentLvl = 1,
-	nextLvl = currentLvl + 1;
-	prevLvl = currentLvl - 1;
+	nextLvl = currentLvl + 1,
+	prevLvl = currentLvl - 1,
     lvl = [[[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]]];
 
- //sets everything 0 and removes items/enemies from array in each cell
-function resetlvl() {
+//sets everything 0 and removes items/enemies from array in each cell
+function resetLvl() {
 	lvl = [[[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]]];
+    console.log('reset level');
 }
 
 //checks to see if the cell has an exit and whether the exit goes to the next or previous levels
-/*function checkExit(PlaCurrCell)
-{
+function checkExit(PlaCurrCell) {
 var x = plaCurrCell [0],
-	y = plaCurrCell [1]
-	if(lvl[x][y][1] >0)
-	{
-		if(lvl[x][y][1] == 1)
-		{
-		makeLvl(prevLvl);
-		}
-		
-		else if (lvl[x][y][1] == 2)
-		{
-		makeLvl(nextLvl);
+	y = plaCurrCell [1];
+    
+	if(lvl[x][y][1] > 0) {
+		if(lvl[x][y][1] == 1) {
+            makeLvl(prevLvl);
+		} else if(lvl[x][y][1] == 2) {
+            makeLvl(nextLvl);
 		}
 	}
 
 }
 
-checks which level the map is creating
-function makeLvl(whichLvl)
-{
-	switch(whichLvl)
-	{
-	case 5: createLvl5();
-			break;
-	case 4: createLvl4();
-			break;
-	case 3: createLvl3();
-			break;
-	case 2: createLvl2();
-			break;
-	case 1: createLvl1();
-			break;
-	default: break;
-	
+//checks which level the map is creating
+function makeLvl(whichLvl) {
+	switch(whichLvl) {
+        case 5:
+            createLvl5();
+            break;
+        case 4:
+            createLvl4();
+            break;
+        case 3:
+            createLvl3();
+            break;
+        case 2:
+            createLvl2();
+            break;
+        case 1:
+            createLvl1();
+            break;
+        default: 
+            break;
 	}
 }
-*/
+
 
 //creates level1 - julian's level
 function createLvl1() {
@@ -74,6 +73,8 @@ function createLvl1() {
     lvl[2][3][0] = 1;
     lvl[3][3][0] = 1;
     lvl[2][4][0] = 1;
+    console.log('create lvl1');
+    
 	placeEntities();
 }
 
@@ -97,6 +98,8 @@ function createLvl2() {
     lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;
     lvl[4][2][1] = 1;
+    console.log('create lvl2');
+    
     placeEntities();
 }
 
