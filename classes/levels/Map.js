@@ -20,6 +20,7 @@ function resetLvl() {
 }
 
 //checks to see if the cell has an exit and whether the exit goes to the next or previous levels
+/*
 function checkExit(PlaCurrCell) {
 var x = plaCurrCell [0],
 	y = plaCurrCell [1];
@@ -56,7 +57,7 @@ function makeLvl(whichLvl) {
             break;
 	}
 }
-
+*/
 
 //creates level1 - julian's level
 function createLvl1() {
