@@ -64,7 +64,9 @@
             <a href="#" onclick="plaXp += 50; plaLvlUp();">Add 50XP</a>
             <a href="#" onclick="plaXp += 100; plaLvlUp();">Add 100XP</a>
             <br><br>
-            <a href="#" onclick="refresh(); plaLvlUp();">Refresh</a>
+            <a href="#" onclick="refresh(); regenLvl(); plaLvlUp();">Refresh</a>
+            <br><br>
+            <a href="#" onclick="createLvl2();">Map 2</a>
         </div>
         
         <div id="mapPane" class="mapPane"></div>
@@ -100,16 +102,19 @@
             document.getElementById('stats').innerHTML = guiShowStats();
         }
         
+        function regenLvl() {
+            for(i = 0; i <= 4; i++) {
+                for(j = 0; j <= 4; j++) {
+                    document.getElementById('mapPane').innerHTML += guiDecode(i, j);
+                }
+            }
+        }
+        
         plaConstruct();
         refresh();
         
         createLvl1();
-        
-        for(i = 0; i <= 4; i++) {
-            for(j = 0; j <= 4; j++) {
-                document.getElementById('mapPane').innerHTML += guiDecode(i, j);
-            }
-        }
+        regenLvl();
         
     </script>
 </html>

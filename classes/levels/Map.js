@@ -58,9 +58,10 @@ function makeLvl(whichLvl)
 	}
 }
 */
-//creates level1
+
+//creates level1 - julian's level
 function createLvl1() {
-    //first array collumn 0-4, second array row 0-4,third array (look at line 2 for what each index is)
+    //first array collumn 0-4, second array row 0-4, third array (look at line 2 for what each index is)
     lvl[3][0][0] = 1;
     lvl[4][0][0] = 1;
     lvl[3][1][0] = 1;
@@ -74,6 +75,29 @@ function createLvl1() {
     lvl[3][3][0] = 1;
     lvl[2][4][0] = 1;
 	placeEntities();
+}
+
+//creates level2 - jon's level
+function createLvl2() {
+    lvl[0][1][0] = 1;
+    lvl[0][3][0] = 1;
+    lvl[0][4][0] = 1;
+    lvl[1][0][0] = 1;
+    lvl[1][1][0] = 1;
+    lvl[1][2][0] = 1;
+    lvl[1][3][0] = 1;
+    lvl[2][1][0] = 1;
+    lvl[2][3][0] = 1;
+    lvl[2][4][0] = 1;
+    lvl[3][0][0] = 1;
+    lvl[3][1][0] = 1;
+    lvl[3][2][0] = 1;
+    lvl[3][4][0] = 1;
+    lvl[3][4][1] = 1;
+    lvl[4][0][0] = 1;
+    lvl[4][2][0] = 1;
+    lvl[4][2][1] = 1;
+    placeEntities();
 }
 
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
