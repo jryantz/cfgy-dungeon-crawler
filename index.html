@@ -32,6 +32,18 @@
         
         <div id="basePane" class="basePane" style="display:none;">
             Base
+            
+            <div class="spec">
+                Specialization
+                
+                <a href="#" onclick="baseSpec(1);" id="spec1" style="display:block;">Dagger Specialization</a>
+                <a href="#" onclick="baseSpec(2);" id="spec2" style="display:block;">Flail Specialization</a>
+                <a href="#" onclick="baseSpec(3);" id="spec3" style="display:block;">Pole Specialization</a>
+                <a href="#" onclick="baseSpec(4);" id="spec4" style="display:block;">Sword Specialization</a>
+                <a href="#" onclick="baseSpec(5);" id="spec5" style="display:block;">Bow Specialization</a>
+                <a href="#" onclick="baseSpec(6);" id="spec6" style="display:block;">Shield Specialization</a>
+                <a href="#" onclick="baseSpec(7);" id="spec7" style="display:block;">Armor Specialization</a>
+            </div>
         </div>
         
         <div id="debugPane" class="debugPane" style="display:none;">
@@ -91,13 +103,11 @@
         plaConstruct();
         refresh();
         
-        //resetlvl();
         createLvl1();
         
         for(i = 0; i <= 4; i++) {
             for(j = 0; j <= 4; j++) {
                 document.getElementById('mapPane').innerHTML += guiDecode(i, j);
-                console.log(plaCurrCell[0] + ' ' + i + ' -- ' + plaCurrCell[1] + ' ' + j);
             }
         }
         

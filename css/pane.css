@@ -119,6 +119,65 @@
     width:calc(75% - 28px);
     height:calc(70% - 26px);
     margin-bottom:12px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.basePane .spec {
+    float:left;
+    width:205px;
+    margin:0 10px;
+}
+
+.basePane .spec.locked {
+    pointer-events:none;
+}
+
+.basePane .spec a {
+    position:relative;
+    float:left;
+    line-height:2.75;
+    padding:2px 5px;
+    color:#2694d8;
+    background:transparent;
+    text-decoration:none;
+    width:200px;
+    text-align:center;
+}
+
+.basePane .spec a:before, .basePane .spec a:after {
+    width:200px;
+    left:0px;
+	height:19.5px;
+    border:3px solid #2694d8;
+    z-index:-1;
+}
+
+.basePane .spec a:before {
+    position:absolute;
+    content:'';
+    border-bottom:none;
+    transform:perspective(15px) rotateX(5deg);  
+}
+
+.basePane .spec a:after {
+    position:absolute;
+    content:'';
+    border-top:none;
+    transform:perspective(15px) rotateX(-5deg);
+    top:25px;
+}
+
+.basePane .spec a:hover,
+.basePane .spec a.active {
+    color:#fff;
+}
+
+.basePane .spec a:hover:before,
+.basePane .spec a:hover:after,
+.basePane .spec a.active:before,
+.basePane .spec a.active:after {
+    background:#2694d8;
 }
 
 .interactionPane {

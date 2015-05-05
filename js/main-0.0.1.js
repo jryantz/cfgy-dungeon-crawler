@@ -53,6 +53,18 @@ function toolDesc(id) {
     }
 }
 
+function baseSpec(id) {
+    var element = document.getElementById('spec' + id);
+    
+    for(i = id - 1; i >= 1; i--) {
+        document.getElementById('spec' + id).style.display = 'none';
+    }
+    
+    for(i = id + 1; i <= 7; i++) {
+        document.getElementById('spec' + id).style.display = 'none';
+    }
+}
+
 window.onload = function() {
     setTimeout(function() {
         visibility('loading');

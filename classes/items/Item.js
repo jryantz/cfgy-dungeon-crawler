@@ -198,25 +198,25 @@ function randomItemTier5() {
 function tier1Item(x) {
     switch(x) {
         case 1:
-            return tier1Dagger
+            return tier1Dagger;
             break;
         case 2: 
-            return tier1Flail
+            return tier1Flail;
             break;
         case 3: 
-            return tier1Pole
+            return tier1Pole;
             break;
         case 4:
-            return tier1sword
+            return tier1sword;
             break;
         case 5:
-            return tier1Bow
+            return tier1Bow;
             break;
         case 6:
-            return tier1shield
+            return tier1shield;
             break;
         case 7:
-            return tier1Armor
+            return tier1Armor;
             break;
         default:
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
@@ -226,25 +226,25 @@ function tier1Item(x) {
 function tier2Item(x) {
     switch(x) {
         case 1:
-            return tier2Dagger
+            return tier2Dagger;
             break;
         case 2: 
-            return tier2Flail
+            return tier2Flail;
             break;
         case 3: 
-            return tier2Pole
+            return tier2Pole;
             break;
         case 4:
-            return tier2sword
+            return tier2sword;
             break;
         case 5:
-            return tier2Bow
+            return tier2Bow;
             break;
         case 6:
-            return tier2shield
+            return tier2shield;
             break;
         case 7:
-            return tier2Armor
+            return tier2Armor;
             break;
         default:
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
@@ -254,25 +254,25 @@ function tier2Item(x) {
 function tier3Item(x) {
     switch(x) {
         case 1:
-            return tier3Dagger
+            return tier3Dagger;
             break;
         case 2: 
-            return tier3Flail
+            return tier3Flail;
             break;
         case 3: 
-            return tier3Pole
+            return tier3Pole;
             break;
         case 4:
-            return tier3sword
+            return tier3sword;
             break;
         case 5:
-            return tier3Bow
+            return tier3Bow;
             break;
         case 6:
-            return tier3shield
+            return tier3shield;
             break;
         case 7:
-            return tier3Armor
+            return tier3Armor;
             break;
         default:
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
@@ -282,25 +282,25 @@ function tier3Item(x) {
 function tier4Item(x) {
     switch(x) {
         case 1:
-            return tier4Dagger
+            return tier4Dagger;
             break;
         case 2: 
-            return tier4Flail
+            return tier4Flail;
             break;
         case 3: 
-            return tier4Pole
+            return tier4Pole;
             break;
         case 4:
-            return tier4sword
+            return tier4sword;
             break;
         case 5:
-            return tier4Bow
+            return tier4Bow;
             break;
         case 6:
-            return tier4shield
+            return tier4shield;
             break;
         case 7:
-            return tier4Armor
+            return tier4Armor;
             break;
         default:
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
@@ -310,25 +310,25 @@ function tier4Item(x) {
 function tier5Item(x) {
     switch(x) {
         case 1:
-            return tier5Dagger
+            return tier5Dagger;
             break;
         case 2: 
-            return tier5Flail
+            return tier5Flail;
             break;
         case 3: 
-            return tier5Pole
+            return tier5Pole;
             break;
         case 4:
-            return tier5sword
+            return tier5sword;
             break;
         case 5:
-            return tier5Bow
+            return tier5Bow;
             break;
         case 6:
-            return tier5shield
+            return tier5shield;
             break;
         case 7:
-            return tier5Armor
+            return tier5Armor;
             break;
         default:
             return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
