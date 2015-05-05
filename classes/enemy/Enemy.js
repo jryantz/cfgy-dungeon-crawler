@@ -2,7 +2,7 @@ var eneLvl = 0,
     eneXp = 0,
     eneHealth = 0,
     eneStr = 0,
-    eneInt = 0,
+    eneVit = 0,
     eneAgi = 0,
     eneDef = 0;
     eneMoney = 0,
@@ -20,12 +20,12 @@ var eneLvl = 0,
  * the enemy regain all of its health when the player runs away from it and just reset
  * weapon is a string for now as a placeholder
  */
-function eneConstruct(name, health, str, int, agi, defense, xp, lvl, money, weapon) {
+function eneConstruct(name, health, str, vit, agi, defense, xp, lvl, money, weapon) {
     eneLvl = lvl;
     eneXp = xp;
     eneHealth = health;
     eneStr = str;
-    eneInt = int;
+    eneVit = vit;
     eneAgi = agi;
     eneDef = defense;
     eneMoney = money;

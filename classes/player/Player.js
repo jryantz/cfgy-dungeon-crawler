@@ -35,7 +35,7 @@ function plaConstruct() {
     checker = false;
     while(checker === false) {
         str = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
-        if (str > 8) {
+        if(str > 8) {
             plaStr = str;
             checker = true;
         }
@@ -44,7 +44,7 @@ function plaConstruct() {
     checker = false;
     while(checker === false) {
         vit = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
-        if (vit > 8) {
+        if(vit > 8) {
             plaVit = vit;
             checker = true;
         }
@@ -53,7 +53,7 @@ function plaConstruct() {
     checker = false; 
     while(checker === false) {
         agi = Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1);
-        if (agi > 8) {
+        if(agi > 8) {
             plaAgi = agi;
             checker = true;
         }
