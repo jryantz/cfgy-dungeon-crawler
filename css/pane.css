@@ -2,6 +2,7 @@
 
 .statsPane,
 .mainPane,
+.basePane,
 .debugPane,
 .interactionPane,
 .mapPane {
@@ -111,13 +112,8 @@
     margin:5px 0 5px 10px;
 }
 
-.mainPane {
-    float:left;
-    width:calc(75% - 28px);
-    height:calc(70% - 26px);
-    margin-bottom:12px;
-}
-
+.mainPane,
+.basePane,
 .debugPane {
     float:left;
     width:calc(75% - 28px);

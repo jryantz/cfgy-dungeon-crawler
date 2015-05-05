@@ -15,7 +15,7 @@ function guiShowStats() {
     
     output += '<div class="slot"><span>Strength: ' + plaStr + '</span></div>';
     
-    output += '<div class="slot"><span>Intelligence: ' + plaInt + '</span></div>';
+    output += '<div class="slot"><span>Vitality: ' + plaVit + '</span></div>';
     
     output += '<div class="slot"><span>Agility: ' + plaAgi + '</span></div>';
     

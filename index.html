@@ -30,6 +30,10 @@
             Main
         </div>
         
+        <div id="basePane" class="basePane" style="display:none;">
+            Base
+        </div>
+        
         <div id="debugPane" class="debugPane" style="display:none;">
             Debug<br><br>
             <a href="#" onclick="guiSetSlot(0, 'item1', 2, 'var2', '4');">Set Slot 1</a>
@@ -54,7 +58,8 @@
         <div id="mapPane" class="mapPane"></div>
         
         <div id="interactionPane" class="interactionPane">
-            <a href="#" onclick="flip('mainPane', 'debugPane');">Debug<br>Mode</a>
+            <a href="#" onclick="flip('mainPane', 'debugPane');">Debug<br>Mode</a><br><br>
+            <a href="#" onclick="flip('mainPane', 'basePane');">Base<br>Screen</a>
         </div>
     </body>
     

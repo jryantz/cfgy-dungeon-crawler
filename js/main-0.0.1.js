@@ -12,6 +12,10 @@ function flip(idPrim, idSec) {
     var elementPrim = document.getElementById(idPrim);
     var elementSec = document.getElementById(idSec);
     
+    if(elementPrim != 'debugPane' && elementSec != 'debugPane') {
+        document.getElementById('debugPane').style.display = 'none';
+    }
+    
     if(elementPrim.style.display == 'block') {
         elementPrim.style.display = 'none';
         elementSec.style.display = 'block';
