@@ -170,7 +170,7 @@
 
 .basePane .spec a:hover,
 .basePane .spec a.active {
-    color:#fff;
+    color:white;
 }
 
 .basePane .spec a:hover:before,
@@ -184,6 +184,51 @@
     float:left;
     width:calc(50% - 28px);
     height:calc(30% - 30px);
+}
+
+.interactionPane a.button {
+    padding:6px 10px;
+    box-shadow:0 0 5px rgba(0,0,0,0.4);
+    color:black;
+    text-decoration:none;
+    float:left;
+    background:rgba(255,255,255,0.3);
+    border:1px solid black;
+    line-height:1;
+}
+
+.interactionPane a.button:hover {
+    box-shadow:inset 0 0 5px rgba(0,0,0,0.4);
+}
+
+.interactionPane .dirKeys {
+    float:left;
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    width:189px;
+}
+
+.interactionPane .dirKeys a.key {
+    padding:20px;
+    width:19px;
+    height:19px;
+    text-align:center;
+    margin:1px;
+}
+
+.interactionPane .dirKeys a.key.disabled {
+    pointer-events:none;
+    color:lightgrey;
+}
+
+.interactionPane .dirKeys a.key.locked {
+    color:transparent;
+    box-shadow:0 0 0 transparent;
+    background:transparent;
+    border:0;
+    width:21px;
+    height:21px;
 }
 
 .interactionPane a.debug {
@@ -210,4 +255,15 @@
     width:calc(20% - 10px);
     margin:1px;
     border:4px solid white;
+}
+
+.mapPane .cell .dot {
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    line-height:10px;
+    background:red;
+    position:relative;
+    top:calc(50% - 5px);
+    left:calc(50% - 5px);
 }

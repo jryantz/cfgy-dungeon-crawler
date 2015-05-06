@@ -9,7 +9,7 @@ var plaLvl = 0,
     plaMoney = 0,
     
     //[x, y]
-    plaCurrCell = [0, 0],
+    plaCurrCell = [3, 2],
     plaPrevCell = [0, 0],
     
     plaMaxInv = 0,
@@ -76,7 +76,21 @@ function plaLvlUp() {
 }
 
 //dir - take direction of movement
+//0 - up | 1 - down | 2 - left | 3 - right
 function plaMove(dir) {
     plaPrevCell = plaCurrCell;
     
+    if(dir == 0) {
+        plaCurrCell[0] -= 1;
+    } else if(dir == 1) {
+        plaCurrCell[0] += 1;
+    } else if(dir == 2) {
+        plaCurrCell[1] -= 1;
+    } else if(dir == 3) {
+        plaCurrCell[1] += 1;
+    } else {}
+    
+    canMove(plaCurrCell);
+
+    regenLvl();
 }

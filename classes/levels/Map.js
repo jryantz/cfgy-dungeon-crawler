@@ -140,7 +140,7 @@ function placeEntities() {
                 }
                 
                 //generates if there is an item
-                if((Math.floor(Math.random() * 6) + 1) > 3) {
+                if((Math.floor(Math.random() * 6) + 1) > 4) {
                     lvl[column][row][3] = 1;
                 } else {
                     lvl[column][row][3] = 0;
@@ -162,4 +162,55 @@ function placeEntities() {
             }
         }
     }
+}
+
+function canMove(currCell) {
+    current = currCell;
+    
+    current[0]--;
+    if(current[0] < 0 || current[0] > 4 || current[1] < 0 || current[1] > 4) {
+        document.getElementById('up').className = 'button key disabled';
+    } else {
+        if(lvl[current[0]][current[1]][0] == 1 && current[0] <= 4 && current[0] >= 0 && current[1] <= 4 && current[1] >= 0) {
+            document.getElementById('up').className = 'button key';
+        } else {
+            document.getElementById('up').className = 'button key disabled';
+        }
+    }
+
+    current[0] += 2;
+    if(current[0] < 0 || current[0] > 4 || current[1] < 0 || current[1] > 4) {
+        document.getElementById('do').className = 'button key disabled';
+    } else {
+        if(lvl[current[0]][current[1]][0] == 1 && current[0] <= 4 && current[0] >= 0 && current[1] <= 4 && current[1] >= 0) {
+            document.getElementById('do').className = 'button key';
+        } else {
+            document.getElementById('do').className = 'button key disabled';
+        }
+    }
+    
+    current[0]--;
+    current[1]--;
+    if(current[0] < 0 || current[0] > 4 || current[1] < 0 || current[1] > 4) {
+        document.getElementById('le').className = 'button key disabled';
+    } else {
+        if(lvl[current[0]][current[1]][0] == 1 && current[0] <= 4 && current[0] >= 0 && current[1] <= 4 && current[1] >= 0) {
+            document.getElementById('le').className = 'button key';
+        } else {
+            document.getElementById('le').className = 'button key disabled';
+        }
+    }
+    
+    current[1] += 2;
+    if(current[0] < 0 || current[0] > 4 || current[1] < 0 || current[1] > 4) {
+        document.getElementById('ri').className = 'button key disabled';
+    } else {
+        if(lvl[current[0]][current[1]][0] == 1 && current[0] <= 4 && current[0] >= 0 && current[1] <= 4 && current[1] >= 0) {
+            document.getElementById('ri').className = 'button key';
+        } else {
+            document.getElementById('ri').className = 'button key disabled';
+        }
+    }
+    
+    current[1]--;
 }
