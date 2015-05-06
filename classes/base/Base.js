@@ -1,5 +1,22 @@
-var baseLvl = 0,
+var baseActive = false; //if true - the player is in the base
+    baseLvl = 0,
     baseExt1 = false;
+
+function enterBase() {
+    baseActive = true;
+    createBase();
+    regenLvl();
+    flip('mainPane', 'basePane');
+    baseButtons();
+}
+
+function leaveBase() {
+    baseActive = false;
+    createLvl1();
+    regenLvl();
+    flip('mainPane', 'basePane');
+    defaultButtons();
+}
 
 function upgradeBase() {
     if(plaMoney >= 200) {

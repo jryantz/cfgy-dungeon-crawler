@@ -60,6 +60,17 @@ function makeLvl(whichLvl) {
 
 //first array collumn 0-4, second array row 0-4, third array (look at line 2 for what each index is)
 
+//creates base
+function createBase() {
+    resetLvl();
+    
+    lvl[1][2][0] = 1
+    
+    lvl[2][1][0] = 1
+    lvl[2][2][0] = 1
+    lvl[2][3][0] = 1
+}
+
 //creates level1 - julian's level
 function createLvl1() {
     resetLvl();
