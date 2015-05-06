@@ -36,13 +36,13 @@
             <div class="spec" id="spec">
                 Specialization
                 
-                <a href="#" onclick="baseSpec(1);" id="spec1" style="display:block;">Dagger Specialization</a>
-                <a href="#" onclick="baseSpec(2);" id="spec2" style="display:block;">Flail Specialization</a>
-                <a href="#" onclick="baseSpec(3);" id="spec3" style="display:block;">Pole Specialization</a>
-                <a href="#" onclick="baseSpec(4);" id="spec4" style="display:block;">Sword Specialization</a>
-                <a href="#" onclick="baseSpec(5);" id="spec5" style="display:block;">Bow Specialization</a>
-                <a href="#" onclick="baseSpec(6);" id="spec6" style="display:block;">Shield Specialization</a>
-                <a href="#" onclick="baseSpec(7);" id="spec7" style="display:block;">Armor Specialization</a>
+                <a href="#" onclick="baseSpec(1); setSpec('dagger');" id="spec1" style="display:block;">Dagger Specialization</a>
+                <a href="#" onclick="baseSpec(2); setSpec('flail');" id="spec2" style="display:block;">Flail Specialization</a>
+                <a href="#" onclick="baseSpec(3); setSpec('pole');" id="spec3" style="display:block;">Pole Specialization</a>
+                <a href="#" onclick="baseSpec(4); setSpec('sword');" id="spec4" style="display:block;">Sword Specialization</a>
+                <a href="#" onclick="baseSpec(5); setSpec('bow');" id="spec5" style="display:block;">Bow Specialization</a>
+                <a href="#" onclick="baseSpec(6); setSpec('shield');" id="spec6" style="display:block;">Shield Specialization</a>
+                <a href="#" onclick="baseSpec(7); setSpec('armor');" id="spec7" style="display:block;">Armor Specialization</a>
             </div>
         </div>
         
@@ -66,6 +66,7 @@
             <br><br>
             <a href="#" onclick="createLvl1(); regenLvl();">Map 1</a>
             <a href="#" onclick="createLvl2(); regenLvl();">Map 2</a>
+            
         </div>
         
         <div id="mapPane" class="mapPane"></div>
@@ -85,7 +86,7 @@
     <script src="classes/gui/Inventory.js" type="text/javascript"></script>
     <script src="classes/gui/Stats.js" type="text/javascript"></script>
     <script src="classes/gui/Map.js" type="text/javascript"></script>
-    <script src="classes/gui/Main.js" type="text/javascript"></script>
+    <script src="classes/gui/Base.js" type="text/javascript"></script>
     
     <script src="classes/player/Player.js" type="text/javascript"></script>
     
