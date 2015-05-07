@@ -3,6 +3,8 @@ var guiProvMap = lvl;
 function guiDecode(locX, locY) {
     if(guiProvMap[locX][locY][0] == 0) {
         return '<div class="cell" style="background-color:black; border-color:black;"></div>';
+    } else if(guiProvMap[locX][locY][0] == -1) {
+        return '<div class="cell" style="background-color:rgba(255,0,0,0.3); border-color:rgba(255,0,0,0.3);"></div>';
     } else {
         if(guiProvMap[locX][locY][1] == 1 || guiProvMap[locX][locY][1] == 2) {
             temp = '<div class="cell" style="background-color:green;">';

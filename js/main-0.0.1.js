@@ -8,6 +8,16 @@ function visibility(id) {
     }
 }
 
+function display(id) {
+    var element = document.getElementById(id);
+    
+    if(element.style.display == 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+
 function flip(idPrim, idSec) {
     var elementPrim = document.getElementById(idPrim);
     var elementSec = document.getElementById(idSec);

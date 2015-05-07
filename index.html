@@ -14,11 +14,13 @@
         <meta name="author" content="">
     </head>
     
-    <body>
+    <body id="body">
         <div id="loading" class="loading" style="visibility:visible;">
             <div class="loadingTitle">CFGY</div>
             <div class="loadingSub">loading...</div>
         </div>
+        
+        <div id="alertCont" style="display:none;"></div>
         
         <div id="statsPane" class="statsPane">
             <div id="stats" class="stats"></div>
@@ -64,6 +66,8 @@
             <br><br>
             <a href="#" onclick="makeLvl(1); regenLvl();">Map 1</a>
             <a href="#" onclick="makeLvl(2); regenLvl();">Map 2</a>
+            <br><br>
+            <a href="#" onclick="upgradeBase();">Upgrade Base</a>
         </div>
         
         <div id="mapPane" class="mapPane"></div>

@@ -82,11 +82,11 @@ function createBase() {
     plaCurrCell = [2, 2];
     plaPrevCell = [0, 0];
     
-    lvl[1][2][0] = 1
+    lvl[1][2][0] = 1;
     
-    lvl[2][1][0] = 1
-    lvl[2][2][0] = 1
-    lvl[2][3][0] = 1
+    lvl[2][1][0] = -1;
+    lvl[2][2][0] = 1;
+    lvl[2][3][0] = -1;
 }
 
 //creates level1 - julian's level

@@ -8,4 +8,5 @@ function defaultButtons() {
 function baseButtons() {
     document.getElementById('interactionPane').innerHTML = '<a href="#" class="debug" onclick="flip(\'mainPane\', \'debugPane\');"></a>';
     document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="leaveBase();">Leave Base</a>';
+    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="">Visit Merchant</a>';
 }

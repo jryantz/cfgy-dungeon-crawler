@@ -6,6 +6,9 @@ var baseActive = false; //if true - the player is in the base
 function enterBase() {
     baseActive = true;
     createBase();
+    if(baseLvl == 0) {
+        lvl[1][2][0] = -1;
+    }
     regenLvl();
     flip('mainPane', 'basePane');
     baseButtons();
@@ -23,11 +26,24 @@ function leaveBase() {
 
 function upgradeBase() {
     if(plaMoney >= 200) {
+        plaMoney -= 200;
+        refresh();
         baseLvl = 1;
         baseExt1 = true;
-        return "Congratulations, Your base has been expanded allowing a merchant to occupy the new area";
+        lvl[1][2][0] = 1;
+        regenLvl();
+        
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Congratulations, your base has been expanded allowing a merchant to occupy the new area.</div>';
+        setTimeout(function() {
+            display('alertCont');
+        }, 5000);
+        display('alertCont');
     } else {
-        return "Come back when you have sufficient coins.";
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Come back when you have sufficient coins.</div>';
+        setTimeout(function() {
+            display('alertCont');
+        }, 5000);
+        display('alertCont');
     }
 }
 
