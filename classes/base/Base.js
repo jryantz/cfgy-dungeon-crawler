@@ -35,84 +35,78 @@ function upgradeBase() {
 // which is tier 2
 
 function createMerchant() {
-    
-}switch(merchantSpec) {
+    switch(merchantSpec) {
         case 'dagger':
             merchantInv.push(tier2item(1));
-            for(int x = 1; x > 7; x++){
-                if(x = 1){
-                    //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 1) {
+                    //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'flail': 
             merchantInv.push(tier2item(2));
-            for(int x = 1; x > 7; x++){
+            for(x = 1; x > 7; x++) {
                 if(x = 2){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'pole': 
             merchantInv.push(tier2item(3));
-            for(int x = 1; x > 7; x++){
-                if(x = 3){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 3) {
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'sword':
             merchantInv.push(tier2item(4));
-            for(int x = 1; x > 7; x++){
-                if(x = 4){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 4) {
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'bow':
             merchantInv.push(tier2item(5));
-            for(int x = 1; x > 7; x++){
-                if(x = 5){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 5) {
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'shield':
             merchantInv.push(tier2item(6));
-            for(int x = 1; x > 7; x++){
-                if(x = 6){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 6) {
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'armor':
             merchantInv.push(tier2item(7));
-            for(int x = 1; x > 7; x++){
-                if(x = 7){
-                     //nothing!
-                }
-                else{
-                merchantInv.push(tier1Item(x));
+            for(x = 1; x > 7; x++) {
+                if(x = 7) {
+                     //nothing
+                } else {
+                    merchantInv.push(tier1Item(x));
                 }
             }
             break;
         default:
             return null;
+    }
+}
