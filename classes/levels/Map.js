@@ -1,8 +1,8 @@
 //map index 0 = 1st column, 1 = 2nd column, 2 = 3rd column, 3 = 4th column, 4 = 5th column
 // = each column = 5x[ability to enter,is an exit(1 to previous,2 to nextlvl), enemy in cell,item in cell, array of enemy and item ids?]
 var currentLvl = 1,
-	nextLvl = currentLvl + 1,
-	prevLvl = currentLvl - 1,
+	nextLvl = 2,
+	prevLvl = 0,
     lvl = [[[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
@@ -19,17 +19,18 @@ function resetLvl() {
 }
 
 //checks to see if the cell has an exit and whether the exit goes to the next or previous levels
-/*
-function checkExit(PlaCurrCell) {
-var x = plaCurrCell [0],
-	y = plaCurrCell [1];
+function checkExit(cell) {
+    x = cell[0];
+	y = cell[1];
+    
+    plaPrevCell = [0, 0];
     
 	if(lvl[x][y][1] > 0) {
 		if(lvl[x][y][1] == 1) {
             makeLvl(prevLvl);
 		} else if(lvl[x][y][1] == 2) {
             makeLvl(nextLvl);
-		}
+		} else {}
 	}
 
 }
@@ -39,30 +40,53 @@ function makeLvl(whichLvl) {
 	switch(whichLvl) {
         case 5:
             createLvl5();
+            currentLvl = 5;
+            nextLvl = 6;
+            prevLvl = 4;
+            console.log('5');
             break;
         case 4:
             createLvl4();
+            currentLvl = 4;
+            nextLvl = 5;
+            prevLvl = 3;
+            console.log('4');
             break;
         case 3:
             createLvl3();
+            currentLvl = 3;
+            nextLvl = 4;
+            prevLvl = 2;
+            console.log('3');
             break;
         case 2:
             createLvl2();
+            currentLvl = 2;
+            nextLvl = 3;
+            prevLvl = 1;
+            console.log('2');
             break;
         case 1:
             createLvl1();
+            currentLvl = 1;
+            nextLvl = 2;
+            prevLvl = 0;
+            console.log('1');
             break;
-        default: 
+        default:
+            console.log('x');
             break;
 	}
 }
-*/
 
 //first array collumn 0-4, second array row 0-4, third array (look at line 2 for what each index is)
 
 //creates base
+//entrance 2,2
 function createBase() {
     resetLvl();
+    plaCurrCell = [2, 2];
+    plaPrevCell = [0, 0];
     
     lvl[1][2][0] = 1
     
@@ -72,6 +96,8 @@ function createBase() {
 }
 
 //creates level1 - julian's level
+//entrance 1,2
+//exit 4,2
 function createLvl1() {
     resetLvl();
     
@@ -89,12 +115,14 @@ function createLvl1() {
     
     lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;
-    lvl[4][2][1] = 1;
+    lvl[4][2][1] = 2;
     
 	placeEntities();
 }
 
 //creates level2 - jon's level
+//entrance 4,2
+//exit 3,4
 function createLvl2() {
     resetLvl();
     
@@ -115,7 +143,7 @@ function createLvl2() {
     lvl[3][1][0] = 1;
     lvl[3][2][0] = 1;
     lvl[3][4][0] = 1;
-    lvl[3][4][1] = 1;
+    lvl[3][4][1] = 2;
     
     lvl[4][0][0] = 1;
     lvl[4][2][0] = 1;

@@ -9,7 +9,7 @@ var plaLvl = 0,
     plaMoney = 0,
     
     //[x, y]
-    plaCurrCell = [3, 2],
+    plaCurrCell = [0, 0],
     plaPrevCell = [0, 0],
     
     plaMaxInv = 0,
@@ -91,6 +91,7 @@ function plaMove(dir) {
     } else {}
     
     canMove(plaCurrCell);
+    checkExit(plaCurrCell);
 
     regenLvl();
 }

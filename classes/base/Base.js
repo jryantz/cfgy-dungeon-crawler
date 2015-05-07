@@ -14,7 +14,8 @@ function enterBase() {
 
 function leaveBase() {
     baseActive = false;
-    createLvl1();
+    makeLvl(1);
+    plaCurrCell = [1, 2];
     regenLvl();
     flip('mainPane', 'basePane');
     defaultButtons();

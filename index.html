@@ -62,8 +62,8 @@
             <a href="#" onclick="plaXp += 50; plaLvlUp(); refresh();">Add 50XP</a>
             <a href="#" onclick="plaXp += 100; plaLvlUp(); refresh();">Add 100XP</a>
             <br><br>
-            <a href="#" onclick="createLvl1(); regenLvl();">Map 1</a>
-            <a href="#" onclick="createLvl2(); regenLvl();">Map 2</a>
+            <a href="#" onclick="makeLvl(1); regenLvl();">Map 1</a>
+            <a href="#" onclick="makeLvl(2); regenLvl();">Map 2</a>
         </div>
         
         <div id="mapPane" class="mapPane"></div>
@@ -91,7 +91,8 @@
         plaConstruct();
         refresh();
         
-        createLvl1();
+        makeLvl(1);
+        plaCurrCell = [1, 2];
         regenLvl();
         
         defaultButtons();
