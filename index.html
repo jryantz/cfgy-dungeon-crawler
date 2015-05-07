@@ -34,13 +34,13 @@
             <div class="spec" id="spec">
                 Specialization
                 
-                <a href="#" onclick="baseSpec(1); setSpec('dagger');" id="spec1" style="display:block;">Dagger Specialization</a>
-                <a href="#" onclick="baseSpec(2); setSpec('flail');" id="spec2" style="display:block;">Flail Specialization</a>
-                <a href="#" onclick="baseSpec(3); setSpec('pole');" id="spec3" style="display:block;">Pole Specialization</a>
-                <a href="#" onclick="baseSpec(4); setSpec('sword');" id="spec4" style="display:block;">Sword Specialization</a>
-                <a href="#" onclick="baseSpec(5); setSpec('bow');" id="spec5" style="display:block;">Bow Specialization</a>
-                <a href="#" onclick="baseSpec(6); setSpec('shield');" id="spec6" style="display:block;">Shield Specialization</a>
-                <a href="#" onclick="baseSpec(7); setSpec('armor');" id="spec7" style="display:block;">Armor Specialization</a>
+                <a href="#" onclick="baseSpec(1); setSpec('dagger'); createMerchant();" id="spec1" style="display:block;">Dagger Specialization</a>
+                <a href="#" onclick="baseSpec(2); setSpec('flail'); createMerchant();" id="spec2" style="display:block;">Flail Specialization</a>
+                <a href="#" onclick="baseSpec(3); setSpec('pole'); createMerchant();" id="spec3" style="display:block;">Pole Specialization</a>
+                <a href="#" onclick="baseSpec(4); setSpec('sword'); createMerchant();" id="spec4" style="display:block;">Sword Specialization</a>
+                <a href="#" onclick="baseSpec(5); setSpec('bow'); createMerchant();" id="spec5" style="display:block;">Bow Specialization</a>
+                <a href="#" onclick="baseSpec(6); setSpec('shield'); createMerchant();" id="spec6" style="display:block;">Shield Specialization</a>
+                <a href="#" onclick="baseSpec(7); setSpec('armor'); createMerchant();" id="spec7" style="display:block;">Armor Specialization</a>
             </div>
         </div>
         
@@ -86,6 +86,8 @@
     <script src="classes/player/Player.js" type="text/javascript"></script>
     
     <script src="classes/base/Base.js" type="text/javascript"></script>
+    
+    <script src="classes/items/Item.js" type="text/javascript"></script>
     
     <script type="text/javascript">    
         plaConstruct();

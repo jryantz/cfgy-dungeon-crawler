@@ -31,11 +31,11 @@ var tier3Bow = ["Recurve Bow", 5, false, "Dodge Chance", 17];
 var tier4Bow = ["Compund Bow", 7, false,  "Dodge Chance", 19];
 var tier5Bow = ["Nights Gaze", 10, false, "Dodge Chance", 21];
 // Name, Special Stat Name, Dodge Chance
-var tier1shield = ["Battered Shield", "Health Bonus", 15];
-var tier2shield = ["Roman Shield", "Health Bonus", 60];
-var tier3shield = ["Spiked Shield", 2, "Health Bonus", 35];
-var tier4shield = ["Molten Shield", 3, "Health Bonus", 45];
-var tier5shield = ["Gaias Crest Shield", 4, "Health Bonus", 100];
+var tier1Shield = ["Battered Shield", "Health Bonus", 15];
+var tier2Shield = ["Roman Shield", "Health Bonus", 60];
+var tier3Shield = ["Spiked Shield", 2, "Health Bonus", 35];
+var tier4Shield = ["Molten Shield", 3, "Health Bonus", 45];
+var tier5Shield = ["Gaias Crest Shield", 4, "Health Bonus", 100];
 // Name, Special Stat Name, Defense Bonus
 var tier1Armor = ["Torn Leather Armor", "Defense", 2];
 var tier2Armor = ["Studded Leather Armor", "Defense", 3];
@@ -59,13 +59,13 @@ function randomItemTier1() {
             return tier1Pole;
             break;
         case 4:
-            return tier1sword;
+            return tier1Sword;
             break;
         case 5:
             return tier1Bow;
             break;
         case 6:
-            return tier1shield;
+            return tier1Shield;
             break;
         case 7:
             return tier1Armor;
@@ -88,13 +88,13 @@ function randomItemTier2() {
             return tier2Pole;
             break;
         case 4:
-            return tier2sword;
+            return tier2Sword;
             break;
         case 5:
             return tier2Bow;
             break;
         case 6:
-            return tier2shield;
+            return tier2Shield;
             break;
         case 7:
             return tier2Armor;
@@ -117,13 +117,13 @@ function randomItemTier3() {
             return tier3Pole;
             break;
         case 4:
-            return tier3sword;
+            return tier3Sword;
             break;
         case 5:
             return tier3Bow;
             break;
         case 6:
-            return tier3shield;
+            return tier3Shield;
             break;
         case 7:
             return tier3Armor;
@@ -146,13 +146,13 @@ function randomItemTier4() {
             return tier4Pole;
             break;
         case 4:
-            return tier4sword;
+            return tier4Sword;
             break;
         case 5:
             return tier4Bow;
             break;
         case 6:
-            return tier4shield;
+            return tier4Shield;
             break;
         case 7:
             return tier4Armor;
@@ -175,13 +175,13 @@ function randomItemTier5() {
             return tier5Pole;
             break;
         case 4:
-            return tier5sword;
+            return tier5Sword;
             break;
         case 5:
             return tier5Bow;
             break;
         case 6:
-            return tier5shield;
+            return tier5Shield;
             break;
         case 7:
             return tier5Armor;
@@ -207,13 +207,13 @@ function tier1Item(x) {
             return tier1Pole;
             break;
         case 4:
-            return tier1sword;
+            return tier1Sword;
             break;
         case 5:
             return tier1Bow;
             break;
         case 6:
-            return tier1shield;
+            return tier1Shield;
             break;
         case 7:
             return tier1Armor;
@@ -235,13 +235,13 @@ function tier2Item(x) {
             return tier2Pole;
             break;
         case 4:
-            return tier2sword;
+            return tier2Sword;
             break;
         case 5:
             return tier2Bow;
             break;
         case 6:
-            return tier2shield;
+            return tier2Shield;
             break;
         case 7:
             return tier2Armor;
@@ -263,13 +263,13 @@ function tier3Item(x) {
             return tier3Pole;
             break;
         case 4:
-            return tier3sword;
+            return tier3Sword;
             break;
         case 5:
             return tier3Bow;
             break;
         case 6:
-            return tier3shield;
+            return tier3Shield;
             break;
         case 7:
             return tier3Armor;
@@ -291,13 +291,13 @@ function tier4Item(x) {
             return tier4Pole;
             break;
         case 4:
-            return tier4sword;
+            return tier4Sword;
             break;
         case 5:
             return tier4Bow;
             break;
         case 6:
-            return tier4shield;
+            return tier4Shield;
             break;
         case 7:
             return tier4Armor;
@@ -319,13 +319,13 @@ function tier5Item(x) {
             return tier5Pole;
             break;
         case 4:
-            return tier5sword;
+            return tier5Sword;
             break;
         case 5:
             return tier5Bow;
             break;
         case 6:
-            return tier5shield;
+            return tier5Shield;
             break;
         case 7:
             return tier5Armor;

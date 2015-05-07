@@ -1,8 +1,7 @@
 var baseActive = false; //if true - the player is in the base
     baseLvl = 0;
     baseExt1 = false;
-    merchantSpec = getSpec();
-    MerchantInv = [];
+    merchantInv = [];
 
 function enterBase() {
     baseActive = true;
@@ -19,6 +18,7 @@ function leaveBase() {
     regenLvl();
     flip('mainPane', 'basePane');
     defaultButtons();
+    canMove(plaCurrCell);
 }
 
 function upgradeBase() {
@@ -33,74 +33,66 @@ function upgradeBase() {
 
 //creates a merchant with weapons available of tier 1 for every item except for their chosen specialization
 // which is tier 2
-
 function createMerchant() {
-    switch(merchantSpec) {
+    switch(getSpec()) {
         case 'dagger':
-            merchantInv.push(tier2item(1));
-            for(x = 1; x > 7; x++) {
-                if(x = 1) {
-                    //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 1) {
+                    merchantInv.push(tier2Item(1));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'flail': 
-            merchantInv.push(tier2item(2));
-            for(x = 1; x > 7; x++) {
-                if(x = 2){
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 2){
+                    merchantInv.push(tier2Item(2));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'pole': 
-            merchantInv.push(tier2item(3));
-            for(x = 1; x > 7; x++) {
-                if(x = 3) {
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 3) {
+                    merchantInv.push(tier2Item(3));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'sword':
-            merchantInv.push(tier2item(4));
-            for(x = 1; x > 7; x++) {
-                if(x = 4) {
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 4) {
+                    merchantInv.push(tier2Item(4));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'bow':
-            merchantInv.push(tier2item(5));
-            for(x = 1; x > 7; x++) {
-                if(x = 5) {
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 5) {
+                    merchantInv.push(tier2Item(5));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'shield':
-            merchantInv.push(tier2item(6));
-            for(x = 1; x > 7; x++) {
-                if(x = 6) {
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 6) {
+                    merchantInv.push(tier2Item(6));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }
             }
             break;
         case 'armor':
-            merchantInv.push(tier2item(7));
-            for(x = 1; x > 7; x++) {
-                if(x = 7) {
-                     //nothing
+            for(x = 1; x < 8; x++) {
+                if(x == 7) {
+                    merchantInv.push(tier2Item(7));
                 } else {
                     merchantInv.push(tier1Item(x));
                 }

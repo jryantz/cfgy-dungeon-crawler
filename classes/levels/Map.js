@@ -43,38 +43,32 @@ function makeLvl(whichLvl) {
             currentLvl = 5;
             nextLvl = 6;
             prevLvl = 4;
-            console.log('5');
             break;
         case 4:
             createLvl4();
             currentLvl = 4;
             nextLvl = 5;
             prevLvl = 3;
-            console.log('4');
             break;
         case 3:
             createLvl3();
             currentLvl = 3;
             nextLvl = 4;
             prevLvl = 2;
-            console.log('3');
             break;
         case 2:
             createLvl2();
             currentLvl = 2;
             nextLvl = 3;
             prevLvl = 1;
-            console.log('2');
             break;
         case 1:
             createLvl1();
             currentLvl = 1;
             nextLvl = 2;
             prevLvl = 0;
-            console.log('1');
             break;
         default:
-            console.log('x');
             break;
 	}
 }
