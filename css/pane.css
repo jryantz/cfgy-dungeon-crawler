@@ -9,7 +9,7 @@
     position:relative;
     display:block;
     color:black;
-    background:rgba(255,255,255,0.4);
+    background:rgba(255,255,255,0.6);
     border:1px solid black;
     box-shadow:inset 0px 0px 8px rgba(0,0,0,0.5);
     padding:10px;
@@ -121,6 +121,39 @@
     margin-bottom:12px;
     overflow-x:hidden;
     overflow-y:auto;
+}
+
+.mainPane {
+    padding:30px;
+    width:calc(75% - 68px);
+    height:calc(70% - 66px);
+}
+
+.mainPane div {
+    float:none;
+    padding:3px;
+    font-weight:500;
+}
+
+.mainPane div.generic {
+    color:black;
+}
+
+.mainPane div.special {
+    font-style:italic;
+    color:dimgray;
+}
+
+.mainPane div.combat {
+    color:crimson;
+}
+
+.mainPane div.item {
+    color:dodgerblue;
+}
+
+.mainPane div.npc {
+    color:mediumpurple;
 }
 
 .basePane .spec {
@@ -238,6 +271,11 @@
     height:16px;
     width:16px;
     float:right;
+}
+
+.interactionPane div.enemySec {
+    width:25%;
+    float:left;
 }
 
 .mapPane {

@@ -3,111 +3,190 @@
 
 var ticker = false, //if ticker = true, then it is the player's turn. If ticker = false then it is the enemy's turn
     endCondition = false, //end condition switches to true if either the player runs out of health, the enemy runs out of health, or if the player runs away
-    playerRoll = 0,
-    playerDecision = true, //true means the player is going to attack, false means the player is running away. The GUI will need to pass whatever the user inputs to here.
+    plaRoll = 0,
+    plaDecision = true, //true means the player is going to attack, false means the player is running away. The GUI will need to pass whatever the user inputs to here.
     eneRoll = 0,
-    playerHits = false,
-    enemyHits = false;
+    plaHits = false,
+    eneHits = false,
+    plaDamage = 0,
+    eneDamage = 0,
+    round = 1,
+    roundSet = 0;
 
 
-function startCombat() {
-    //deciding who goes first
-    playerRoll = Math.floor((Math.random() * 20) + 1 +  Math.floor((plaAgi - 10) / 2));
-    eneRoll = Math.floor((Math.random() * 20) +  Math.floor((eneAgi - 10) / 2));
-    if(playerRoll >= eneRoll) {
-        ticker = true;
+function startCombat(enemy) {
+    if(plaWeapon[0] == 0 || plaWeapon[1] == null) {
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Please select your weapon.</div>';
+        setTimeout(function() {
+            display('alertCont');
+        }, 2500);
+        display('alertCont');
     } else {
-        ticker = false;
-    }
-    
-    //initiating combat
-    while(endCondition === false) {
-        //player's turn
-        if(ticker === true) {
-            //This runs if the palyer decides to attack 
-            if(playerDecision === true) {
-                //This if statement runs if the weapon is Strength based
-                if(plaWeapon[2] === true) {
-                    playerRoll = Math.floor((Math.random() * 20)) +  Math.floor((plaStr - 10) / 2);
-                    //This runs if the player hits
-                    if(playerRoll >= eneDef) {
-                        playerHits = true;
-                        eneHealth = eneHealth - (plaWeapon[1] + Math.floor((plaStr - 10) / 2));
-                    } else {
-                        //This runs if the player does not hit
-                        playerHits = false;
-                    }
-                }
-                
-                //This if statement runs if the weapon is Agility based
-                if(plaWeapon[2] === false) {
-                    playerRoll = Math.floor((Math.random() * 20)) +  Math.floor((plaAgi - 10) / 2);
-                    //This runs if the player hits
-                    if(playerRoll >= eneDef) {
-                        playerHits = true;
-                        eneHealth = eneHealth - (plaWeapon[1] + Math.floor((plaAgi - 10) / 2));
-                    } else {
-                        //This runs if the player does not hit
-                        playerHits = false;
-                    }
-                }
-            } else {
-                //this would execute if the player chose to run away
-                
-                playerRoll = Math.floor((Math.random() * 20) + 1 +  Math.floor((plaAgi - 10) / 2));
-                eneRoll = Math.floor((Math.random() * 20) +  Math.floor((eneAgi - 10) / 2));
-                if(playerRoll >= eneRoll) {
-                    break; //ends combat
-                } else {
-                    //some sort of statement is outputed to the user saying they failed to run away
-                }
-            }
-        }//end of player turn
+        //set the players defense
+        setDefense();
         
-        //enemy's turn
-        if(ticker === false) {
-            //This if statement runs if the weapon is Strength based
-            if(eneWeap[2] === true) {
-                eneRoll = Math.floor((Math.random() * 20)) +  Math.floor((eneStr - 10) / 2);
-                //This runs if the enemy hits
-                if(eneRoll >= plaDefense) {
-                    enemyHits = true;
-                    plaHealth = plaHealth - (eneWeap[1] + Math.floor((eneStr - 10) / 2));
-                } else {
-                    //This runs if the enemy does not hit
-                    enemyHits = false;
-                }
+        //deciding who goes first
+        plaRoll = Math.floor((Math.random() * 20) + 1 +  Math.floor((plaAgi - 10) / 2));
+        eneRoll = Math.floor((Math.random() * 20) +  Math.floor((enemies[enemy][7] - 10) / 2));
+        if(plaRoll >= eneRoll) {
+            ticker = true;
+        } else {
+            ticker = false;
+        }
+
+        //initiating combat
+        while(endCondition === false) {
+            
+            if(round == 1 || roundSet > 1) {
+                addMain('--------------------', 'generic');
+                addMain('Round ' + round + ' - FIGHT!', 'item');
+                showMain();
+                round += 1;
+                roundSet = 0;
             }
             
-            //This if statement runs if the weapon is Agility based
-            if(plaWeapon[2] === false) {
-                eneRoll = Math.floor((Math.random() * 20)) +  Math.floor((eneAgi - 10) / 2);
-                //This runs if the enemy hits
-                if(eneRoll >= plaDefense) {
-                    enemyHits = true;
-                    plaHealth = plaHealth - (eneWeap[1] + Math.floor((eneAgi - 10) / 2));
+            //player's turn
+            if(ticker === true) {
+                roundSet += 1;
+                //This runs if the palyer decides to attack 
+                if(plaDecision === true) {
+                    //This if statement runs if the weapon is Strength based
+                    if(plaWeapon[1] === 'Strength') {
+                        plaRoll = Math.floor((Math.random() * 20)) +  Math.floor((plaStr - 10) / 2);
+                        //This runs if the player hits
+                        if(plaRoll >= enemies[enemy][8]) {
+                            plaHits = true;
+                            eneDamage = plaWeapon[0] + Math.floor((plaStr - 10) / 2) + Math.round((Math.random() * 3));
+                            enemies[enemy][4] -= eneDamage;
+                        } else {
+                            //This runs if the player does not hit
+                            plaHits = false;
+                        }
+                    }
+
+                    //This if statement runs if the weapon is Agility based
+                    if(plaWeapon[1] === 'Agility') {
+                        plaRoll = Math.floor((Math.random() * 20)) +  Math.floor((plaAgi - 10) / 2);
+                        //This runs if the player hits
+                        if(plaRoll >= enemies[enemy][8]) {
+                            plaHits = true;
+                            eneDamage = plaWeapon[0] + Math.floor((plaStr - 10) / 2) + Math.round((Math.random() * 3));
+                            enemies[enemy][4] -= eneDamage;
+                        } else {
+                            //This runs if the player does not hit
+                            plaHits = false;
+                        }
+                    }
                 } else {
-                    //This runs if the enemy does not hit
-                    enemyHits = false;
+                    //this would execute if the player chose to run away
+
+                    plaRoll = Math.floor((Math.random() * 20) + 1 +  Math.floor((plaAgi - 10) / 2));
+                    eneRoll = Math.floor((Math.random() * 20) +  Math.floor((enemies[enemy][7] - 10) / 2));
+                    if(plaRoll >= eneRoll) {
+                        break; //ends combat
+                    } else {
+                        //some sort of statement is outputed to the user saying they failed to run away
+                    }
                 }
-            }   
-        }//end of enemy turn
+                addMain('You dealt ' + eneDamage + ' damage.', 'combat');
+                showMain();
+            }//end of player turn
+
+            //enemy's turn
+            if(ticker === false) {
+                roundSet += 1;
+                //This if statement runs if the weapon is Strength based
+                if(enemies[enemy][10][3] === 'Strength') {
+                    eneRoll = Math.floor((Math.random() * 20)) +  Math.floor((enemies[enemy][5] - 10) / 2);
+                    //This runs if the enemy hits
+                    if(eneRoll >= plaDefense) {
+                        eneHits = true;
+                        plaDamage = enemies[enemy][10][2] + Math.floor((enemies[enemy][5] - 10) / 2) + Math.round((Math.random() * 3));
+                        plaHealth -= plaDamage;
+                    } else {
+                        //This runs if the enemy does not hit
+                        eneHits = false;
+                    }
+                }
+
+                //This if statement runs if the weapon is Agility based
+                if(enemies[enemy][10][3] === 'Agility') {
+                    eneRoll = Math.floor((Math.random() * 20)) +  Math.floor((enemies[enemy][7] - 10) / 2);
+                    //This runs if the enemy hits
+                    if(eneRoll >= plaDefense) {
+                        eneHits = true;
+                        plaDamage = enemies[enemy][10][2] + Math.floor((enemies[enemy][5] - 10) / 2) + Math.round((Math.random() * 3));
+                        plaHealth -= plaDamage;
+                    } else {
+                        //This runs if the enemy does not hit
+                        eneHits = false;
+                    }
+                }
+                addMain('Enemy dealt ' + plaDamage + ' damage.', 'combat');
+                showMain();
+            }//end of enemy turn
+
+            if(enemies[enemy][4] <= 0 || plaHealth <= 0) {
+                if(enemies[enemy][4] <= 0) {
+                    addMain('--------------------', 'generic');
+                    addMain('You win!', 'npc');
+                    showMain();
+                    
+                    lvl[plaCurrCell[0]][plaCurrCell[1]][2] = 0;
+                    lvl[plaCurrCell[0]][plaCurrCell[1]][4][0] = null;
+                    
+                    refresh();
+                    regenLvl();
+                    
+                    defaultButtons();
+                    canMove(plaCurrCell);
+                } else {
+                    plaHealth = 0;
+                    plaXp = 0;
+                    refresh();
+                    addMain('You died.', 'npc');
+                    showMain();
+                    blank();
+                    setTimeout(function() {
+                        addMain('You died, you were sent back to your base and revived.  Better luck next time.', 'special');
+                        showMain();
+                        enterBase();
+                    }, 4000);
+                }
+                endCondition = true;
+                break;
+            } else {
+                plaDamage = 0;
+                eneDamage = 0;
+                ticker = !ticker;
+            }
+        }//end of while loop
         
-        if(eneHealth <= 0 || plaHealth <= 0) {
-            endCondition = true;
-            break;
+        combatDefaults();
+
+        //After the fight
+        if(plaHealth > 0) {
+            plaMoney = plaMoney + enemies[enemy][9];
+            plaXp = plaXp + enemies[enemy][3];
+            refresh();
+            plaLvlUp();
+            refresh();
         } else {
-            ticker = !ticker;
+            //insert some sort of end condition here. GUI probably provides a game over screen or they're teleported back to the Base
         }
-    }//end of while loop
-    
-    //After the fight
-    if(plaHealth > 0) {
-        plaMoney = plaMoney + eneMoney;
-        plaXp = plaXp + eneXp;
-    } else {
-        //insert some sort of end condition here. GUI probably provides a game over screen or they're teleported back to the Base
     }
-    
-    
+}
+
+function combatDefaults() {
+    ticker = false;
+    endCondition = false;
+    plaRoll = 0;
+    plaDecision = true;
+    eneRoll = 0;
+    plaHits = false;
+    eneHits = false;
+    plaDamage = 0;
+    eneDamage = 0;
+    round = 1;
+    roundSet = 0;
 }

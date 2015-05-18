@@ -1,77 +1,87 @@
 //each weapon is saved as an array with "stats" stored in it
 //unlabeled indexes are damage
-//the dodge chance for the bows is zero according to the document so i will put in values of my own for now //feel free to change these values as you see fit. I have done the same for the boss dependant weapons so //feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
+//the dodge chance for the bows is zero according to the document so i will put in values of my own for now 
+//feel free to change these values as you see fit. I have done the same for the boss dependant weapons so 
+//feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
 
-//Name, Damage, Stat Identifier
-//Stat Idenfitifer meaning: True = Strength, False = Agility
-var tier1Dagger = ["Sharpened Stick", 1, false];
-var tier2Dagger = ["Rusted Dagger", 3, false];
-var tier3Dagger = ["Steel Dagger", 5, false];
-var tier4Dagger = ["Sacrificial Dagger", 7, false];
-var tier5Dagger = ["Shard of Asteria", 10, false];
-var tier1Flail = ["Stick with Rock", 1, true];
-var tier2Flail = ["Worn Flail", 4, true];
-var tier3Flail = ["Iron Flail", 6, true];
-var tier4Flail = ["Sacrifial Flail", 9, true];
-var tier5Flail = ["Another Fucking Flail", 12, true];
-var tier1Pole = ["Tree Branch",  4, true];
-var tier2Pole = ["Stone Spear", 6, true];
-var tier3Pole = ["Trident", 9, true];
-var tier4Pole = ["Scythe", 11, true];
-var tier5Pole = ["Astraeus's Splintered Staff", 14, true];
-var tier1Sword = ["2x4", 2, true];
-var tier2Sword = ["Bronze Sword", 4, true];
-var tier3Sword = ["Katana", 6, true];
-var tier4Sword = ["Macuahuitl", 8, true]; //changed to the actual name of the weapon
-var tier5Sword = ["Blade of Olymbros", 11, true];
-// Name, Damage, Stat Identifier, Special Stat Name, Dodge Chance, 
-var tier1Bow = ["Short Bow", 1, false, "Dodge Chance", 15];
-var tier2Bow = ["Long Bow", 3, false, "Dodge Chance", 15];
-var tier3Bow = ["Recurve Bow", 5, false, "Dodge Chance", 17];
-var tier4Bow = ["Compund Bow", 7, false,  "Dodge Chance", 19];
-var tier5Bow = ["Nights Gaze", 10, false, "Dodge Chance", 21];
-// Name, Special Stat Name, Dodge Chance
-var tier1Shield = ["Battered Shield", "Health Bonus", 15];
-var tier2Shield = ["Roman Shield", "Health Bonus", 60];
-var tier3Shield = ["Spiked Shield", 2, "Health Bonus", 35];
-var tier4Shield = ["Molten Shield", 3, "Health Bonus", 45];
-var tier5Shield = ["Gaias Crest Shield", 4, "Health Bonus", 100];
-// Name, Special Stat Name, Defense Bonus
-var tier1Armor = ["Torn Leather Armor", "Defense", 2];
-var tier2Armor = ["Studded Leather Armor", "Defense", 3];
-var tier3Armor = ["Chain Vest", "Defense", 4];
-var tier4Armor = ["pyrium suit", 5];
-var tier5Armor = ["Armor of the Ancients", 6];
+//id, name, damage, stat name, stat value
+//dagger
+var i0 = [0, 'Sharpened Stick', 3, 'Agility', null],
+    i1 = [1, 'Rusted Dagger', 5, 'Agility', null],
+    i2 = [2, 'Steel Dagger', 7, 'Agility', null],
+    i3 = [3, 'Sacrificial Dagger', 9, 'Agility', null],
+    i4 = [4, 'Shard of Asteria', 12, 'Agility', null];
+    
+//flail
+var i5 = [5, 'Stick with Rock', 2, 'Strength', null],
+    i6 = [6, 'Worn Flail', 6, 'Strength', null],
+    i7 = [7, 'Iron Flail', 8, 'Strength', null],
+    i8 = [8, 'Sacrifial Flail', 11, 'Strength', null],
+    i9 = [9, 'Another Fucking Flail', 14, 'Strength', null];
+
+//pole weapon
+var i10 = [10, 'Tree Branch',  5, 'Strength', null],
+    i11 = [11, 'Stone Spear', 8, 'Strength', null],
+    i12 = [12, 'Trident', 11, 'Strength', null],
+    i13 = [13, 'Scythe', 13, 'Strength', null],
+    i14 = [14, 'Astraeus\'s Splintered Staff', 16, 'Strength', null];
+
+//sword
+var i15 = [15, '2x4', 5, 'Strength', null],
+    i16 = [16, 'Bronze Sword', 6, 'Strength', null],
+    i17 = [17, 'Katana', 8, 'Strength', null],
+    i18 = [18, 'Macuahuitl', 10, 'Strength', null],
+    i19 = [19, 'Blade of Olymbros', 13, 'Strength', null];
+
+//bow
+var i20 = [20, 'Short Bow', 3, 'Dodge Chance', 15],
+    i21 = [21, 'Long Bow', 5, 'Dodge Chance', 15],
+    i22 = [22, 'Recurve Bow', 7, 'Dodge Chance', 17],
+    i23 = [23, 'Compund Bow', 9, 'Dodge Chance', 19],
+    i24 = [24, 'Nights Gaze', 12, 'Dodge Chance', 21];
+
+//shield
+var i25 = [25, 'Battered Shield', 0, 'Health Bonus', 15],
+    i26 = [26, 'Roman Shield', 0, 'Health Bonus', 60],
+    i27 = [27, 'Spiked Shield', 4, 'Health Bonus', 35],
+    i28 = [28, 'Molten Shield', 5, 'Health Bonus', 45],
+    i29 = [29, 'Gaias Crest Shield', 6, 'Health Bonus', 100];
+
+//armor
+var i30 = [30, 'Torn Leather Armor', 0, 'Defense', 2],
+    i31 = [31, 'Studded Leather Armor', 0, 'Defense', 3],
+    i32 = [32, 'Chain Vest', 0, 'Defense', 4],
+    i33 = [33, 'Pyrium Suit', 0, 'Defense', 5],
+    i34 = [34, 'Armor of the Ancients', 0, 'Defense', 6];
 
 
 //these functions provide a random item of a certain tier
-
 function randomItemTier1() {
     var choice = Math.round((Math.random() * 6) + 1);
     switch(choice) {
         case 1:
-            return tier1Dagger;
+            return i0;
             break;
         case 2: 
-            return tier1Flail;
+            return i5;
             break;
         case 3: 
-            return tier1Pole;
+            return i10;
             break;
         case 4:
-            return tier1Sword;
+            return i15;
             break;
         case 5:
-            return tier1Bow;
+            return i20;
             break;
         case 6:
-            return tier1Shield;
+            return i25;
             break;
         case 7:
-            return tier1Armor;
+            return i30;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 } 
 
@@ -79,28 +89,28 @@ function randomItemTier2() {
     var choice = Math.round((Math.random() * 6) + 1);
     switch(choice) {
         case 1:
-            return tier2Dagger;
+            return i1;
             break;
         case 2: 
-            return tier2Flail;
+            return i6;
             break;
         case 3: 
-            return tier2Pole;
+            return i11;
             break;
         case 4:
-            return tier2Sword;
+            return i16;
             break;
         case 5:
-            return tier2Bow;
+            return i21;
             break;
         case 6:
-            return tier2Shield;
+            return i26;
             break;
         case 7:
-            return tier2Armor;
+            return i31;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 } 
 
@@ -108,28 +118,28 @@ function randomItemTier3() {
     var choice = Math.round((Math.random() * 6) + 1);
     switch(choice) {
         case 1:
-            return tier3Dagger;
+            return i2;
             break;
         case 2: 
-            return tier3Flail;
+            return i7;
             break;
         case 3: 
-            return tier3Pole;
+            return i12;
             break;
         case 4:
-            return tier3Sword;
+            return i17;
             break;
         case 5:
-            return tier3Bow;
+            return i22;
             break;
         case 6:
-            return tier3Shield;
+            return i27;
             break;
         case 7:
-            return tier3Armor;
+            return i32;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 } 
 
@@ -137,28 +147,28 @@ function randomItemTier4() {
     var choice = Math.round((Math.random() * 6) + 1);
     switch(choice) {
         case 1:
-            return tier4Dagger;
+            return i3;
             break;
         case 2: 
-            return tier4Flail;
+            return i8;
             break;
         case 3: 
-            return tier4Pole;
+            return i13;
             break;
         case 4:
-            return tier4Sword;
+            return i18;
             break;
         case 5:
-            return tier4Bow;
+            return i23;
             break;
         case 6:
-            return tier4Shield;
+            return i28;
             break;
         case 7:
-            return tier4Armor;
+            return i33;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 } 
 
@@ -166,172 +176,171 @@ function randomItemTier5() {
     var choice = Math.round((Math.random() * 6) + 1);
     switch(choice) {
         case 1:
-            return tier5Dagger;
+            return i4;
             break;
         case 2: 
-            return tier5Flail;
+            return i9;
             break;
         case 3: 
-            return tier5Pole;
+            return i14;
             break;
         case 4:
-            return tier5Sword;
+            return i19;
             break;
         case 5:
-            return tier5Bow;
+            return i24;
             break;
         case 6:
-            return tier5Shield;
+            return i29;
             break;
         case 7:
-            return tier5Armor;
+            return i34;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 
 //returns item from certain tiers
 //1 returns a dagger, 2 returns a flail, 3 returns a pole, 4 returns sword, 5 returns bow, 6 returns shield
 //7 returns armor
-
 function tier1Item(x) {
     switch(x) {
         case 1:
-            return tier1Dagger;
+            return i0;
             break;
         case 2: 
-            return tier1Flail;
+            return i5;
             break;
         case 3: 
-            return tier1Pole;
+            return i10;
             break;
         case 4:
-            return tier1Sword;
+            return i15;
             break;
         case 5:
-            return tier1Bow;
+            return i20;
             break;
         case 6:
-            return tier1Shield;
+            return i25;
             break;
         case 7:
-            return tier1Armor;
+            return i30;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 
 function tier2Item(x) {
     switch(x) {
         case 1:
-            return tier2Dagger;
+            return i1;
             break;
         case 2: 
-            return tier2Flail;
+            return i6;
             break;
         case 3: 
-            return tier2Pole;
+            return i11;
             break;
         case 4:
-            return tier2Sword;
+            return i16;
             break;
         case 5:
-            return tier2Bow;
+            return i21;
             break;
         case 6:
-            return tier2Shield;
+            return i26;
             break;
         case 7:
-            return tier2Armor;
+            return i31;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 
 function tier3Item(x) {
     switch(x) {
         case 1:
-            return tier3Dagger;
+            return i2;
             break;
         case 2: 
-            return tier3Flail;
+            return i7;
             break;
         case 3: 
-            return tier3Pole;
+            return i12;
             break;
         case 4:
-            return tier3Sword;
+            return i17;
             break;
         case 5:
-            return tier3Bow;
+            return i22;
             break;
         case 6:
-            return tier3Shield;
+            return i27;
             break;
         case 7:
-            return tier3Armor;
+            return i32;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 
 function tier4Item(x) {
     switch(x) {
         case 1:
-            return tier4Dagger;
+            return i3;
             break;
         case 2: 
-            return tier4Flail;
+            return i8;
             break;
         case 3: 
-            return tier4Pole;
+            return i13;
             break;
         case 4:
-            return tier4Sword;
+            return i18;
             break;
         case 5:
-            return tier4Bow;
+            return i23;
             break;
         case 6:
-            return tier4Shield;
+            return i28;
             break;
         case 7:
-            return tier4Armor;
+            return i33;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 
 function tier5Item(x) {
     switch(x) {
         case 1:
-            return tier5Dagger;
+            return i4;
             break;
         case 2: 
-            return tier5Flail;
+            return i9;
             break;
         case 3: 
-            return tier5Pole;
+            return i14;
             break;
         case 4:
-            return tier5Sword;
+            return i19;
             break;
         case 5:
-            return tier5Bow;
+            return i24;
             break;
         case 6:
-            return tier5Shield;
+            return i29;
             break;
         case 7:
-            return tier5Armor;
+            return i34;
             break;
         default:
-            return "YO HO YO HO NEAR THE BOOTS I'LL NEVER GO!";
+            break;
     }
 }
 

@@ -28,8 +28,10 @@ function checkExit(cell) {
 	if(lvl[x][y][1] > 0) {
 		if(lvl[x][y][1] == 1) {
             makeLvl(prevLvl);
+            canMove(plaCurrCell);
 		} else if(lvl[x][y][1] == 2) {
             makeLvl(nextLvl);
+            canMove(plaCurrCell);
 		} else {}
 	}
 
@@ -146,6 +148,79 @@ function createLvl2() {
     placeEntities();
 }
 
+//creates level3 - x's level
+//entrance 3,4
+//exit 2,0
+function createLvl3() {
+    resetLvl();
+    
+    lvl[0][3][0] = 1;
+    lvl[0][4][0] = 1;
+    
+    lvl[1][0][0] = 1;
+    lvl[1][1][0] = 1;
+    lvl[1][2][0] = 1;
+    lvl[1][3][0] = 1;
+    lvl[1][4][0] = 1;
+    
+    lvl[2][0][0] = 1;
+    lvl[2][0][1] = 2;
+    lvl[2][3][0] = 1;
+    
+    lvl[3][1][0] = 1;
+    lvl[3][3][0] = 1;
+    lvl[3][4][0] = 1;
+    lvl[3][4][1] = 1;
+    
+    lvl[4][1][0] = 1;
+    lvl[4][2][0] = 1;
+    lvl[4][3][0] = 1;
+    
+    placeEntities();
+}
+
+//creates level4 - x's level
+//entrance 2,0
+//exit 0,2
+function createLvl4() {
+    resetLvl();
+    
+    lvl[0][0][0] = 1;
+    lvl[0][2][0] = 1;
+    lvl[0][2][1] = 2;
+    
+    lvl[1][0][0] = 1;
+    lvl[1][2][0] = 1;
+    lvl[1][3][0] = 1;
+    lvl[1][4][0] = 1;
+    
+    lvl[2][0][0] = 1;
+    lvl[2][0][1] = 1;
+    lvl[2][4][0] = 1;
+    
+    lvl[3][0][0] = 1;
+    lvl[3][2][0] = 1;
+    lvl[3][3][0] = 1;
+    lvl[3][4][0] = 1;
+    
+    lvl[4][0][0] = 1;
+    lvl[4][1][0] = 1;
+    lvl[4][2][0] = 1;
+    
+    placeEntities();
+}
+
+//creates level5 - x's level
+//entrance 0,4
+//exit x,x
+function createLvl5() {
+    resetLvl();
+    
+    
+    
+    placeEntities();
+}
+
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
 function placeEntities() {
     //first for loop goes through the columns of the lvl
@@ -153,7 +228,7 @@ function placeEntities() {
         //second for loop goes through the rows
         for(row = 0; row < 5; row++) {
             //checks if the current cell is accessable to player
-            if(lvl[column][row][0] == 1) {
+            if(lvl[column][row][0] == 1 && lvl[column][row][1] == 0) {
                 //generates if there is an enemy
                 if((Math.floor(Math.random() * 6) + 1) > 2) {
                     lvl[column][row][2] = 1;
@@ -162,24 +237,45 @@ function placeEntities() {
                 }
                 
                 //generates if there is an item
-                if((Math.floor(Math.random() * 6) + 1) > 4) {
+                if((Math.floor(Math.random() * 6) + 1) > 3 && lvl[column][row][2] == 0) {
                     lvl[column][row][3] = 1;
                 } else {
                     lvl[column][row][3] = 0;
                 }
                 
-                //checks if enemy in cell and adds to item/enemy array
+                //checks if enemy in cell and adds enemy to array
                 if(lvl[column][row][2] == 1) {
-                    lvl[column][row][4][0] = currentLvl;
+                    randomEnemies(currentLvl);
+                    
+                    random = Math.round(Math.random() * 13);
+                    lvl[column][row][4][0] = enemies[random];
                 } else {
-                    lvl[column][row][4][0] = 0;  
+                    lvl[column][row][4][0] = null;  
                 }
 
-                //checks if item in cell and adds to item/enemy array
+                //checks if item in cell and adds item to array
                 if(lvl[column][row][3] == 1) {
-                    lvl[column][row][4][1] = currentLvl;
+                    switch(currentLvl) {
+                        case 1:
+                            lvl[column][row][4][1] = randomItemTier1();
+                            break;
+                        case 2:
+                            lvl[column][row][4][1] = randomItemTier2();
+                            break;
+                        case 3:
+                            lvl[column][row][4][1] = randomItemTier3();
+                            break;
+                        case 4:
+                            lvl[column][row][4][1] = randomItemTier4();
+                            break;
+                        case 5:
+                            lvl[column][row][4][1] = randomItemTier5();
+                            break;
+                        default:
+                            break;
+                    }
                 } else {
-                    lvl[column][row][4][1] = 0;
+                    lvl[column][row][4][1] = null;
                 }
             }
         }
@@ -235,4 +331,17 @@ function canMove(currCell) {
     }
     
     current[1]--;
+}
+
+function checkContents(currCell) {
+    if(lvl[currCell[0]][currCell[1]][2] == 1 && lvl[currCell[0]][currCell[1]][3] == 1) {
+        //enemy and item
+        //enemyItemButtons(currCell[0], currCell[1]);
+    } else if(lvl[currCell[0]][currCell[1]][2] == 1 && lvl[currCell[0]][currCell[1]][3] == 0) {
+        //enemy
+        enemyButtons(currCell[0], currCell[1]);
+    } else if(lvl[currCell[0]][currCell[1]][2] == 0 && lvl[currCell[0]][currCell[1]][3] == 1) {
+        //item
+        itemButtons(currCell[0], currCell[1]);
+    }
 }

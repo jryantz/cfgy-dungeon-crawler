@@ -1,6 +1,6 @@
-var baseActive = false; //if true - the player is in the base
-    baseLvl = 0;
-    baseExt1 = false;
+var baseActive = false, //if true - the player is in the base
+    baseLvl = 0,
+    baseExt1 = false,
     merchantInv = [];
 
 function enterBase() {
@@ -12,6 +12,8 @@ function enterBase() {
     regenLvl();
     flip('mainPane', 'basePane');
     baseButtons();
+    plaHealth = plaMaxHealth;
+    refresh();
 }
 
 function leaveBase() {
@@ -47,7 +49,7 @@ function upgradeBase() {
     }
 }
 
-//creates a merchant with weapons available of tier 1 for every item except for their chosen specialization
+// creates a merchant with weapons available of tier 1 for every item except for their chosen specialization
 // which is tier 2
 function createMerchant() {
     switch(getSpec()) {
