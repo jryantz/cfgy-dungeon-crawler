@@ -8,7 +8,11 @@ function defaultButtons() {
 function baseButtons() {
     document.getElementById('interactionPane').innerHTML = '<a href="#" class="debug" onclick="flip(\'mainPane\', \'debugPane\');"></a>';
     document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="leaveBase();">Leave Base</a>';
-    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="">Visit Merchant</a>';
+    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="showMerch();">Visit Merchant</a>';
+    
+    if(plaLvl > 1 && baseLvl < 1) {
+        document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="upgradeBase();">Upgrade Base</a>';
+    }
 }
 
 function enemyButtons(column, row) {

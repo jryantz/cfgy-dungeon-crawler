@@ -34,6 +34,8 @@ function upgradeBase() {
         baseExt1 = true;
         lvl[1][2][0] = 1;
         regenLvl();
+        leaveBase();
+        enterBase();
         
         document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Congratulations, your base has been expanded allowing a merchant to occupy the new area.</div>';
         setTimeout(function() {
@@ -119,4 +121,17 @@ function createMerchant() {
         default:
             return null;
     }
+}
+
+function showMerch() {
+    size = merchantInv.length;
+    
+    tempContent = merchantInv.slice();
+    
+    document.getElementById("merch").innerHTML = '';
+    for(i = 0; i < size; i++) {
+        document.getElementById("merch").innerHTML += merchantInv.pop()[1];
+    }
+    
+    merchantInv = tempContent.slice();
 }

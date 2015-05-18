@@ -230,14 +230,14 @@ function placeEntities() {
             //checks if the current cell is accessable to player
             if(lvl[column][row][0] == 1 && lvl[column][row][1] == 0) {
                 //generates if there is an enemy
-                if((Math.floor(Math.random() * 6) + 1) > 2) {
+                if((Math.round(Math.random() * 8) + 1) > 4) {
                     lvl[column][row][2] = 1;
                 } else {
                     lvl[column][row][2] = 0;
                 }
                 
                 //generates if there is an item
-                if((Math.floor(Math.random() * 6) + 1) > 3 && lvl[column][row][2] == 0) {
+                if((Math.round(Math.random() * 8) + 1) < 5 && lvl[column][row][2] == 0) {
                     lvl[column][row][3] = 1;
                 } else {
                     lvl[column][row][3] = 0;
