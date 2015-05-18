@@ -57,65 +57,184 @@ function upgradeBase() {
 function createMerchant() {
     switch(getSpec()) {
         case 'dagger':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 1) {
-                    merchantInv.push(tier2Item(1));
+                if(highestLvl == 1) {
+                    if(x == 1) {
+                        merchantInv.push(tier2Item(1));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 1) {
+                        merchantInv.push(tier3Item(1));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 1) {
+                        merchantInv.push(tier4Item(1));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
-        case 'flail': 
+        case 'flail':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 2){
-                    merchantInv.push(tier2Item(2));
+                if(highestLvl == 1) {
+                    if(x == 2) {
+                        merchantInv.push(tier2Item(2));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 2) {
+                        merchantInv.push(tier3Item(2));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 2) {
+                        merchantInv.push(tier4Item(2));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
-        case 'pole': 
+        case 'pole':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 3) {
-                    merchantInv.push(tier2Item(3));
+                if(highestLvl == 1) {
+                    if(x == 3) {
+                        merchantInv.push(tier2Item(3));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 3) {
+                        merchantInv.push(tier3Item(3));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 3) {
+                        merchantInv.push(tier4Item(3));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
         case 'sword':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 4) {
-                    merchantInv.push(tier2Item(4));
+                if(highestLvl == 1) {
+                    if(x == 4) {
+                        merchantInv.push(tier2Item(4));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 4) {
+                        merchantInv.push(tier3Item(4));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 4) {
+                        merchantInv.push(tier4Item(4));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
         case 'bow':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 5) {
-                    merchantInv.push(tier2Item(5));
+                if(highestLvl == 1) {
+                    if(x == 5) {
+                        merchantInv.push(tier2Item(5));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 5) {
+                        merchantInv.push(tier3Item(5));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 5) {
+                        merchantInv.push(tier4Item(5));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
         case 'shield':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 6) {
-                    merchantInv.push(tier2Item(6));
+                if(highestLvl == 1) {
+                    if(x == 6) {
+                        merchantInv.push(tier2Item(6));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 6) {
+                        merchantInv.push(tier3Item(6));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 6) {
+                        merchantInv.push(tier4Item(6));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
         case 'armor':
+            merchantInv = [];
             for(x = 1; x < 8; x++) {
-                if(x == 7) {
-                    merchantInv.push(tier2Item(7));
+                if(highestLvl == 1) {
+                    if(x == 7) {
+                        merchantInv.push(tier2Item(7));
+                    } else {
+                        merchantInv.push(tier1Item(x));
+                    }
+                } else if(highestLvl == 2) {
+                    if(x == 7) {
+                        merchantInv.push(tier3Item(7));
+                    } else {
+                        merchantInv.push(tier2Item(x));
+                    }
+                } else if(highestLvl == 3) {
+                    if(x == 7) {
+                        merchantInv.push(tier4Item(7));
+                    } else {
+                        merchantInv.push(tier3Item(x));
+                    }
                 } else {
-                    merchantInv.push(tier1Item(x));
+                    merchantInv.push(tier4Item(x));
                 }
             }
             break;
@@ -125,7 +244,9 @@ function createMerchant() {
 }
 
 function showMerch() {
-    if(getSpec() == null) {
+    createMerchant();
+    
+    if(getSpec() == null || baseLvl < 1) {
         document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Please choose a specialization.</div>';
         setTimeout(function() {
             display('alertCont');
@@ -141,6 +262,9 @@ function showMerch() {
             temp = merchantInv.pop();
             if(temp[4] == null) {
                 temp[4] = '<i style=\'color:limegreen;\'>boosted</i>';
+            }
+            if(temp[4] <= 1) {
+                temp[4] = temp[4] * 100;
             }
             document.getElementById("merch").innerHTML += '<div class="merch cf"><span><a href="#" onclick="buyMerch(i' + temp[0] + ');">' + temp[1] + '</a></span><span>Damage: ' + temp[2] + '</span><span>' + temp[3] + ': ' + temp[4] + '</span><span>$' + temp[5] + '</span></div>';
         }

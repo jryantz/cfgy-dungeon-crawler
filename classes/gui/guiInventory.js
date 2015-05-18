@@ -60,6 +60,11 @@ function guiSetSlot(item, stat1v, stat2n, stat2v, id) {
     guiSlots[num][0] = item;
     guiSlots[num][1] = stat1v;
     guiSlots[num][2] = stat2n;
+    
+    if(stat2v <= 1) {
+        stat2v = stat2v * 100;
+    }
+    
     guiSlots[num][3] = stat2v;
     guiSlots[num][5] = id;
     

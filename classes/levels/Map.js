@@ -3,6 +3,7 @@
 var currentLvl = 1,
 	nextLvl = 2,
 	prevLvl = 0,
+    highestLvl = 1,
     lvl = [[[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
 		   [[0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]], [0, 0, 0, 0, [null, null, null]]],
@@ -41,34 +42,49 @@ function checkExit(cell) {
 function makeLvl(whichLvl) {
 	switch(whichLvl) {
         case 5:
-            createLvl5();
             currentLvl = 5;
             nextLvl = 6;
             prevLvl = 4;
+            if(currentLvl > highestLvl) {
+                highestLvl = currentLvl;
+            }
+            createLvl5();
             break;
         case 4:
-            createLvl4();
             currentLvl = 4;
             nextLvl = 5;
             prevLvl = 3;
+            if(currentLvl > highestLvl) {
+                highestLvl = currentLvl;
+            }
+            createLvl4();
             break;
         case 3:
-            createLvl3();
             currentLvl = 3;
             nextLvl = 4;
             prevLvl = 2;
+            if(currentLvl > highestLvl) {
+                highestLvl = currentLvl;
+            }
+            createLvl3();
             break;
         case 2:
-            createLvl2();
             currentLvl = 2;
             nextLvl = 3;
             prevLvl = 1;
+            if(currentLvl > highestLvl) {
+                highestLvl = currentLvl;
+            }
+            createLvl2();
             break;
         case 1:
-            createLvl1();
             currentLvl = 1;
             nextLvl = 2;
             prevLvl = 0;
+            if(currentLvl > highestLvl) {
+                highestLvl = currentLvl;
+            }
+            createLvl1();
             break;
         default:
             break;
@@ -223,6 +239,7 @@ function createLvl5() {
 
 //randomly sets if an enemy and/or an item is in the cell only if the cell is accessable to the player
 function placeEntities() {
+    randomEnemies(currentLvl);
     //first for loop goes through the columns of the lvl
 	for(column = 0; column < 5; column++) {
         //second for loop goes through the rows
@@ -245,10 +262,10 @@ function placeEntities() {
                 
                 //checks if enemy in cell and adds enemy to array
                 if(lvl[column][row][2] == 1) {
-                    randomEnemies(currentLvl);
-                    
-                    random = Math.round(Math.random() * 13);
+                    random = Math.round(Math.random() * 14);
                     lvl[column][row][4][0] = enemies[random];
+                    
+                    console.log(lvl[column][row][4][0]);
                 } else {
                     lvl[column][row][4][0] = null;  
                 }
@@ -340,6 +357,8 @@ function checkContents(currCell) {
     } else if(lvl[currCell[0]][currCell[1]][2] == 1 && lvl[currCell[0]][currCell[1]][3] == 0) {
         //enemy
         enemyButtons(currCell[0], currCell[1]);
+        addMain('You came across a violent ' + lvl[plaCurrCell[0]][plaCurrCell[1]][4][0][1] + '.', 'npc');
+        showMain();
     } else if(lvl[currCell[0]][currCell[1]][2] == 0 && lvl[currCell[0]][currCell[1]][3] == 1) {
         //item
         itemButtons(currCell[0], currCell[1]);

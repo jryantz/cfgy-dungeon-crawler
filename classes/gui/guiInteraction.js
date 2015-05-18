@@ -8,7 +8,10 @@ function defaultButtons() {
 function baseButtons() {
     document.getElementById('interactionPane').innerHTML = '<a href="#" class="debug" onclick="flip(\'mainPane\', \'debugPane\');"></a>';
     document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="leaveBase();">Leave Base</a>';
-    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="showMerch();">Visit Merchant</a>';
+    
+    if(plaLvl > 1 && baseLvl == 1) {
+        document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="showMerch();">Visit Merchant</a>';
+    }
     
     if(plaLvl > 1 && baseLvl < 1) {
         document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="upgradeBase();">Upgrade Base</a>';
@@ -38,7 +41,7 @@ function enemyButtons(column, row) {
     for(i = 0; i <= 8; i++) {
         if(guiSlots[i][4] == 0 && guiSlots[i][0] != 'empty') {
             if(guiSlots[i][5] >= 25 && guiSlots[i][5] <= 29) {
-                document.getElementById('shield').innerHTML += '<a href="#" class="button" onclick="addMain(\'Shield: ' + guiSlots[i][0] + '\', \'combat\'); showMain(); setPlaShield(' + guiSlots[i][1] + ', \'' + guiSlots[i][2] + '\', ' + guiSlots[i][3] + ');">' + guiSlots[i][0] + '</a>';
+                document.getElementById('shield').innerHTML += '<a href="#" class="button" onclick="addMain(\'Shield: ' + guiSlots[i][0] + '\', \'combat\'); showMain(); setPlaShield(' + guiSlots[i][1] + ', \'' + guiSlots[i][2] + '\', ' + guiSlots[i][3] / 100 + ');">' + guiSlots[i][0] + '</a>';
             }
         }
     }

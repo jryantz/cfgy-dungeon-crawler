@@ -20,7 +20,7 @@ var enemies = [
 function randomEnemies(lvl) {
     for(i = 0; i <= 14; i++) {
         //random name
-        randName = Math.round((Math.random() * 3) + 1);
+        randName = Math.round((Math.random() * 6) + 1);
         switch(randName) {
             case 1:
                 enemies[i][1] = 'Bandit';
@@ -33,6 +33,15 @@ function randomEnemies(lvl) {
                 break;
             case 4:
                 enemies[i][1] = 'Werewolf';
+                break;
+            case 5:
+                enemies[i][1] = 'Crazy Space Robot';
+                break;
+            case 6:
+                enemies[i][1] = 'Ghoul';
+                break;
+            case 7:
+                enemies[i][1] = 'C3H8 Elemental';
                 break;
             default:
                 break;
@@ -57,7 +66,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0];
                     enemies[i][6] = genStrVitAgi()[1];
                     enemies[i][7] = genStrVitAgi()[2];
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 5);
                     enemies[i][10] = tier1Item(Math.round((Math.random() * 2) + 1));
                 } else if(randLvl >= 6) {
@@ -67,7 +76,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 1);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 1);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 1);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 15);
                     enemies[i][10] = tier1Item(Math.round((Math.random() * 2) + 1));
                 } else {}
@@ -80,7 +89,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 5);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 5);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 5);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 35);
                     enemies[i][10] = tier2Item(Math.round((Math.random() * 2) + 1));
                 } else if(randLvl >= 6) {
@@ -90,7 +99,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 9);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 9);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 9);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 45);
                     enemies[i][10] = tier2Item(Math.round((Math.random() * 2) + 1));
                 } else {}
@@ -103,7 +112,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 13);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 13);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 13);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 65);
                     enemies[i][10] = tier3Item(Math.round((Math.random() * 2) + 1));
                 } else if(randLvl >= 6) {
@@ -113,7 +122,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 17);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 17);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 17);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 75);
                     enemies[i][10] = tier3Item(Math.round((Math.random() * 2) + 1));
                 } else {}
@@ -126,7 +135,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 21);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 21);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 21);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 95);
                     enemies[i][10] = tier4Item(Math.round((Math.random() * 2) + 1));
                 } else if(randLvl >= 6) {
@@ -136,7 +145,7 @@ function randomEnemies(lvl) {
                     enemies[i][5] = genStrVitAgi()[0] + Math.round((Math.random() * 3) + 25);
                     enemies[i][6] = genStrVitAgi()[1] + Math.round((Math.random() * 3) + 25);
                     enemies[i][7] = genStrVitAgi()[2] + Math.round((Math.random() * 3) + 25);
-                    enemies[i][8] = Math.round((plaAgi - 10) / 2);
+                    enemies[i][8] = Math.round((enemies[i][7] - 10) / 2);
                     enemies[i][9] = Math.round((Math.random() * 50) + 105);
                     enemies[i][10] = tier4Item(Math.round((Math.random() * 2) + 1));
                 } else {}

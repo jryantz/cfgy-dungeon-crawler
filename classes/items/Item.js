@@ -17,7 +17,7 @@ var i5 = [5, 'Stick with Rock', 2, 'Strength', null, 100],
     i6 = [6, 'Worn Flail', 6, 'Strength', null, 135],
     i7 = [7, 'Iron Flail', 8, 'Strength', null, 165],
     i8 = [8, 'Sacrifial Flail', 11, 'Strength', null, 215],
-    i9 = [9, 'Another Fucking Flail', 14, 'Strength', null, 315];
+    i9 = [9, 'Another Damn Flail', 14, 'Strength', null, 315];
 
 //pole weapon
 var i10 = [10, 'Tree Branch',  5, 'Strength', null, 125],
@@ -41,11 +41,11 @@ var i20 = [20, 'Short Bow', 3, 'Dodge Chance', 15, 80],
     i24 = [24, 'Nights Gaze', 12, 'Dodge Chance', 21, 230];
 
 //shield
-var i25 = [25, 'Battered Shield', 0, 'Health Bonus', 15, 100],
-    i26 = [26, 'Roman Shield', 0, 'Health Bonus', 60, 165],
-    i27 = [27, 'Spiked Shield', 4, 'Health Bonus', 35, 270],
-    i28 = [28, 'Molten Shield', 5, 'Health Bonus', 45, 320],
-    i29 = [29, 'Gaias Crest Shield', 6, 'Health Bonus', 100, 400];
+var i25 = [25, 'Battered Shield', 0, 'Defense', 0.15, 100],
+    i26 = [26, 'Roman Shield', 0, 'Defense', 0.60, 165],
+    i27 = [27, 'Spiked Shield', 4, 'Defense', 0.35, 270],
+    i28 = [28, 'Molten Shield', 5, 'Defense', 0.45, 320],
+    i29 = [29, 'Gaias Crest Shield', 6, 'Defense', 1.0, 400];
 
 //armor
 var i30 = [30, 'Torn Leather Armor', 0, 'Defense', 2, 95],
