@@ -22,12 +22,13 @@ function leaveBase() {
     plaCurrCell = [1, 2];
     regenLvl();
     flip('mainPane', 'basePane');
+    document.getElementById("merch").innerHTML = '';
     defaultButtons();
     canMove(plaCurrCell);
 }
 
 function upgradeBase() {
-    if(plaMoney >= 200) {
+    if(plaMoney >= 200 && plaLvl > 1) {
         plaMoney -= 200;
         refresh();
         baseLvl = 1;
@@ -43,7 +44,7 @@ function upgradeBase() {
         }, 5000);
         display('alertCont');
     } else {
-        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Come back when you have sufficient coins.</div>';
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Come back when you have sufficient coins and are level 2.</div>';
         setTimeout(function() {
             display('alertCont');
         }, 5000);
@@ -124,14 +125,37 @@ function createMerchant() {
 }
 
 function showMerch() {
-    size = merchantInv.length;
-    
-    tempContent = merchantInv.slice();
-    
-    document.getElementById("merch").innerHTML = '';
-    for(i = 0; i < size; i++) {
-        document.getElementById("merch").innerHTML += merchantInv.pop()[1];
+    if(getSpec() == null) {
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Please choose a specialization.</div>';
+        setTimeout(function() {
+            display('alertCont');
+        }, 3000);
+        display('alertCont');
+    } else {
+        size = merchantInv.length;
+
+        tempContent = merchantInv.slice();
+
+        document.getElementById("merch").innerHTML = '';
+        for(i = 0; i < size; i++) {
+            temp = merchantInv.pop();
+            if(temp[4] == null) {
+                temp[4] = '<i style=\'color:limegreen;\'>boosted</i>';
+            }
+            document.getElementById("merch").innerHTML += '<div class="merch cf"><span><a href="#" onclick="buyMerch(i' + temp[0] + ');">' + temp[1] + '</a></span><span>Damage: ' + temp[2] + '</span><span>' + temp[3] + ': ' + temp[4] + '</span><span>$' + temp[5] + '</span></div>';
+        }
+
+        merchantInv = tempContent.slice();
     }
-    
-    merchantInv = tempContent.slice();
+}
+
+function buyMerch(id) {
+    if(plaMoney >= id[5]) {
+        plaMoney -= id[5];
+        pickupItem(id[1], id[2], id[3], id[4], id[0]);
+        
+        baseButtons();
+    } else {
+        
+    }
 }

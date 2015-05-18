@@ -52,5 +52,7 @@ function getSpec() {
         return 'shield';
     } else if(baseArmor == true) {
         return 'armor';
-    } else {}
+    } else {
+        return null;
+    }
 }

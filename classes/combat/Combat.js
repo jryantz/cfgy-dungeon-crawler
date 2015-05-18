@@ -65,7 +65,7 @@ function startCombat(enemy) {
                     }
 
                     //This if statement runs if the weapon is Agility based
-                    if(plaWeapon[1] === 'Agility') {
+                    if(plaWeapon[1] === 'Agility' || plaWeapon[1] === 'Dodge Chance') {
                         plaRoll = Math.floor((Math.random() * 20)) +  Math.floor((plaAgi - 10) / 2);
                         //This runs if the player hits
                         if(plaRoll >= enemies[enemy][8]) {
@@ -110,7 +110,7 @@ function startCombat(enemy) {
                 }
 
                 //This if statement runs if the weapon is Agility based
-                if(enemies[enemy][10][3] === 'Agility') {
+                if(enemies[enemy][10][3] === 'Agility' || enemies[enemy][10][3] === 'Dodge Chance') {
                     eneRoll = Math.floor((Math.random() * 20)) +  Math.floor((enemies[enemy][7] - 10) / 2);
                     //This runs if the enemy hits
                     if(eneRoll >= plaDefense) {

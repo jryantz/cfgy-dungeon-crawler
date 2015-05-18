@@ -4,55 +4,55 @@
 //feel free to change these values as you see fit. I have done the same for the boss dependant weapons so 
 //feel free to change them as well. Also none of the weapons take advantage of the hit chance stat
 
-//id, name, damage, stat name, stat value
+//id, name, damage, stat name, stat value, price
 //dagger
-var i0 = [0, 'Sharpened Stick', 3, 'Agility', null],
-    i1 = [1, 'Rusted Dagger', 5, 'Agility', null],
-    i2 = [2, 'Steel Dagger', 7, 'Agility', null],
-    i3 = [3, 'Sacrificial Dagger', 9, 'Agility', null],
-    i4 = [4, 'Shard of Asteria', 12, 'Agility', null];
+var i0 = [0, 'Sharpened Stick', 3, 'Agility', null, 100],
+    i1 = [1, 'Rusted Dagger', 5, 'Agility', null, 125],
+    i2 = [2, 'Steel Dagger', 7, 'Agility', null, 165],
+    i3 = [3, 'Sacrificial Dagger', 9, 'Agility', null, 200],
+    i4 = [4, 'Shard of Asteria', 12, 'Agility', null, 300];
     
 //flail
-var i5 = [5, 'Stick with Rock', 2, 'Strength', null],
-    i6 = [6, 'Worn Flail', 6, 'Strength', null],
-    i7 = [7, 'Iron Flail', 8, 'Strength', null],
-    i8 = [8, 'Sacrifial Flail', 11, 'Strength', null],
-    i9 = [9, 'Another Fucking Flail', 14, 'Strength', null];
+var i5 = [5, 'Stick with Rock', 2, 'Strength', null, 100],
+    i6 = [6, 'Worn Flail', 6, 'Strength', null, 135],
+    i7 = [7, 'Iron Flail', 8, 'Strength', null, 165],
+    i8 = [8, 'Sacrifial Flail', 11, 'Strength', null, 215],
+    i9 = [9, 'Another Fucking Flail', 14, 'Strength', null, 315];
 
 //pole weapon
-var i10 = [10, 'Tree Branch',  5, 'Strength', null],
-    i11 = [11, 'Stone Spear', 8, 'Strength', null],
-    i12 = [12, 'Trident', 11, 'Strength', null],
-    i13 = [13, 'Scythe', 13, 'Strength', null],
-    i14 = [14, 'Astraeus\'s Splintered Staff', 16, 'Strength', null];
+var i10 = [10, 'Tree Branch',  5, 'Strength', null, 125],
+    i11 = [11, 'Stone Spear', 8, 'Strength', null, 165],
+    i12 = [12, 'Trident', 11, 'Strength', null, 210],
+    i13 = [13, 'Scythe', 13, 'Strength', null, 230],
+    i14 = [14, 'Astraeus\'s Splintered Staff', 16, 'Strength', null, 340];
 
 //sword
-var i15 = [15, '2x4', 5, 'Strength', null],
-    i16 = [16, 'Bronze Sword', 6, 'Strength', null],
-    i17 = [17, 'Katana', 8, 'Strength', null],
-    i18 = [18, 'Macuahuitl', 10, 'Strength', null],
-    i19 = [19, 'Blade of Olymbros', 13, 'Strength', null];
+var i15 = [15, '2x4', 5, 'Strength', null, 125],
+    i16 = [16, 'Bronze Sword', 6, 'Strength', null, 140],
+    i17 = [17, 'Katana', 8, 'Strength', null, 165],
+    i18 = [18, 'Macuahuitl', 10, 'Strength', null, 210],
+    i19 = [19, 'Blade of Olymbros', 13, 'Strength', null, 305];
 
 //bow
-var i20 = [20, 'Short Bow', 3, 'Dodge Chance', 15],
-    i21 = [21, 'Long Bow', 5, 'Dodge Chance', 15],
-    i22 = [22, 'Recurve Bow', 7, 'Dodge Chance', 17],
-    i23 = [23, 'Compund Bow', 9, 'Dodge Chance', 19],
-    i24 = [24, 'Nights Gaze', 12, 'Dodge Chance', 21];
+var i20 = [20, 'Short Bow', 3, 'Dodge Chance', 15, 80],
+    i21 = [21, 'Long Bow', 5, 'Dodge Chance', 15, 100],
+    i22 = [22, 'Recurve Bow', 7, 'Dodge Chance', 17, 140],
+    i23 = [23, 'Compund Bow', 9, 'Dodge Chance', 19, 180],
+    i24 = [24, 'Nights Gaze', 12, 'Dodge Chance', 21, 230];
 
 //shield
-var i25 = [25, 'Battered Shield', 0, 'Health Bonus', 15],
-    i26 = [26, 'Roman Shield', 0, 'Health Bonus', 60],
-    i27 = [27, 'Spiked Shield', 4, 'Health Bonus', 35],
-    i28 = [28, 'Molten Shield', 5, 'Health Bonus', 45],
-    i29 = [29, 'Gaias Crest Shield', 6, 'Health Bonus', 100];
+var i25 = [25, 'Battered Shield', 0, 'Health Bonus', 15, 100],
+    i26 = [26, 'Roman Shield', 0, 'Health Bonus', 60, 165],
+    i27 = [27, 'Spiked Shield', 4, 'Health Bonus', 35, 270],
+    i28 = [28, 'Molten Shield', 5, 'Health Bonus', 45, 320],
+    i29 = [29, 'Gaias Crest Shield', 6, 'Health Bonus', 100, 400];
 
 //armor
-var i30 = [30, 'Torn Leather Armor', 0, 'Defense', 2],
-    i31 = [31, 'Studded Leather Armor', 0, 'Defense', 3],
-    i32 = [32, 'Chain Vest', 0, 'Defense', 4],
-    i33 = [33, 'Pyrium Suit', 0, 'Defense', 5],
-    i34 = [34, 'Armor of the Ancients', 0, 'Defense', 6];
+var i30 = [30, 'Torn Leather Armor', 0, 'Defense', 2, 95],
+    i31 = [31, 'Studded Leather Armor', 0, 'Defense', 3, 120],
+    i32 = [32, 'Chain Vest', 0, 'Defense', 4, 150],
+    i33 = [33, 'Pyrium Suit', 0, 'Defense', 5, 180],
+    i34 = [34, 'Armor of the Ancients', 0, 'Defense', 6, 200];
 
 
 //these functions provide a random item of a certain tier

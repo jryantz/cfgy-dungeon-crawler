@@ -213,6 +213,17 @@
     background:#2694d8;
 }
 
+.basePane .merch {
+    display:block;
+    margin:5px;
+}
+
+.basePane .merch span {
+    padding:5px;
+    margin:0 5px;
+    float:left;
+}
+
 .interactionPane {
     float:left;
     width:calc(50% - 28px);

@@ -77,7 +77,7 @@ function guiUnsetSlot(num) {
     
     for(i = num += 1; i <= 8; i++) {
         if(guiSlots[i][0] != null && guiSlots[i][0] != 'locked') {
-            for(j = 0; j < 5; j++) {
+            for(j = 0; j < 6; j++) {
                 guiSlots[i - 1][j] = guiSlots[i][j];
                 if(j == 0) {
                     guiSlots[i][j] = 'empty';
