@@ -13,7 +13,7 @@ function baseButtons() {
         document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="showMerch();">Visit Merchant</a>';
     }
     
-    if(plaLvl > 1 && baseLvl < 1) {
+    if(baseLvl != 1) {
         document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="upgradeBase();">Upgrade Base</a>';
     }
 }
@@ -67,7 +67,7 @@ function combatButtons() {
 function itemButtons(column, row) {
     document.getElementById('interactionPane').innerHTML = '<a href="#" class="debug" onclick="flip(\'mainPane\', \'debugPane\');"></a>';
     document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="pickupItem(\'' + lvl[column][row][4][1][1] + '\', ' + lvl[column][row][4][1][2] + ', \'' + lvl[column][row][4][1][3] + '\', ' + lvl[column][row][4][1][4] + ', ' + lvl[column][row][4][1][0] + ');">Pickup Item</a>';
-    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="defaultButtons();">Ignore Item</a>';
+    document.getElementById('interactionPane').innerHTML += '<a href="#" class="button" onclick="defaultButtons(); canMove(plaCurrCell);">Ignore Item</a>';
     document.getElementById('interactionPane').innerHTML += '<br><br>Item: ' + lvl[column][row][4][1][1];
 }
 

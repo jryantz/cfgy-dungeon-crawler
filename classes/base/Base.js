@@ -44,7 +44,7 @@ function upgradeBase() {
         }, 5000);
         display('alertCont');
     } else {
-        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Come back when you have sufficient coins and are level 2.</div>';
+        document.getElementById('alertCont').innerHTML = '<div id="alert" class="alert">Come back when you have $200 and are level 2.</div>';
         setTimeout(function() {
             display('alertCont');
         }, 5000);

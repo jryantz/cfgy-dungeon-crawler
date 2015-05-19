@@ -48,6 +48,8 @@ function makeLvl(whichLvl) {
             if(currentLvl > highestLvl) {
                 highestLvl = currentLvl;
             }
+            addMain('You have entered level 5.', 'generic');
+            showMain();
             createLvl5();
             break;
         case 4:
@@ -57,6 +59,8 @@ function makeLvl(whichLvl) {
             if(currentLvl > highestLvl) {
                 highestLvl = currentLvl;
             }
+            addMain('You have entered level 4.', 'generic');
+            showMain();
             createLvl4();
             break;
         case 3:
@@ -66,6 +70,8 @@ function makeLvl(whichLvl) {
             if(currentLvl > highestLvl) {
                 highestLvl = currentLvl;
             }
+            addMain('You have entered level 3.', 'generic');
+            showMain();
             createLvl3();
             break;
         case 2:
@@ -75,6 +81,8 @@ function makeLvl(whichLvl) {
             if(currentLvl > highestLvl) {
                 highestLvl = currentLvl;
             }
+            addMain('You have entered level 2.', 'generic');
+            showMain();
             createLvl2();
             break;
         case 1:
@@ -84,6 +92,8 @@ function makeLvl(whichLvl) {
             if(currentLvl > highestLvl) {
                 highestLvl = currentLvl;
             }
+            addMain('You have entered level 1.', 'generic');
+            showMain();
             createLvl1();
             break;
         default:

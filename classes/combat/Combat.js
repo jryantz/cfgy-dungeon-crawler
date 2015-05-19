@@ -168,6 +168,11 @@ function startCombat(enemy) {
         if(plaHealth > 0) {
             plaMoney = plaMoney + enemies[enemy][9];
             plaXp = plaXp + enemies[enemy][3];
+            
+            addMain('You got $' + enemies[enemy][9] + '.', 'npc');
+            addMain('You got ' + enemies[enemy][3] + ' XP.', 'npc');
+            showMain();
+            
             refresh();
             plaLvlUp();
             refresh();
