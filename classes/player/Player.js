@@ -9,20 +9,17 @@ var plaLvl = 0,
     plaMoney = 0,
     
     //[x, y]
-    plaCurrCell = [3, 2],
+    plaCurrCell = [0, 0],
     plaPrevCell = [0, 0],
-    
-    plaMaxInv = 0,
-    plaInv = [],
     
     plaName = '',
     plaRace = '',
     plaBg = [],
 
-    plaWeapon = [],
-    plaArmor = [],
-    plaShield = [],
-    plaDefense = plaArmor[2] + plaShield[2] + Math.floor((plaAgi - 10) / 2);
+    plaWeapon = [0, '', 0],
+    plaArmor = [0, '', 0],
+    plaShield = [0, '', 0],
+    plaDefense;
 
 function plaConstruct() {
     /*
@@ -65,14 +62,51 @@ function plaConstruct() {
     
     plaHealth = 100;
     plaMaxHealth = 100;
+    
+    invUp();
 }
 
 function plaLvlUp() {
     if(plaXp >= plaMaxXp) {
+        //level up player and make sure any excess rolls over to next level
         plaXp = plaXp - plaMaxXp;
         plaMaxXp += Math.floor(plaMaxXp * 0.75);
         plaLvl += 1;
+        
+        //add health
+        plaMaxHealth += Math.floor(plaMaxHealth * 0.5);
+        plaHealth = plaMaxHealth;
+        
+        //increment 3 special stats
+        str = Math.round((Math.random() * 3) + 1);
+        plaStr += str;
+        
+        vit = Math.round((Math.random() * 3) + 1);
+        plaVit += vit;
+        
+        agi = Math.round((Math.random() * 3) + 1);
+        plaAgi += agi;
+        
+        //update inventory level if need be
+        invUp();
+        
+        //refresh
+        refresh();
     }
+}
+
+function invUp() {
+    if(plaStr >= 12 && plaStr <= 14) {
+        guiChangeLvl(1);
+    } else if(plaStr >= 15 && plaStr <= 17) {
+        guiChangeLvl(2);
+    } else if(plaStr >= 18 && plaStr <= 20) {
+        guiChangeLvl(3);
+    } else if(plaStr >= 21 && plaStr <= 23) {
+        guiChangeLvl(4);
+    } else if(plaStr >= 24 && plaStr <= 26) {
+        guiChangeLvl(5);
+    } else {}
 }
 
 //dir - take direction of movement
@@ -91,6 +125,51 @@ function plaMove(dir) {
     } else {}
     
     canMove(plaCurrCell);
+    checkExit(plaCurrCell);
+    
+    checkContents(plaCurrCell);
 
     regenLvl();
+}
+
+function pickupItem(item, val, spec, specval, id) {
+    if(specval == null) {
+        specval = '<i style=\"color:palegreen;\">boosted</i>';
+    }
+    
+    if(guiSetSlot(item, val, spec, specval, id)) {
+        lvl[plaCurrCell[0]][plaCurrCell[1]][3] = 0;
+        lvl[plaCurrCell[0]][plaCurrCell[1]][4][1] = null;
+        refresh();
+        regenLvl();
+    }
+    
+    defaultButtons();
+    canMove(plaCurrCell);
+}
+
+function setPlaWeapon(damage, val2name, val2) {
+    plaWeapon[0] = damage;
+    plaWeapon[1] = val2name;
+    plaWeapon[2] = val2;
+}
+
+function setPlaShield(damage, val2name, val2) {
+    plaShield[0] = damage;
+    plaShield[1] = val2name;
+    plaShield[2] = val2;
+    
+    setDefense();
+}
+
+function setPlaArmor(damage, val2name, val2) {
+    plaArmor[0] = damage;
+    plaArmor[1] = val2name;
+    plaArmor[2] = val2;
+    
+    setDefense();
+}
+
+function setDefense() {
+    plaDefense = plaArmor[2] + plaShield[2] + Math.floor((plaAgi - 10) / 2);
 }
