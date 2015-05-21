@@ -33,6 +33,8 @@ function upgradeBase() {
 //creates a merchant with weapons available of tier 1 for every item except for their chosen specialization
 // which is tier 2
 
+
+
 function createMerchant() {
     
 }switch(merchantSpec) {
